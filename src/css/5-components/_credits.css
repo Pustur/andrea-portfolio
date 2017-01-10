@@ -1,0 +1,5 @@
+.credits {
+  &__link {
+    color: $accent;
+  }
+}
