@@ -18,6 +18,7 @@
 
 /* Import components */
 @import '5-components/main-menu';
+@import '5-components/social-menu';
 @import '5-components/footer';
 @import '5-components/to-top';
 @import '5-components/credits';

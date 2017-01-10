@@ -31,16 +31,20 @@
   },
   "social": [
     {
-      "name": "Soundcloud",
-      "url": "https://soundcloud.com/andrea-colosio-897590039"
-    },
-    {
       "name": "Facebook",
       "url": "https://www.facebook.com/profile.php?id=100007314858560"
     },
     {
+      "name": "Soundcloud",
+      "url": "https://soundcloud.com/andrea-colosio-897590039"
+    },
+    {
       "name": "Linkedin",
       "url": "https://www.linkedin.com/in/andreacolosio"
+    },
+    {
+      "name": "IMDb",
+      "url": "http://www.imdb.com"
     }
   ]
 }

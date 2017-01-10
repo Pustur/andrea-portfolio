@@ -1,0 +1,82 @@
+.social-menu {
+  font-size: 0;
+
+  &__item {
+    display: inline-block;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    overflow: hidden;
+
+    &,
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    [class*='-background'],
+    [class*='-icon'] {
+      transition: fill $fast ease;
+    }
+
+    [class*='-background'] {
+      fill: white;
+    }
+
+    [class*='-icon'] {
+      fill: $footer;
+    }
+
+    &:hover {
+      .fb-background {
+        fill: $fb-background;
+      }
+
+      .fb-icon {
+        fill: $fb-icon;
+      }
+
+      .sc-background {
+        fill: $sc-background;
+      }
+
+      .sc-icon {
+        fill: $sc-icon;
+      }
+
+      .in-background {
+        fill: $in-background;
+      }
+
+      .in-icon {
+        fill: $in-icon;
+      }
+
+      .imdb-background {
+        fill: $imdb-background;
+      }
+
+      .imdb-icon {
+        fill: $imdb-icon;
+      }
+    }
+  }
+
+  .footer & {
+    padding: 36px 0;
+  }
+}
+
+@media (--md-min) {
+  .social-menu {
+    .footer & {
+      padding: 48px 0;
+    }
+  }
+}

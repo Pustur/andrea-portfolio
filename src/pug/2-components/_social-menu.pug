@@ -1,3 +1,14 @@
 ul.social-menu.unstyled-list
   each socialItem in social
-    +listLink(socialItem.url, socialItem.name, 'social-menu__item', 'social-menu__link')(target='_blank')
+    li.social-menu__item
+      a.social-menu__link(href=socialItem.url target='_blank')
+        case socialItem.name
+          when 'Facebook'
+            include _icon-facebook
+          when 'Soundcloud'
+            include _icon-soundcloud
+          when 'Linkedin'
+            include _icon-linkedin
+          when 'IMDb'
+            include _icon-imdb
+        = socialItem.name
