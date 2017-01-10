@@ -1,11 +1,11 @@
 {
-  "name": "boilerplate",
-  "version": "0.2.1",
-  "description": "A modern boilerplate for kickstarting new web projects",
+  "name": "Andrea-portfolio",
+  "version": "0.0.0",
+  "description": "Portfolio for Andrea Colosio, Sound Designer",
   "main": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pustur/boilerplate.git"
+    "url": "https://github.com/Pustur/Andrea-portfolio.git"
   },
   "scripts": {
     "test": "pug-lint src/**/*.pug && stylelint src/**/*.css && eslint *.js"
