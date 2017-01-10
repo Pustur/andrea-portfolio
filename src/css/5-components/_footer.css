@@ -1,3 +1,15 @@
 .footer {
   position: relative;
+  background-color: $footer;
+  text-align: center;
+  color: white;
+  padding-top: 65px;
+  padding-bottom: 55px;
+}
+
+@media (--md-min) {
+  .footer {
+    padding-top: 95px;
+    padding-bottom: 85px;
+  }
 }
