@@ -10,12 +10,14 @@
 @import '2-generic/normalize';
 
 /* Import base */
+@import '3-base/base';
 @import '3-base/typography';
 
 /* Import objects */
 @import '4-objects/unstyled-list';
 
 /* Import components */
+@import '5-components/main-menu';
 @import '5-components/footer';
 
 /* Import trumps */
