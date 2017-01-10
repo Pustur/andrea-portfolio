@@ -1,1 +1,15 @@
-//- Mixins here
+mixin listLink(url, text, liClass, aClass)
+  li(class=liClass)
+    a(class=aClass, href=url)&attributes(attributes)= text
+
+mixin textarea(text, inputId, labelText)
+  div.contact-form__input-wrap
+    span.contact-form__text= text
+    label.contact-form__label(for=inputId)= labelText
+    textarea.contact-form__textarea(id=inputId)&attributes(attributes)
+
+mixin input(text, inputId, labelText)
+  div.contact-form__input-wrap
+    span.contact-form__text= text
+    label.contact-form__label(for=inputId)= labelText
+    input.contact-form__input(id=inputId)&attributes(attributes)

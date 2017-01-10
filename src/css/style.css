@@ -2,16 +2,18 @@
 @import '0-settings/variables';
 
 /* Import tools */
+@import '1-tools/extends';
 @import '1-tools/mixins';
 
 /* Import generic */
-@import '2-generic/reset';
+@import '2-generic/box-sizing';
+@import '2-generic/normalize';
 
 /* Import base */
 @import '3-base/typography';
 
 /* Import objects */
-@import '4-objects/generic-elements';
+@import '4-objects/unstyled-list';
 
 /* Import components */
 @import '5-components/footer';

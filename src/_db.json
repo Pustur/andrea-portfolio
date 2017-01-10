@@ -3,5 +3,44 @@
     "email": "loris.bettazza@gmail.com",
     "firstName": "Loris",
     "lastName": "Bettazza"
-  }
+  },
+  "menu": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Works",
+      "url": "/works"
+    },
+    {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "News",
+      "url": "/news"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
+  "site": {
+    "url": "http://localhost:8000"
+  },
+  "social": [
+    {
+      "name": "Soundcloud",
+      "url": "https://soundcloud.com/andrea-colosio-897590039"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=100007314858560"
+    },
+    {
+      "name": "Linkedin",
+      "url": "https://www.linkedin.com/in/andreacolosio"
+    }
+  ]
 }
