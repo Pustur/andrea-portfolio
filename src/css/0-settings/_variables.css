@@ -12,3 +12,11 @@ $body-font: 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 @custom-media --lg-min (width >= 1024px);
 @custom-media --lg-max (width < 1440px);
 @custom-media --xlg-min (width >= 1440px);
+
+/* Speeds */
+$fast: 0.3s;
+$medium: 0.5s;
+$slow: 0.8s;
+
+/* to-top */
+$to-top-size: 70px;
