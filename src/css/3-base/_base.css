@@ -1,6 +1,5 @@
 body {
-  // -moz-osx-font-smoothing: grayscale;
-  // -webkit-font-smoothing: antialiased;
+  color: $black;
   font-family: $body-font;
   font-size: 15px;
   font-weight: 300;

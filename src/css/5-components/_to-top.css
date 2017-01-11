@@ -24,7 +24,7 @@
   }
 
   &__polyline {
-    fill: transparent;
+    fill: none;
     stroke: $black;
     stroke-width: 1;
     stroke-linecap: round;

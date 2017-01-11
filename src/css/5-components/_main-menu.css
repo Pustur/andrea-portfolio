@@ -1,5 +1,4 @@
 .main-menu {
-  color: $black;
   font-weight: 600;
 
   &__item {
