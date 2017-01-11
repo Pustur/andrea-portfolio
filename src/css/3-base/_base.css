@@ -11,6 +11,23 @@ a {
   text-decoration: none;
 }
 
-svg {
+svg,
+img {
   display: block;
+}
+
+img {
+  width: 100%;
+}
+
+@media (--md-min) {
+  body {
+    font-size: 17px;
+  }
+}
+
+@media (--lg-min) {
+  body {
+    font-size: 18px;
+  }
 }

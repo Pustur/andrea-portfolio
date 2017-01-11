@@ -20,6 +20,7 @@
 /* Import components */
 @import '5-components/header';
 @import '5-components/logo';
+@import '5-components/news-item';
 @import '5-components/main-menu';
 @import '5-components/social-menu';
 @import '5-components/footer';

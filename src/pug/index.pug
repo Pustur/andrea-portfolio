@@ -4,4 +4,9 @@ block meta
   title Andrea Colosio • Sound Designer Portfolio
 
 block main
-  main.main Main
+  main.main
+    section#news
+      .container
+        h3.h2 News
+        - const latestNews = news[0];
+        +news(latestNews.thumbnail, latestNews.alt, latestNews.title, latestNews.date, latestNews.text)

@@ -1,1 +1,46 @@
-/* Define base typography */
+.h4 {
+  @extend %wide-caps;
+}
+
+.h3 {
+  text-align: center;
+}
+
+.h4 {
+  font-weight: 600;
+}
+
+.h3 {
+  font-weight: 300;
+}
+
+.h3 {
+  font-size: $h3-font-size;
+}
+
+.h4 {
+  font-size: $h4-font-size;
+
+  &:before {
+    content: '//';
+    color: $accent;
+    letter-spacing: 0;
+    margin-right: 10px;
+  }
+}
+
+@media (--md-min) {
+  .h3 {
+    font-size: $h3-font-size-md;
+  }
+
+  .h4 {
+    font-size: $h4-font-size-md;
+  }
+}
+
+@media (--lg-min) {
+  .h3 {
+    font-size: $h3-font-size-lg;
+  }
+}

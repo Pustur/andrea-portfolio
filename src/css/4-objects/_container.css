@@ -4,10 +4,10 @@
   @neat-outer-container 100%;
 }
 
-@media (--md-min) {
+@media (--lg-min) {
   .container {
     padding: 0 $container-padding-md;
 
-    @neat-outer-container;
+    @neat-outer-container 80%;
   }
 }

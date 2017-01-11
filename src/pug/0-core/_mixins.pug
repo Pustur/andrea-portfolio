@@ -13,3 +13,12 @@ mixin input(text, inputId, labelText)
     span.contact-form__text= text
     label.contact-form__label(for=inputId)= labelText
     input.contact-form__input(id=inputId)&attributes(attributes)
+
+mixin news(img, alt, title, date, text)
+  .news-item
+    .news-item__img
+      img(src=img, alt=alt)
+    .news-item__body
+      h4.h4= title
+      .news-item__date= date
+      p.news-item__text= text
