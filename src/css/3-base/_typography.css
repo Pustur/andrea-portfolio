@@ -1,17 +1,31 @@
+.h1,
+.h2,
 .h4 {
   @extend %wide-caps;
 }
 
+.h1,
+.h2,
 .h3 {
   text-align: center;
 }
 
+.h1,
 .h4 {
   font-weight: 600;
 }
 
+.h2,
 .h3 {
   font-weight: 300;
+}
+
+.h1 {
+  font-size: $h1-font-size;
+}
+
+.h2 {
+  font-size: $h2-font-size;
 }
 
 .h3 {
@@ -30,6 +44,15 @@
 }
 
 @media (--md-min) {
+  .h1 {
+    font-weight: 400;
+    font-size: $h1-font-size-md;
+  }
+
+  .h2 {
+    font-size: $h2-font-size-md;
+  }
+
   .h3 {
     font-size: $h3-font-size-md;
   }
@@ -40,6 +63,10 @@
 }
 
 @media (--lg-min) {
+  .h1 {
+    font-size: $h1-font-size-lg;
+  }
+
   .h3 {
     font-size: $h3-font-size-lg;
   }

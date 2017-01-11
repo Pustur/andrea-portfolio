@@ -43,6 +43,15 @@ $logo-vertical-padding-md: 10px;
 /* to-top */
 $to-top-size: 70px;
 
+/* h1 */
+$h1-font-size: 24px;
+$h1-font-size-md: 36px;
+$h1-font-size-lg: 48px;
+
+/* h2 */
+$h2-font-size: 28px;
+$h2-font-size-md: 36px;
+
 /* h3 */
 $h3-font-size: 18px;
 $h3-font-size-md: 20px;
