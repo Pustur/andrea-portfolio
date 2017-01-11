@@ -36,5 +36,9 @@ $container-padding-md: 30px;
 $header-height: 60px;
 $header-height-md: 90px;
 
+/* logo */
+$logo-vertical-padding: 5px;
+$logo-vertical-padding-md: 10px;
+
 /* to-top */
 $to-top-size: 70px;

@@ -1,0 +1,36 @@
+.logo {
+  display: inline-block;
+  transition: opacity $fast ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &__svg {
+    height: $header-height;
+    padding: $logo-vertical-padding 0;
+  }
+
+  &__head,
+  &__mustache {
+    fill: none;
+    stroke: $black;
+  }
+
+  &__head {
+    stroke-width: 4;
+  }
+
+  &__mustache {
+    stroke-width: 3;
+  }
+}
+
+@media (--md-min) {
+  .logo {
+    &__svg {
+      height: $header-height-md;
+      padding: $logo-vertical-padding-md 0;
+    }
+  }
+}
