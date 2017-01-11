@@ -1,0 +1,9 @@
+.header {
+  height: $header-height;
+}
+
+@media (--md-min) {
+  .header {
+    height: $header-height-md;
+  }
+}

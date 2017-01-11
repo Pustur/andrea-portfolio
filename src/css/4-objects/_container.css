@@ -1,0 +1,13 @@
+.container {
+  padding: 0 $container-padding;
+
+  @neat-outer-container 100%;
+}
+
+@media (--md-min) {
+  .container {
+    padding: 0 $container-padding-md;
+
+    @neat-outer-container;
+  }
+}

@@ -28,5 +28,13 @@ $fast: 0.3s;
 $medium: 0.5s;
 $slow: 0.8s;
 
+/* container */
+$container-padding: 20px;
+$container-padding-md: 30px;
+
+/* header */
+$header-height: 60px;
+$header-height-md: 90px;
+
 /* to-top */
 $to-top-size: 70px;
