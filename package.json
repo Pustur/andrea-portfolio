@@ -8,7 +8,7 @@
     "url": "https://github.com/Pustur/Andrea-portfolio.git"
   },
   "scripts": {
-    "test": "pug-lint src/**/*.pug && stylelint src/**/*.css && eslint *.js"
+    "test": "pug-lint src/**/*.pug && stylelint \"src/**/*.css\" && eslint \"src/**/*.js\""
   },
   "author": "Loris Bettazza <loris.bettazza@gmail.com>",
   "license": "MIT",

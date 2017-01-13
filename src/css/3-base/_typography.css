@@ -35,7 +35,7 @@
 .h4 {
   font-size: $h4-font-size;
 
-  &:before {
+  &::before {
     content: '//';
     color: $accent;
     letter-spacing: 0;
