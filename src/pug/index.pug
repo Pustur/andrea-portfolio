@@ -5,10 +5,12 @@ block meta
 
 block main
   main.main
-    section#news
+    section#name.name
+      h1.h1= slogan.main
+      h2.h3= slogan.secondary
+
+    section#news.news
       .container
-        h1.h1 Andrea Colosio
-        h2.h3 Sound Designer
         h3.h2 News
         - const latestNews = news[0];
         +news(latestNews.thumbnail, latestNews.alt, latestNews.title, latestNews.date, latestNews.text)

@@ -39,6 +39,10 @@
   "site": {
     "url": "http://localhost:8000"
   },
+  "slogan": {
+    "main": "Andrea Colosio",
+    "secondary": "Sound Designer"
+  },
   "social": [
     {
       "name": "Facebook",
