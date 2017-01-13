@@ -16,6 +16,7 @@
     display: inline-block;
     width: 20px;
     margin-bottom: -2px;
+    margin-left: 4px;
     transition: transform $medium ease;
   }
 
