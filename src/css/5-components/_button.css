@@ -1,0 +1,61 @@
+.button {
+  @extend %wide-caps;
+
+  width: 240px;
+  display: block;
+  margin: 0 auto;
+  background-color: $accent;
+  text-align: center;
+  position: relative;
+  font-weight: 400;
+  padding: 12px 0;
+  font-size: 12px;
+  transition: background-color $fast ease;
+
+  &__svg {
+    display: inline-block;
+    width: 20px;
+    margin-bottom: -2px;
+    transition: transform $medium ease;
+  }
+
+  &__polyline {
+    fill: none;
+    stroke: $black;
+    stroke-width: 0.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+  }
+
+  &::before {
+    top: -11px;
+    left: -11px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    bottom: -11px;
+    right: -11px;
+    transform: rotate(225deg);
+  }
+
+  &:hover {
+    background-color: $accent-light;
+
+    .button__svg {
+      transform: translateX(4px);
+    }
+  }
+}

@@ -16,10 +16,12 @@
 /* Import objects */
 @import '4-objects/container';
 @import '4-objects/unstyled-list';
+@import '4-objects/news';
 
 /* Import components */
 @import '5-components/header';
 @import '5-components/logo';
+@import '5-components/button';
 @import '5-components/news-item';
 @import '5-components/main-menu';
 @import '5-components/social-menu';
