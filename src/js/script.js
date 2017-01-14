@@ -1,10 +1,12 @@
 (($, window) => {
   // Cache DOM
   const $window = $(window);
+  const $root = $('html, body');
   const $html = $('html');
   const $header = $('.header');
   const $name = $('#name');
   const $hamburger = $('.hamburger');
+  const $toTop = $('.to-top');
 
   // Variables
   let yPosition = 0;
@@ -36,6 +38,13 @@
     } else {
       $header.css('background-color', '');
     }
+  });
+
+  $toTop.on('click', () => {
+    $root.animate({
+      scrollTop: 0,
+    }, 1000);
+    return false;
   });
 
   $hamburger.on('click', toggleMenu);
