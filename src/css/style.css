@@ -22,8 +22,10 @@
 /* Import components */
 @import '5-components/header';
 @import '5-components/logo';
+@import '5-components/hamburger';
 @import '5-components/button';
 @import '5-components/news-item';
+@import '5-components/menu-wrapper';
 @import '5-components/main-menu';
 @import '5-components/social-menu';
 @import '5-components/footer';

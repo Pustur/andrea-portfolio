@@ -1,13 +1,23 @@
 .header {
   height: $header-height;
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
 }
 
+@media (--sm-max) {
+  .header {
+    &.shadow {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
 @media (--md-min) {
   .header {
+    position: absolute;
     height: $header-height-md;
   }
 }

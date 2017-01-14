@@ -61,3 +61,12 @@ $h3-font-size-lg: 24px;
 /* h4 */
 $h4-font-size: 14px;
 $h4-font-size-md: 16px;
+
+/* hamburger */
+$hamburger-padding-x: 5px;
+$hamburger-padding-y: 15px;
+$hamburger-layer-width: 30px;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 6px;
+$hamburger-layer-color: $black;
+$hamburger-layer-border-radius: 0;

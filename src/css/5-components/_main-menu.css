@@ -35,6 +35,9 @@
 
 @media (--sm-max) {
   .main-menu {
+    width: 100%;
+    overflow: hidden;
+
     &__item {
       display: block;
     }
@@ -43,8 +46,31 @@
       font-size: 20px;
       text-align: center;
 
+      &__item {
+        &:nth-child(odd) {
+          .main-menu__link {
+            transform: translateX(75%);
+          }
+        }
+
+        &:nth-child(even) {
+          .main-menu__link {
+            transform: translateX(-75%);
+          }
+        }
+      }
+
       &__link {
         padding: 10px;
+        opacity: 0;
+        transition: transform $medium cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity $medium ease;
+      }
+
+      .menu-animation & {
+        &__link {
+          transform: translateX(0) !important;
+          opacity: 1 !important;
+        }
       }
     }
 
