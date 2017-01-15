@@ -40,10 +40,13 @@
     }
   });
 
+  $window.on('resize', () => $window.scroll());
+
   $toTop.on('click', () => {
     $root.animate({
       scrollTop: 0,
     }, 1000);
+
     return false;
   });
 

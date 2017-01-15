@@ -1,6 +1,4 @@
 .news-item {
-  @neat-row;
-
   &__img,
   &__body {
     @neat-span-columns 10;

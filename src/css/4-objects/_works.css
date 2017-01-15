@@ -1,12 +1,12 @@
 .works {
-  padding-top: 70px;
+  padding-top: 40px;
 
   .h2 {
     margin-bottom: 50px;
   }
 
   .button {
-    margin-top: 30px;
+    margin-top: 60px;
   }
 }
 
@@ -17,7 +17,8 @@
     }
 
     .button {
-      margin-top: 100px;
+      margin-top: 80px;
+      margin-bottom: 40px;
     }
   }
 }

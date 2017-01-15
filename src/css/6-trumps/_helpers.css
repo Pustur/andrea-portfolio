@@ -1,3 +1,7 @@
 .relative {
   position: relative;
 }
+
+.row {
+  @neat-row;
+}
