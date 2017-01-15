@@ -11,6 +11,7 @@
   padding: 12px 0;
   font-size: 12px;
   transition: background-color $fast ease;
+  color: $black;
 
   &__svg {
     display: inline-block;
@@ -38,6 +39,11 @@
     border-width: 10px;
     border-style: solid;
     border-color: transparent white transparent transparent;
+    transition: border-color $slow ease;
+
+    .dark-mode & {
+      border-color: transparent black transparent transparent;
+    }
   }
 
   &::before {

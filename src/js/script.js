@@ -46,6 +46,13 @@
 
   $window.on('resize', () => $window.scroll());
 
+  plyrInstance.on('playing', () => {
+    $html.addClass('dark-mode');
+  });
+  plyrInstance.on('pause ended', () => {
+    $html.removeClass('dark-mode');
+  });
+
   $workItems.hover(function mouseEnter() {
     $workItems.addClass('disabled');
     $(this).removeClass('disabled');

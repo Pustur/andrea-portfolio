@@ -4,6 +4,16 @@ body {
   font-size: 15px;
   font-weight: 300;
   line-height: 1.6;
+  transition: background-color $slow ease, color $slow ease;
+
+  .dark-mode & {
+    background-color: black;
+
+    .works,
+    .news {
+      color: $gray;
+    }
+  }
 }
 
 a {
