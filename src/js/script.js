@@ -1,4 +1,4 @@
-(($, window) => {
+(($, window, plyr) => {
   // Cache DOM
   const $window = $(window);
   const $root = $('html, body');
@@ -57,4 +57,6 @@
     speed: 0.5,
     position: 'center bottom',
   });
-})(jQuery, window); // eslint-disable-line no-undef
+
+  plyr.setup();
+})(jQuery, window, plyr); // eslint-disable-line no-undef

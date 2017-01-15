@@ -8,6 +8,7 @@
 /* Import generic */
 @import '2-generic/box-sizing';
 @import '2-generic/normalize';
+@import '2-generic/plyr';
 
 /* Import base */
 @import '3-base/base';
@@ -17,6 +18,7 @@
 @import '4-objects/container';
 @import '4-objects/unstyled-list';
 @import '4-objects/name';
+@import '4-objects/works';
 @import '4-objects/news';
 
 /* Import components */

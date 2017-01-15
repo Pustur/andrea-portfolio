@@ -9,6 +9,15 @@ block main
       h1.h1= slogan.main
       h2.h3= slogan.secondary
 
+    section#works.works
+      .container
+        h3.h2 Works
+        div(data-type='vimeo', data-video-id='169575716')
+        a.button(href=menu[1].url) View all works
+          svg.button__svg(xmlns='http://www.w3.org/2000/svg', version='1.1', x='0', y='0', viewBox='0 -1 16 10', xml:space='preserve')
+            polyline.button__polyline(points='1,4 15,4')
+            polyline.button__polyline(points='11,1 15,4 11,7')
+
     section#news.news
       .container
         h3.h2 News

@@ -1,0 +1,23 @@
+.works {
+  padding-top: 70px;
+
+  .h2 {
+    margin-bottom: 50px;
+  }
+
+  .button {
+    margin-top: 30px;
+  }
+}
+
+@media (--md-min) {
+  .works {
+    .h2 {
+      margin-bottom: 80px;
+    }
+
+    .button {
+      margin-top: 100px;
+    }
+  }
+}
