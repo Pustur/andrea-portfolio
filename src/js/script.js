@@ -6,10 +6,14 @@
   const $header = $('.header');
   const $name = $('#name');
   const $hamburger = $('.hamburger');
+  const $videoDescription = $('.video-description');
+  const $workItems = $('.work-item');
   const $toTop = $('.to-top');
 
   // Variables
   let yPosition = 0;
+  let eventAttached = false;
+  const plyrInstance = plyr.setup()[0];
   const nameHeight = $name.height();
   const headerHeight = $header.height();
 
@@ -42,6 +46,46 @@
 
   $window.on('resize', () => $window.scroll());
 
+  $workItems.hover(function mouseEnter() {
+    $workItems.addClass('disabled');
+    $(this).removeClass('disabled');
+  }, () => {
+    $workItems.removeClass('disabled');
+  });
+
+  $workItems.on('click', function selectVideo() {
+    const $this = $(this);
+    const $videoPlayer = $('.video-player');
+    const videoOffset = $videoPlayer.offset().top;
+    const videoHeight = $videoPlayer.height();
+    const windowHeight = $window.height();
+    const scrollPosition = (videoOffset + (videoHeight / 2)) - (windowHeight / 2);
+
+    $root.animate({
+      scrollTop: scrollPosition,
+    }, 1000).promise().then(() => {
+      $videoDescription.html($this.find('.work-item__description').html());
+
+      plyrInstance.source({
+        type: 'video',
+        title: $this.find('.work-item__title').text(),
+        sources: [
+          {
+            src: $this.attr('data-work-id'),
+            type: 'vimeo',
+          },
+        ],
+      });
+
+      if (!eventAttached) {
+        plyrInstance.on('ready', () => plyrInstance.play());
+        eventAttached = true;
+      }
+    });
+
+    return false;
+  });
+
   $toTop.on('click', () => {
     $root.animate({
       scrollTop: 0,
@@ -60,6 +104,4 @@
     speed: 0.5,
     position: 'center bottom',
   });
-
-  plyr.setup();
 })(jQuery, window, plyr); // eslint-disable-line no-undef

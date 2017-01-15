@@ -60,5 +60,49 @@
       "name": "IMDb",
       "url": "http://www.imdb.com"
     }
+  ],
+  "works": [
+    {
+      "id": "165560817",
+      "title": "Uncharted 4: A Thief’s End - Man Behind the Treasure TV Spot",
+      "duration": "0.43",
+      "description": "© 2016 Sony Computer Entertainment America LLC. UNCHARTED 4: A Thief’s End is a trademark of Sony Computer Entertainment America LLC.\nCreated and developed by Naughty Dog LLC."
+    },
+    {
+      "id": "97981374",
+      "title": "Tom Clancy’s The Division: Take Back New York",
+      "duration": "4.13",
+      "description": "Massive Entertainment & Ubisoft entrusted Blur to create a conceptually unique trailer that will make a strong impact at E3. A timelapsed journey explores the devastating decline of a virus infected New York City as The Agents try to restore hope amongst its desperate citizens."
+    },
+    {
+      "id": "171169416",
+      "title": "Halo Wars 2",
+      "duration": "2.08",
+      "description": ""
+    },
+    {
+      "id": "57142668",
+      "title": "CYBERPUNK 2077 Teaser",
+      "duration": "2.10",
+      "description": "Cyberpunk 2077 - next, after The Witcher & The Witcher 2, project created jointly by CD Projekt Red and Platige Image.\nThis teaser is the first announcement of the game, based on the system of Cyberpunk 2020 - American RPG game written by Mike Pondsmith in the 90's."
+    },
+    {
+      "id": "130929667",
+      "title": "Fallen Empire",
+      "duration": "4.19",
+      "description": ""
+    },
+    {
+      "id": "169575716",
+      "title": "Horizon Zero Dawn - Aloy’s Journey Trailer",
+      "duration": "3.14",
+      "description": ""
+    },
+    {
+      "id": "63942137",
+      "title": "DEAD SPACE: Chase to Death Live Action Video Game Trailer",
+      "duration": "3.25",
+      "description": "I'm a fan of Science Fiction, Filmmaking, and Video games, so I clashed it all together in one video, DEAD SPACE: Chase to Death. I hope that I will be able to continue making live action video game trailers. It's so much fun. I hope you enjoy it, especially the creators of Dead Space. Thanks for the inspiration and encouragement to travel into the horror of outer space. I also want to thank my amazing crew for sticking with me til' the bitter end of space. Onto the next one...maybe Dead Space: Collusion or Dark Souls II or ..."
+    }
   ]
 }

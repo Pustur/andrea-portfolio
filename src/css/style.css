@@ -26,6 +26,9 @@
 @import '5-components/logo';
 @import '5-components/hamburger';
 @import '5-components/button';
+@import '5-components/video-description';
+@import '5-components/video-gallery';
+@import '5-components/work-item';
 @import '5-components/news-item';
 @import '5-components/menu-wrapper';
 @import '5-components/main-menu';

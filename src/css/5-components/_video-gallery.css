@@ -1,0 +1,15 @@
+.video-gallery {
+  margin-top: 40px;
+}
+
+@media (--md-min) {
+  .video-gallery {
+    margin-top: 60px;
+  }
+}
+
+@media (--lg-min) {
+  .video-gallery {
+    margin-top: 80px;
+  }
+}

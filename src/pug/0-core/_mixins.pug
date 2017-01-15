@@ -22,3 +22,14 @@ mixin news(img, alt, title, date, text)
       h4.h4= title
       .news-item__date= date
       p.news-item__text= text
+
+mixin work(id, title, duration, description)
+  a.work-item.row(href='#', data-work-id=id)
+    .work-item__img(style=`background-image: url(/img/works/${id}.jpg)`)
+      button.plyr__play-large.plyr__play-custom(type='button', aria-label='Play')
+        include ../2-components/_icon-play
+        span.plyr__sr-only Play
+      .work-item__duration= duration
+    .work-item__body
+      h5.work-item__title= title
+      p.work-item__description!= (description + '').replace(/\n/g, '<br>')

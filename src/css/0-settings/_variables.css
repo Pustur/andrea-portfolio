@@ -1,5 +1,6 @@
 /* Colors */
 $black: #333;
+$gray: #999;
 $accent: #f6be3a;
 $accent-light: #ffd557;
 $footer: $black;
@@ -15,6 +16,7 @@ $imdb-icon: black;
 
 /* Fonts */
 $body-font: 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$plyr-font: 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 
 /* Breakpoints */
 @custom-media --sm-max (width < 768px);
@@ -40,6 +42,9 @@ $header-height-md: 90px;
 /* logo */
 $logo-vertical-padding: 8px;
 $logo-vertical-padding-md: 10px;
+
+/* work-item */
+$work-padding: 16px;
 
 /* to-top */
 $to-top-size: 70px;

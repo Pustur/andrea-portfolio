@@ -1,1 +1,15 @@
-/* Define mixins */
+@define-mixin aspect-ratio $width, $height {
+  position: relative;
+  display: block;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: calc(($height / $width) * 100%);
+  }
+
+  & > * {
+    position: absolute;
+  }
+}

@@ -1,0 +1,27 @@
+.video-description {
+  font-size: 12px;
+  opacity: 0.7;
+
+  &:empty {
+    display: none;
+  }
+}
+
+@media (--md-min) {
+  .video-description {
+    @neat-span-columns 10;
+    @neat-shift 1;
+
+    font-size: 16px;
+    margin-top: 40px;
+  }
+}
+
+@media (--lg-min) {
+  .video-description {
+    @neat-span-columns 8;
+    @neat-shift 2;
+
+    margin-top: 60px;
+  }
+}
