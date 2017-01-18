@@ -33,3 +33,13 @@ mixin work(id, title, duration, description)
     .work-item__body
       h5.work-item__title= title
       p.work-item__description!= (description + '').replace(/\n/g, '<br>')
+
+mixin videoPlayer(videos)
+  - const preloadedVideo = videos[0];
+  .video-player
+    div(data-type='vimeo', data-video-id=preloadedVideo.id)
+  .row
+    p.video-description!= String(preloadedVideo.description).replace(/\n/g, '<br>')
+  .video-gallery.row
+    each video in videos
+      +work(video.id, video.title, video.duration, video.description)

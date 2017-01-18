@@ -12,14 +12,7 @@ block main
     section#works.works
       .container
         h3.h2 Works
-        - const preloadedVideo = works[0];
-        .video-player
-          div(data-type='vimeo', data-video-id=preloadedVideo.id)
-        .row
-          p.video-description!= (preloadedVideo.description + '').replace(/\n/g, '<br>')
-        .video-gallery.row
-          each worksItem, i in works
-            +work(worksItem.id, worksItem.title, worksItem.duration, worksItem.description)
+        +videoPlayer(works.slice(0, 3))
         a.button(href=menu[1].url) View all works
           svg.button__svg(xmlns='http://www.w3.org/2000/svg', version='1.1', x='0', y='0', viewBox='0 -1 16 10', xml:space='preserve')
             polyline.button__polyline(points='1,4 15,4')
