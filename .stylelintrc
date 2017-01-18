@@ -1,6 +1,9 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": "src/**/_normalize.css",
+  "ignoreFiles": [
+    "src/**/_normalize.css",
+    "src/**/_plyr.css",
+  ],
   "rules": {
     "string-quotes": "single",
     "at-rule-empty-line-before": [

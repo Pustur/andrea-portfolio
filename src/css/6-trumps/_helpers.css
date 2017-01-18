@@ -1,3 +1,7 @@
+.sr-only {
+  @extend %sr-only;
+}
+
 .relative {
   position: relative;
 }

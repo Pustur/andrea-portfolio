@@ -5,17 +5,17 @@ block meta
 
 block main
   main.main
-    section#name.name
+    #name.name
       h1.h1= slogan.main
-      h2.h3= slogan.secondary
+      p.h3= slogan.secondary
 
-    section#works.works
+    #works.works
       .container
         h3.h2 Works
         +videoPlayer(works.slice(0, 3))
         +button('View all works', menu[1].url)
 
-    section#news.news
+    #news.news
       .container
         h3.h2 News
         - const latestNews = news[0];
