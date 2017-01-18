@@ -37,7 +37,7 @@ mixin work(id, title, duration, description)
         span.plyr__sr-only Play
       .work-item__duration= duration
     .work-item__body
-      h5.work-item__title= title
+      h4.work-item__title= title
       p.work-item__description!= (description + '').replace(/\n/g, '<br>')
 
 mixin videoPlayer(videos)

@@ -24,6 +24,7 @@
   &__title {
     margin-top: $work-padding;
     margin-bottom: 0;
+    font-size: 15px;
   }
 
   &__description {
