@@ -13,17 +13,11 @@ block main
       .container
         h3.h2 Works
         +videoPlayer(works.slice(0, 3))
-        a.button(href=menu[1].url) View all works
-          svg.button__svg(xmlns='http://www.w3.org/2000/svg', version='1.1', x='0', y='0', viewBox='0 -1 16 10', xml:space='preserve')
-            polyline.button__polyline(points='1,4 15,4')
-            polyline.button__polyline(points='11,1 15,4 11,7')
+        +button('View all works', menu[1].url)
 
     section#news.news
       .container
         h3.h2 News
         - const latestNews = news[0];
         +news(latestNews.thumbnail, latestNews.alt, latestNews.title, latestNews.date, latestNews.text)
-        a.button(href=menu[3].url) View all news
-          svg.button__svg(xmlns='http://www.w3.org/2000/svg', version='1.1', x='0', y='0', viewBox='0 -1 16 10', xml:space='preserve')
-            polyline.button__polyline(points='1,4 15,4')
-            polyline.button__polyline(points='11,1 15,4 11,7')
+        +button('View all news', menu[3].url)
