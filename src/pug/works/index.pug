@@ -1,0 +1,14 @@
+extends ../1-layouts/_standard
+
+block meta
+  title Works • Andrea Colosio • Sound Designer Portfolio
+
+block main
+  main.main
+    .parallax(data-image-src='/img/parallax-works.jpg')
+      div
+        h1.h1 Works
+
+    .works
+      .container
+        +videoPlayer(works)
