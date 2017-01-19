@@ -7,6 +7,7 @@
   const $hamburger = $('.hamburger');
   const $videoDescription = $('.video-description');
   const $workItems = $('.work-item');
+  const $inputs = $('.contact-form__input, .contact-form__textarea');
   const $toTop = $('.to-top');
   const $parallax = $('.parallax');
 
@@ -46,12 +47,14 @@
 
   $window.on('resize', () => $window.scroll());
 
-  plyrInstance.on('playing', () => {
-    $html.addClass('dark-mode');
-  });
-  plyrInstance.on('pause ended', () => {
-    $html.removeClass('dark-mode');
-  });
+  if (plyrInstance) {
+    plyrInstance.on('playing', () => {
+      $html.addClass('dark-mode');
+    });
+    plyrInstance.on('pause ended', () => {
+      $html.removeClass('dark-mode');
+    });
+  }
 
   $workItems.hover(function mouseEnter() {
     $workItems.addClass('disabled');
@@ -92,6 +95,30 @@
 
     return false;
   });
+
+  if ($inputs.length) {
+    $inputs
+      .on('focusin', function onFocus() {
+        $(this).prev().addClass('is-label');
+      })
+      .on('blur', function onBlur() {
+        const $this = $(this);
+
+        if ($this.val()) {
+          $this.prev().addClass('is-label');
+        } else {
+          $this.prev().removeClass('is-label');
+        }
+      });
+
+    $inputs.each((i, el) => {
+      const $el = $(el);
+
+      if ($el.val()) {
+        $el.trigger('focusin');
+      }
+    });
+  }
 
   $toTop.on('click', () => {
     $root.animate({

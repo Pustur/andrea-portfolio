@@ -12,6 +12,7 @@
   font-size: 12px;
   transition: background-color $fast ease;
   color: $black;
+  cursor: pointer;
 
   &__svg {
     display: inline-block;

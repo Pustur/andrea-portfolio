@@ -1,0 +1,24 @@
+extends ../1-layouts/_standard
+
+block meta
+  title Contact me • Andrea Colosio • Sound Designer Portfolio
+
+block main
+  main.main
+    .parallax(data-image-src='/img/parallax-contact.jpg')
+      div
+        h1.h1 Contact
+
+    .contact
+      .container
+        p.contact-paragraph Hey! I'm always available to talk about work or simply to chat.
+          br
+          | Leave me a message here or contact me at my email:
+          a(href=`mailto:${client.email}`)= ` ${client.email}`
+        form.contact-form(action=`https://formspree.io/${client.email}`, method='POST')
+          input(type="text" name="_gotcha" style="display: none")
+          .contact-form__row
+            +input('name-input', 'Name')(type='text', name='name', required)
+            +input('email-input', 'Email')(type='email', name='email', required)
+          +textarea('message-input', 'Message')(name='message')(rows='5', required)
+          input.button(type='submit', value='Send')

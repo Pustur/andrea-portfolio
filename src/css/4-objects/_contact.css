@@ -1,0 +1,23 @@
+.contact {
+  padding-top: 50px;
+
+  &-paragraph {
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0.7;
+    font-size: 14px;
+
+    a {
+      color: $accent;
+    }
+  }
+}
+
+@media (--md-min) {
+  .contact {
+    &-paragraph {
+      font-size: 16px;
+      margin-bottom: 50px;
+    }
+  }
+}

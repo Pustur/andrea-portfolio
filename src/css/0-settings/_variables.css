@@ -1,6 +1,7 @@
 /* Colors */
 $black: #333;
 $gray: #999;
+$white: #f8f8f8;
 $accent: #f6be3a;
 $accent-light: #ffd557;
 $footer: $black;
@@ -45,6 +46,10 @@ $logo-vertical-padding-md: 10px;
 
 /* work-item */
 $work-padding: 16px;
+
+/* forms */
+$input-height: 40px;
+$input-padding: 10px;
 
 /* to-top */
 $to-top-size: 70px;

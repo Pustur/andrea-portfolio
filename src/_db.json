@@ -4,6 +4,11 @@
     "firstName": "Loris",
     "lastName": "Bettazza"
   },
+  "client": {
+    "email": "silverstar130@gmail.com",
+    "firstName": "Andrea",
+    "lastName": "Colosio"
+  },
   "menu": [
     {
       "name": "Home",
