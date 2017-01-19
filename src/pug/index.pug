@@ -5,17 +5,18 @@ block meta
 
 block main
   main.main
-    #name.name
-      h1.h1= slogan.main
-      p.h3= slogan.secondary
+    .parallax(data-image-src='/img/parallax-home.jpg')
+      div
+        h1.h1= slogan.main
+        p.h3= slogan.secondary
 
-    #works.works
+    .works
       .container
         h3.h2 Works
         +videoPlayer(works.slice(0, 3))
         +button('View all works', menu[1].url)
 
-    #news.news
+    .news
       .container
         h3.h2 News
         - const latestNews = news[0];

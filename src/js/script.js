@@ -4,17 +4,17 @@
   const $root = $('html, body');
   const $html = $('html');
   const $header = $('.header');
-  const $name = $('#name');
   const $hamburger = $('.hamburger');
   const $videoDescription = $('.video-description');
   const $workItems = $('.work-item');
   const $toTop = $('.to-top');
+  const $parallax = $('.parallax');
 
   // Variables
   let yPosition = 0;
   let eventAttached = false;
   const plyrInstance = plyr.setup()[0];
-  const nameHeight = $name.height();
+  const parallaxHeight = $parallax.height();
   const headerHeight = $header.height();
 
   // Functions
@@ -31,7 +31,7 @@
     yPosition = $(this).scrollTop();
 
     if (window.matchMedia('(max-width: 767px)').matches) {
-      const opacity = yPosition / (nameHeight - headerHeight);
+      const opacity = yPosition / (parallaxHeight - headerHeight);
       $header.css('background-color', `rgba(255, 255, 255, ${opacity})`);
 
       if (opacity >= 1) {
@@ -106,9 +106,8 @@
   // Body
   $window.scroll();
 
-  $name.parallax({
-    imageSrc: '/img/parallax-mountains.jpg',
+  $parallax.parallax({
     speed: 0.5,
-    position: 'center bottom',
+    position: 'center',
   });
 })(jQuery, window, plyr); // eslint-disable-line no-undef
