@@ -58,7 +58,9 @@
     transform: rotate(225deg);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: 0;
     background-color: $accent-light;
 
     .button__svg {

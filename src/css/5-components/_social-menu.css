@@ -33,7 +33,10 @@
       fill: $footer;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: 0;
+
       .fb-background {
         fill: $fb-background;
       }

@@ -32,7 +32,9 @@
     stroke-linejoin: round;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: 0;
     background-color: $accent-light;
 
     .to-top__svg {
