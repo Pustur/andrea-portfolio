@@ -5,7 +5,7 @@
     "lastName": "Bettazza"
   },
   "client": {
-    "email": "silverstar130@gmail.com",
+    "email": "andreacolosiosound@gmail.com",
     "firstName": "Andrea",
     "lastName": "Colosio"
   },
@@ -32,6 +32,14 @@
     }
   ],
   "news": [
+    {
+      "thumbnail": "https://unsplash.it/500/500",
+      "img": "https://unsplash.it/1600/900",
+      "alt": "Image alt description",
+      "title": "Title of the second news",
+      "date": "March 13 2017",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
     {
       "thumbnail": "https://unsplash.it/500/500",
       "img": "https://unsplash.it/1600/900",

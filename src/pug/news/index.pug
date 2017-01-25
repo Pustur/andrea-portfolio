@@ -1,0 +1,15 @@
+extends ../1-layouts/_standard
+
+block meta
+  title News • Andrea Colosio • Sound Designer Portfolio
+
+block main
+  main.main
+    .parallax(data-image-src='/img/parallax-news.jpg')
+      div
+        h1.h1 News
+
+    .news
+      .container
+        each newsItem in news
+          +news(newsItem.thumbnail, newsItem.alt, newsItem.title, newsItem.date, newsItem.text)

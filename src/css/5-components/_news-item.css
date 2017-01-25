@@ -1,4 +1,8 @@
 .news-item {
+  & + & {
+    margin-top: 50px;
+  }
+
   &__img,
   &__body {
     @neat-span-columns 10;
@@ -27,8 +31,12 @@
 
 @media (--md-min) {
   .news-item {
-    display: flex;
+    display: flex !important;
     align-items: center;
+
+    & + & {
+      margin-top: 80px;
+    }
 
     &__img {
       @neat-span-columns 3;

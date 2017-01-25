@@ -20,5 +20,5 @@ block main
           .contact-form__row
             +input('name-input', 'Name')(type='text', name='name', required)
             +input('email-input', 'Email')(type='email', name='email', required)
-          +textarea('message-input', 'Message')(name='message')(rows='5', required)
+          +textarea('message-input', 'Message')(name='message', rows='5', required)
           input.button(type='submit', value='Send')
