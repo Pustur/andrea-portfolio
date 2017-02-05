@@ -33,7 +33,7 @@
 
     if (window.matchMedia('(max-width: 767px)').matches) {
       const opacity = yPosition / (parallaxHeight - headerHeight);
-      $header.css('background-color', `rgba(255, 255, 255, ${opacity})`);
+      $header.css('background-color', `rgba(51, 51, 51, ${opacity})`);
 
       if (opacity >= 1) {
         $header.addClass('shadow');

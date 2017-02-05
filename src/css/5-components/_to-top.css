@@ -8,12 +8,12 @@
   width: $to-top-size;
   height: $to-top-size;
   font-size: 12px;
-  color: $black;
-  background-color: $accent;
+  color: white;
+  background-color: $blue-darker;
   border-radius: 99px;
   display: block;
   padding-top: 18px;
-  font-weight: 600;
+  font-family: $avenir-font;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
   transition: background-color $fast ease;
 
@@ -26,7 +26,7 @@
 
   &__polyline {
     fill: none;
-    stroke: $black;
+    stroke: white;
     stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -35,7 +35,7 @@
   &:hover,
   &:focus {
     outline: 0;
-    background-color: $accent-light;
+    background-color: $blue-dark;
 
     .to-top__svg {
       transform: translateY(-4px);

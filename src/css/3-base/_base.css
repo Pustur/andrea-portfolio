@@ -1,8 +1,8 @@
 body {
-  color: $black;
-  font-family: $body-font;
+  color: $blue-darker;
+  font-family: $helvetica-font;
+  background-color: $blue-lighter;
   font-size: 15px;
-  font-weight: 300;
   line-height: 1.6;
   transition: background-color $slow ease, color $slow ease;
 
@@ -13,6 +13,10 @@ body {
     .news {
       color: $gray;
     }
+  }
+
+  ::selection {
+    background: $blue;
   }
 }
 

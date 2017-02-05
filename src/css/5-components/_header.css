@@ -19,5 +19,9 @@
   .header {
     position: absolute;
     height: $header-height-md;
+
+    .container {
+      max-width: 95%;
+    }
   }
 }

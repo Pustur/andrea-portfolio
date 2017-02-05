@@ -1,4 +1,16 @@
 .h1,
+.h3 {
+  color: white;
+}
+
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: $avenir-font;
+}
+
+.h1,
 .h2,
 .h4 {
   @extend %wide-caps;
@@ -7,17 +19,8 @@
 .h1,
 .h2,
 .h3 {
-  text-align: center;
-}
-
-.h1,
-.h4 {
-  font-weight: 600;
-}
-
-.h2,
-.h3 {
   font-weight: 300;
+  text-align: center;
 }
 
 .h1 {
@@ -34,10 +37,11 @@
 
 .h4 {
   font-size: $h4-font-size;
+  font-weight: 600;
 
   &::before {
     content: '//';
-    color: $accent;
+    color: $blue;
     letter-spacing: 0;
     margin-right: 10px;
   }

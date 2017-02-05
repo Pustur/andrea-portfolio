@@ -15,9 +15,18 @@ $in-icon: white;
 $imdb-background: #f5de50;
 $imdb-icon: black;
 
+/* Andrea colors */
+$blue-darker: #506F74;
+$blue-dark: #5e8288;
+$blue: #8EACA9;
+$blue-light: #9bbab7;
+$blue-lighter: #f4fbfb;
+
 /* Fonts */
-$body-font: 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$plyr-font: 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+$avenir-font: 'Avenir', 'Avenir Next', 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$raleway-font: 'Raleway', 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$helvetica-font: 'Helvetica Neue', 'Helvetica', 'Raleway', 'Arial', sans-serif;
+$plyr-font: 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
 
 /* Breakpoints */
 @custom-media --sm-max (width < 768px);
@@ -64,9 +73,9 @@ $h2-font-size: 28px;
 $h2-font-size-md: 36px;
 
 /* h3 */
-$h3-font-size: 18px;
-$h3-font-size-md: 20px;
-$h3-font-size-lg: 24px;
+$h3-font-size: 20px;
+$h3-font-size-md: 24px;
+$h3-font-size-lg: 30px;
 
 /* h4 */
 $h4-font-size: 14px;
@@ -78,5 +87,5 @@ $hamburger-padding-y: 15px;
 $hamburger-layer-width: 30px;
 $hamburger-layer-height: 2px;
 $hamburger-layer-spacing: 6px;
-$hamburger-layer-color: $black;
+$hamburger-layer-color: white;
 $hamburger-layer-border-radius: 0;

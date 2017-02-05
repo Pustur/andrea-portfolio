@@ -1,5 +1,5 @@
 .contact-form {
-  font-family: $body-font;
+  font-family: $avenir-font;
 
   &__input-wrap {
     margin-bottom: calc($container-padding * 2);
@@ -14,7 +14,7 @@
     transition: all 0.3s ease;
 
     &.is-label {
-      color: $accent;
+      color: $blue;
       font-size: 12px;
       transform: translate3d(0, -100%, 0);
     }
@@ -25,7 +25,7 @@
     color: $gray;
     font-family: inherit;
     width: 100%;
-    background-color: $white;
+    background-color: white;
     margin: 0;
     border: 0;
     border-radius: 4px;

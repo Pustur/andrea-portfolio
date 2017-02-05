@@ -1,5 +1,6 @@
 .main-menu {
-  font-weight: 600;
+  font-weight: 400;
+  color: white;
 
   &__item {
     display: inline-block;
@@ -11,15 +12,13 @@
   }
 
   .footer & {
-    color: white;
-
     &__link {
       transition: color $fast ease;
 
       &:hover,
       &:focus {
         outline: 0;
-        color: $accent;
+        color: $blue;
       }
     }
   }
