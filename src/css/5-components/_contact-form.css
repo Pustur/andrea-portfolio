@@ -45,8 +45,7 @@
   }
 
   .button {
-    @extend %appearance;
-
+    appearance: none;
     font-size: 16px;
     font-weight: 300;
     border: 0;

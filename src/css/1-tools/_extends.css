@@ -13,9 +13,3 @@
   position: absolute;
   width: 1px;
 }
-
-%appearance {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}

@@ -35,10 +35,10 @@
   &::after {
     content: '';
     display: block;
-    width: 20px;
-    height: 20px;
+    width: $button-mask-size;
+    height: $button-mask-size;
     position: absolute;
-    border-width: 10px;
+    border-width: calc($button-mask-size / 2);
     border-style: solid;
     border-color: transparent $blue-lighter transparent transparent;
     transition: border-color $slow ease;
@@ -49,14 +49,14 @@
   }
 
   &::before {
-    top: -11px;
-    left: -11px;
+    top: calc((-$button-mask-size / 2) -1px);
+    left: calc((-$button-mask-size / 2) -1px);
     transform: rotate(45deg);
   }
 
   &::after {
-    bottom: -11px;
-    right: -11px;
+    bottom: calc((-$button-mask-size / 2) -1px);
+    right: calc((-$button-mask-size / 2) -1px);
     transform: rotate(225deg);
   }
 
