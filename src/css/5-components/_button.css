@@ -49,14 +49,14 @@
   }
 
   &::before {
-    top: calc((-$button-mask-size / 2) -1px);
-    left: calc((-$button-mask-size / 2) -1px);
+    top: calc((-$button-mask-size / 2) - 1px);
+    left: calc((-$button-mask-size / 2) - 1px);
     transform: rotate(45deg);
   }
 
   &::after {
-    bottom: calc((-$button-mask-size / 2) -1px);
-    right: calc((-$button-mask-size / 2) -1px);
+    bottom: calc((-$button-mask-size / 2) - 1px);
+    right: calc((-$button-mask-size / 2) - 1px);
     transform: rotate(225deg);
   }
 

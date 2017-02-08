@@ -33,7 +33,7 @@ ul {
     position: relative;
     padding-left: 1.5em;
 
-    &:before {
+    &::before {
       color: $blue;
       content: '—';
       position: absolute;
