@@ -10,6 +10,7 @@
   const $inputs = $('.contact-form__input, .contact-form__textarea');
   const $toTop = $('.to-top');
   const $parallax = $('.parallax');
+  const $slider = $('.slider');
 
   // Variables
   let yPosition = 0;
@@ -136,5 +137,11 @@
   $parallax.parallax({
     speed: 0.5,
     position: 'center',
+  });
+
+  $slider.slick({
+    adaptiveHeight: true,
+    prevArrow: '<a class="slick-prev" href="javascript:;">Previous</a>',
+    nextArrow: '<a class="slick-next" href="javascript:;">Next</a>',
   });
 })(jQuery, window, plyr); // eslint-disable-line no-undef

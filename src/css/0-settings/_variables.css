@@ -63,6 +63,10 @@ $button-mask-size: 20px;
 $input-height: 40px;
 $input-padding: 10px;
 
+/* silder */
+$slider-arrow-width: 186px;
+$slider-arrow-height: 50px;
+
 /* to-top */
 $to-top-size: 70px;
 
