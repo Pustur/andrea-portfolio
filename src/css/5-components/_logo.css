@@ -15,18 +15,16 @@
     padding: $logo-vertical-padding 0;
   }
 
-  &__head,
-  &__mustache {
-    fill: none;
-    stroke: white;
+  &__andrea {
+    fill: white;
   }
 
-  &__head {
-    stroke-width: 4;
+  &__colosio {
+    fill: #c8c8c8;
   }
 
-  &__mustache {
-    stroke-width: 3;
+  &__sound {
+    fill: #aaa;
   }
 }
 
