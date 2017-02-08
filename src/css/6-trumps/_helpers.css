@@ -9,3 +9,10 @@
 .row {
   @neat-row;
 }
+
+@media (--md-min) {
+  .half {
+    width: 50%;
+    float: left;
+  }
+}
