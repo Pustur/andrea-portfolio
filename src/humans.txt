@@ -4,4 +4,9 @@
   From: Ticino, Switzerland
 
   Web Designer (Concept idea): Fabio Caverzasio
+  Contact: fabio.caverzasio@gmail.com
+  From: Ticino, Switzerland
+
+/* CLIENT */
+  Contact: andreacolosiosound@gmail.com
   From: Ticino, Switzerland
