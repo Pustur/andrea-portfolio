@@ -16,15 +16,15 @@
   }
 
   &__andrea {
-    fill: white;
+    fill: #d6d6d6;
   }
 
   &__colosio {
-    fill: #c8c8c8;
+    fill: #238e8b;
   }
 
   &__sound {
-    fill: #aaa;
+    fill: $blue;
   }
 }
 
