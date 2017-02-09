@@ -49,11 +49,5 @@ block main
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
 
         ul.slider.unstyled-list
-          li
-            img(src="/img/slider/andrea-beach.jpg")
-          li
-            img(src="/img/slider/microphone-bike.jpg")
-          li
-            img(src="/img/slider/on-set-3.jpg")
-          li
-            img(src="/img/slider/school-group.jpg")
+          each slide in slider
+            +slide(slide.url, slide.alt)

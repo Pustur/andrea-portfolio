@@ -49,6 +49,48 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
   ],
+  "slider": [
+    {
+      "url": "/img/slider/andrea-beach.jpg",
+      "alt": "Andrea recording on the beach"
+    },
+    {
+      "url": "/img/slider/andrea-studio.jpg",
+      "alt": "Andrea in the studio"
+    },
+    {
+      "url": "/img/slider/microphone-garden.jpg",
+      "alt": "Andrea recording in the garden"
+    },
+    {
+      "url": "/img/slider/microphone-street.jpg",
+      "alt": "Andrea recording traffic noise"
+    },
+    {
+      "url": "/img/slider/microphone-bike.jpg",
+      "alt": "Andrea recording his bike"
+    },
+    {
+      "url": "/img/slider/school-group.jpg",
+      "alt": "Group photo with other VFS students"
+    },
+    {
+      "url": "/img/slider/on-set-1.jpg",
+      "alt": "Andrea on set with other VFS students (1)"
+    },
+    {
+      "url": "/img/slider/on-set-2.jpg",
+      "alt": "Andrea on set with other VFS students (2)"
+    },
+    {
+      "url": "/img/slider/on-set-3.jpg",
+      "alt": "Andrea on set with other VFS students (3)"
+    },
+    {
+      "url": "/img/slider/on-set-4.jpg",
+      "alt": "Andrea on set with other VFS students (4)"
+    }
+  ],
   "slogan": {
     "main": "Andrea Colosio",
     "secondary": "Sound Designer"

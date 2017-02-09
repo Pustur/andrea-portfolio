@@ -47,3 +47,7 @@ mixin videoPlayer(videos)
   .video-gallery.row
     each video in videos
       +work(video.id, video.title, video.duration, video.description)
+
+mixin slide(url, alt)
+  li
+    img(src=url, alt=alt)
