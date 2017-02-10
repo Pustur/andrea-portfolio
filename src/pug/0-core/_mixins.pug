@@ -3,14 +3,14 @@ mixin listLink(url, text, liClass, aClass)
     a(class=aClass, href=url)&attributes(attributes)= text
 
 mixin textarea(inputId, labelText)
-  div.contact-form__input-wrap
+  .contact-form__input-wrap
     label.contact-form__label(for=inputId)= labelText
     textarea.contact-form__textarea(id=inputId)&attributes(attributes)
 
 mixin input(inputId, labelText)
-  div.contact-form__input-wrap
+  .contact-form__input-wrap
     label.contact-form__label(for=inputId)= labelText
-    input.contact-form__input(id=inputId)&attributes(attributes)
+    input.contact-form__input(id=inputId, type='text')&attributes(attributes)
 
 mixin button(text, url)
   a.button(href=url)= text
@@ -36,7 +36,7 @@ mixin work(id, title, duration, description)
       .work-item__duration= duration
     .work-item__body
       h4.work-item__title= title
-      p.work-item__description!= (description + '').replace(/\n/g, '<br>')
+      p.work-item__description!= String(description).replace(/\n/g, '<br>')
 
 mixin videoPlayer(videos)
   - const preloadedVideo = videos[0];

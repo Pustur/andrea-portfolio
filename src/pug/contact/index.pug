@@ -16,7 +16,7 @@ block main
           | Leave me a message here or contact me at my email:
           a(href=`mailto:${client.email}`)= ` ${client.email}`
         form.contact-form(action=`https://formspree.io/${client.email}`, method='POST')
-          input(type="text" name="_gotcha" style="display: none")
+          input(type='text', name='_gotcha', style='display: none')
           .contact-form__row
             +input('name-input', 'Name')(type='text', name='name', required)
             +input('email-input', 'Email')(type='email', name='email', required)

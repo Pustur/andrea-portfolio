@@ -1,7 +1,7 @@
 ul.social-menu.unstyled-list
   each socialItem in social
     li.social-menu__item
-      a.social-menu__link(href=socialItem.url target='_blank')
+      a.social-menu__link(href=socialItem.url, target='_blank')
         case socialItem.name
           when 'Facebook'
             include _icon-facebook
