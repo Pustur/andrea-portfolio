@@ -3,9 +3,9 @@ extends ../1-layouts/_standard
 block meta
   title= meta.news.title
   meta(name='description', content=meta.news.description)
-  meta(property='og:title' content=meta.news.title)
-  meta(property='og:description' content=meta.news.description)
-  meta(property='og:url' content=`${site.url}${menu[3].url}`)
+  meta(property='og:title', content=meta.news.title)
+  meta(property='og:description', content=meta.news.description)
+  meta(property='og:url', content=`${site.url}${menu[3].url}`)
 
 block main
   main.main
