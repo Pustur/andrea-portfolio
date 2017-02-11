@@ -1,7 +1,8 @@
 extends ../1-layouts/_standard
 
 block meta
-  title Contact me • Andrea Colosio • Sound Designer Portfolio
+  title= meta.contact.title
+  meta(name='description', content=meta.contact.description)
 
 block main
   main.main

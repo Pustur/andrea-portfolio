@@ -1,7 +1,8 @@
 extends ../1-layouts/_standard
 
 block meta
-  title News • Andrea Colosio • Sound Designer Portfolio
+  title= meta.news.title
+  meta(name='description', content=meta.news.description)
 
 block main
   main.main
