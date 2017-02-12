@@ -140,7 +140,9 @@
   });
 
   $slider.slick({
-    adaptiveHeight: true,
+    pauseOnFocus: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
     prevArrow: '<a class="slick-prev" href="javascript:;">Previous</a>',
     nextArrow: '<a class="slick-next" href="javascript:;">Next</a>',
   });

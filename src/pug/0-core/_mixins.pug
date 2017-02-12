@@ -49,5 +49,4 @@ mixin videoPlayer(videos)
       +work(video.id, video.title, video.duration, video.description)
 
 mixin slide(url, alt)
-  li
-    img(src=url, alt=alt)
+  li(style=`background-image: url(${url});`, title=alt)
