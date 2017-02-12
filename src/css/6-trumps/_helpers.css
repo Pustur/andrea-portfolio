@@ -16,3 +16,7 @@
     float: left;
   }
 }
+
+.no-margin-top {
+  margin-top: 0;
+}

@@ -1,6 +1,6 @@
 .slider {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 60px auto 0 auto;
   padding-top: $slider-arrow-height;
   position: relative;
 

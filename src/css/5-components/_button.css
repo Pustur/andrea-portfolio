@@ -3,7 +3,7 @@
 
   width: 240px;
   display: block;
-  margin: 0 auto;
+  margin: 60px auto 0 auto;
   background-color: $blue-darker;
   text-align: center;
   position: relative;
@@ -70,3 +70,9 @@
     }
   }
 }
+
+@media (--md-min) {
+  .button {
+    margin-top: 80px;
+  }
+};
