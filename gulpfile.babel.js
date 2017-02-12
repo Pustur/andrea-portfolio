@@ -84,7 +84,12 @@ gulp.task('css', () => {
     neat(),
     fixes(),
     autoprefixer({
-      browsers: ['last 2 versions'],
+      browsers: [
+        'IE >= 10',
+        'Safari >= 8',
+        'last 2 versions',
+        '> 1%',
+      ],
     }),
   ];
 
