@@ -18,9 +18,14 @@
     left: 0;
 
     li {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
+      padding: 1px; // Fix rounding error safari
+
+      .slider-image {
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
     }
   }
 }

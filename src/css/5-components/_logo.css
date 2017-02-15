@@ -3,6 +3,8 @@
   z-index: 10;
   display: inline-block;
   transition: opacity $fast ease;
+  padding: $logo-vertical-padding 0;
+  height: $header-height;
 
   &:hover,
   &:focus {
@@ -11,8 +13,7 @@
   }
 
   &__svg {
-    height: $header-height;
-    padding: $logo-vertical-padding 0;
+    height: 100%;
   }
 
   &__andrea {
@@ -20,19 +21,17 @@
   }
 
   &__colosio {
-    fill: #238e8b;
+    fill: #d6d6d6;
   }
 
   &__sound {
-    fill: $blue;
+    fill: #d6d6d6;
   }
 }
 
 @media (--md-min) {
   .logo {
-    &__svg {
-      height: $header-height-md;
-      padding: $logo-vertical-padding-md 0;
-    }
+    padding: $logo-vertical-padding-md 0;
+    height: $header-height-md;
   }
 }
