@@ -18,7 +18,7 @@
     left: 0;
 
     li {
-      padding: 1px; // Fix rounding error safari
+      padding: 1px; /* Fix rounding error safari */
 
       .slider-image {
         height: 100%;
