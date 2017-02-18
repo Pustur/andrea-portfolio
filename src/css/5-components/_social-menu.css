@@ -68,6 +68,14 @@
       .imdb-icon {
         fill: $imdb-icon;
       }
+
+      .email-background {
+        fill: $email-background;
+      }
+
+      .email-icon {
+        fill: $email-icon;
+      }
     }
   }
 

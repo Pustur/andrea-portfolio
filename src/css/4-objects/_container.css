@@ -4,10 +4,18 @@
   @neat-outer-container 100%;
 }
 
-@media (--lg-min) {
+@media (--md-min) {
   .container {
     padding: 0 $container-padding-md;
+  }
+}
 
+@media (--lg-min) {
+  .container {
     @neat-outer-container 80%;
+
+    &.smaller {
+      @neat-outer-container 60%;
+    }
   }
 }

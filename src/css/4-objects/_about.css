@@ -1,0 +1,16 @@
+.about {
+  a {
+    color: $blue;
+  }
+}
+
+@media (--lg-min) {
+  .about {
+    .container {
+      &:first-child {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

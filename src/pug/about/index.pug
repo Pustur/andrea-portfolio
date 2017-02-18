@@ -16,42 +16,26 @@ block main
     .about
       .container
         img.profile-pic(src='/img/andrea.jpg', alt='Andrea Colosio Portrait')
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .intro!= about.intro
 
+      .container.smaller
         h2.h2 Origin story
-        p
-          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-          br
-          | Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          br
-        p
-          |Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          br
-          | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          br
-          | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        div!= about.originStory
 
+      .container
         ul.slider.unstyled-list
           each slide in slider
             +slide(slide.url, slide.alt)
 
-        h2.h2 Skills & Tools
+        h2.h2 Skills & Knowledge
         .row
           .half
             h3.h4 Skills
-            ul.half
-              li Sound design
-              li Mixing & mastering
-              li Recording
-              li Reverse engineering
-              li Video editing
-              li Video game nights organizer
+            ul
+              each skill in about.skills
+                li= skill
           .half
-            h3.h4 Tools
-            ul.half
-              li Kyma
-              li Logic Pro
-              li Pro Tools
-              li Wwise
-              li Unity 3D
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            h3.h4 Knowledge
+            ul
+              each knowledge in about.knowledge
+                li= knowledge

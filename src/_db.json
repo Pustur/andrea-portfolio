@@ -1,4 +1,30 @@
 {
+  "about": {
+    "intro": "<p>I have always been a guy with his head in the clouds and because of this. I have a unique sense of creativity. My professional and sometimes childlike wonder make me really enjoyable to work with, which can help colleagues overcome any challenge.</p>",
+    "originStory": "<p>We all have our own big dreams when we are young. Mine was to spend my life doing something that I like.</p><p>I never considered working in the film industry because the reality of living in a small city made it almost impossible to believe. At that time I was finishing my apprenticeship as an electrician and I wasn’t really happy with my life.<br>The only thing that made me happy was my love for music, which I had carried with me since I was 6 years old.<br>The music in my life gave me the inspiration to redirect my future toward my passion for sound.</p><p>Where I was born, the music and film industries are not really that promising, and to enter these industries, you have to find a way to somehow gain experience and grow in these fields.</p><p>Then something amazing happened! Finding my way within that small world, I was fortunate enough to work at the <a href=\"http://www.rsi.ch/\" target=\"_blank\">national radio and television station</a>, an experience that changed my life.<br>Two years there allowed me to learn all the basics about the world of sound for both music and radio/TV production, and I also discovered the existence of this artform called sound design.</p><p>Finally I knew what I wanted to do with my life, but it forced me to make a really hard decision: if I opted to study sound design I wanted to do it properly at a really good school, but I would have had to leave everything and everyone behind to chase that dream.<br>Not an easy decision to make, but sometimes you have to take risks, especially when it comes to spending the rest of your life doing something that you like.<br>So I made my decision. Because it was my choice, I wanted to save money and pay for school by myself, without letting my family help me. Then one day I was finally able to apply to the <a href=\"https://vfs.edu/programs/sound-design\" target=\"_blank\">Sound Design program</a> at <a href=\"https://vfs.edu/\" target=\"_blank\">Vancouver Film School</a>.</p><p>I was impatiently waiting for school to start, but the thrill of sound design pushed me to begin experimenting and learning how to design sounds on my own.<br>When I was working on my first projects, I had some moments of weakness and I wondered if I was doing the right thing and if my work was good enough.<br>From all this, I learned how to persevere through hard times and more importantly, how to overcome challenges to achieve my goals.</p>",
+    "skills": [
+      "Sound Design",
+      "Mixing & Mastering",
+      "Field Recording",
+      "Foley",
+      "Post Audio Editing",
+      "Game Audio Implementation",
+      "Music Editing",
+      "Production Sound",
+      "Dialogue Recording & Editing"
+    ],
+    "knowledge": [
+      "Pro Tools",
+      "Logic Pro",
+      "Wwise",
+      "Unity",
+      "Kyma",
+      "Max MSP",
+      "FMOD Designer",
+      "Perforce",
+      "Kontakt"
+    ]
+  },
   "author": {
     "email": "loris.bettazza@gmail.com",
     "firstName": "Loris",
@@ -132,6 +158,10 @@
     {
       "name": "Linkedin",
       "url": "https://www.linkedin.com/in/andreacolosio"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:andreacolosiosound@gmail.com"
     }
   ],
   "works": [
