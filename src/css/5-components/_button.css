@@ -3,7 +3,7 @@
 
   width: 240px;
   display: block;
-  margin: 60px auto 0 auto;
+  margin: 60px auto 0;
   background-color: $blue-darker;
   text-align: center;
   position: relative;
@@ -76,4 +76,4 @@
   .button {
     margin-top: 80px;
   }
-};
+}
