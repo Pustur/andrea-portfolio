@@ -1,4 +1,6 @@
 .credits {
+  margin-top: 0.5em;
+
   &__link {
     color: $blue;
   }

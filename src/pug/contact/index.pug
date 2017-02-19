@@ -18,7 +18,8 @@ block main
         p.contact-paragraph Hey! I'm always available to talk about work or simply to chat.
           br
           | Leave me a message here or contact me at my email:
-          a(href=`mailto:${client.email}`)= ` ${client.email}`
+          = ' '
+          a(href=`mailto:${client.email}`)= client.email
         form.contact-form(action=`https://formspree.io/${client.email}`, method='POST')
           input(type='text', name='_gotcha', style='display: none')
           .contact-form__row
