@@ -25,7 +25,7 @@ mixin news(img, alt, title, date, text)
     .news-item__body
       h4.h4= title
       .news-item__date= date
-      p.news-item__text= text
+      .news-item__text!= text
 
 mixin work(id, title, duration, description)
   a.work-item.row(href='#', data-work-id=id)
@@ -36,7 +36,7 @@ mixin work(id, title, duration, description)
       .work-item__duration= duration
     .work-item__body
       h4.work-item__title= title
-      p.work-item__description!= String(description).replace(/\n/g, '<br>')
+      p.work-item__description= description
 
 mixin videoPlayer(videos)
   - const preloadedVideo = videos[0];

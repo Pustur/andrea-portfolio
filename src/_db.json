@@ -1,7 +1,7 @@
 {
   "about": {
     "intro": "<p>I have always been a guy with his head in the clouds and because of this, I have a unique sense of creativity. My professional and sometimes childlike wonder make me really enjoyable to work with, which can help colleagues overcome any challenge.</p>",
-    "originStory": "<p>We all have our own big dreams when we are young. Mine was to spend my life doing something that I like.</p><p>I never considered working in the film industry because the reality of living in a small city made it almost impossible to believe. At that time I was finishing my apprenticeship as an electrician and I wasn’t really happy with my life.<br>The only thing that made me happy was my love for music, which I had carried with me since I was 6 years old.<br>The music in my life gave me the inspiration to redirect my future toward my passion for sound.</p><p>Where I was born, the music and film industries are not really that promising, and to enter these industries, you have to find a way to somehow gain experience and grow in these fields.</p><p>Then something amazing happened! Finding my way within that small world, I was fortunate enough to work at the <a href=\"http://www.rsi.ch/\" target=\"_blank\">national radio and television station</a>, an experience that changed my life.<br>Two years there allowed me to learn all the basics about the world of sound for both music and radio/TV production, and I also discovered the existence of this artform called sound design.</p><p>Finally I knew what I wanted to do with my life, but it forced me to make a really hard decision: if I opted to study sound design I wanted to do it properly at a really good school, but I would have had to leave everything and everyone behind to chase that dream.<br>Not an easy decision to make, but sometimes you have to take risks, especially when it comes to spending the rest of your life doing something that you like.<br>So I made my decision. Because it was my choice, I wanted to save money and pay for school by myself, without letting my family help me. Then one day I was finally able to apply to the <a href=\"https://vfs.edu/programs/sound-design\" target=\"_blank\">Sound Design program</a> at <a href=\"https://vfs.edu/\" target=\"_blank\">Vancouver Film School</a>.</p><p>I was impatiently waiting for school to start, but the thrill of sound design pushed me to begin experimenting and learning how to design sounds on my own.<br>When I was working on my first projects, I had some moments of weakness and I wondered if I was doing the right thing and if my work was good enough.<br>From all this, I learned how to persevere through hard times and more importantly, how to overcome challenges to achieve my goals.</p>",
+    "originStory": "<p>We all have our own big dreams when we are young. Mine was to spend my life doing something that I like.</p><p>I never considered working in the film industry because the reality of living in a small city made it almost impossible to believe. At that time I was finishing my apprenticeship as an electrician and I wasn’t really happy with my life.<br>The only thing that made me happy was my love for music, which I had carried with me since I was 6 years old.<br>The music in my life gave me the inspiration to redirect my future toward my passion for sound.</p><p>Then something amazing happened! Finding my way within that small world, I was fortunate enough to work at the <a href=\"http://www.rsi.ch/\" target=\"_blank\">national radio and television station</a>, an experience that changed my life.<br>Two years there allowed me to learn all the basics about the world of sound for both music and radio/TV production, and I also discovered the existence of this art form called sound design.</p><p>Finally I knew what I wanted to do with my life, but it forced me to make a really hard decision: if I opted to study sound design I wanted to do it properly at a really good school, but I would have had to leave everything and everyone behind to chase that dream.<br>Not an easy decision to make, but sometimes you have to take risks, especially when it comes to spending the rest of your life doing something that you like.<br>So I made my decision. Because it was my choice, I wanted to save money and pay for school by myself, without letting my family help me. Then one day I was finally able to apply to the <a href=\"https://vfs.edu/programs/sound-design\" target=\"_blank\">Sound Design program</a> at <a href=\"https://vfs.edu/\" target=\"_blank\">Vancouver Film School</a>.</p><p>I was impatiently waiting for school to start, but the thrill of sound design pushed me to begin experimenting and learning how to design sounds on my own.<br>When I was working on my first projects, I had some moments of weakness and I wondered if I was doing the right thing and if my work was good enough.<br>From all this, I learned how to persevere through hard times and more importantly, how to overcome challenges to achieve my goals.</p>",
     "skills": [
       "Sound Design",
       "Mixing & Mastering",
@@ -82,19 +82,17 @@
   "news": [
     {
       "thumbnail": "https://unsplash.it/500/500",
-      "img": "https://unsplash.it/1600/900",
       "alt": "Image alt description",
       "title": "Title of the second news",
       "date": "March 13 2017",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
     },
     {
       "thumbnail": "https://unsplash.it/500/500",
-      "img": "https://unsplash.it/1600/900",
       "alt": "Image alt description",
       "title": "Title of the news",
       "date": "February 24 2017",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     }
   ],
   "site": {
@@ -108,6 +106,10 @@
     {
       "url": "/img/slider/andrea-studio.jpg",
       "alt": "Andrea in the studio"
+    },
+    {
+      "url": "/img/slider/andrea-and-sofia.jpg",
+      "alt": "Andrea and Sofia preparing the equipment on set"
     },
     {
       "url": "/img/slider/microphone-garden.jpg",
@@ -158,56 +160,48 @@
     {
       "name": "Linkedin",
       "url": "https://www.linkedin.com/in/andreacolosio"
+    },
+    {
+      "name": "IMDb",
+      "url": "http://www.imdb.com/user/ur72108005"
     }
   ],
   "works": [
     {
-      "id": "165560817",
-      "title": "Uncharted 4: A Thief’s End - Man Behind the Treasure TV Spot",
-      "duration": "0.43",
-      "description": "© 2016 Sony Computer Entertainment America LLC. UNCHARTED 4: A Thief’s End is a trademark of Sony Computer Entertainment America LLC.\nCreated and developed by Naughty Dog LLC."
+      "id": "205121933",
+      "title": "Andrea Colosio - Demo Reel",
+      "duration": "2.22",
+      "description": "This is my Sound Design Demo Reel"
     },
     {
-      "id": "97981374",
-      "title": "Tom Clancy’s The Division: Take Back New York",
-      "duration": "4.13",
-      "description": "Massive Entertainment & Ubisoft entrusted Blur to create a conceptually unique trailer that will make a strong impact at E3. A timelapsed journey explores the devastating decline of a virus infected New York City as The Agents try to restore hope amongst its desperate citizens."
+      "id": "205120303",
+      "title": "Horizon Zero Dawn - VFS Final Sound Design Project",
+      "duration": "4.16",
+      "description": "This is my final sound design project that I have done at Vancouver Film School. I am responsible for all the sounds replacement from the recordings, to the editing and the final mix as well. This is a stereo LtRt version of the original 5.1 mix that I have done in a Dolby approved theater. All the rights are reserved and belongs to Sony Interactive Entertainment Europe and Guerrilla Games."
     },
     {
-      "id": "171169416",
-      "title": "Halo Wars 2",
-      "duration": "2.08",
-      "description": ""
+      "id": "204837972",
+      "title": "World of Warcraft – Music Edit",
+      "duration": "3.22",
+      "description": "This project is an audio replacement of the original trailer but just with music. I did the music edit for the whole piece as demonstration on how important the music in a trailer can be. The music is provided by 5Alarms - www.5alarmmusic.com"
     },
     {
-      "id": "57142668",
-      "title": "CYBERPUNK 2077 Teaser",
-      "duration": "2.10",
-      "description": "Cyberpunk 2077 - next, after The Witcher & The Witcher 2, project created jointly by CD Projekt Red and Platige Image.\nThis teaser is the first announcement of the game, based on the system of Cyberpunk 2020 - American RPG game written by Mike Pondsmith in the 90's."
+      "id": "204839157",
+      "title": "TE Fire – Sound Design Edit",
+      "duration": "1.17",
+      "description": "This is a short piece of sound design that I edited for this specific sequence. The project is the finished edit and has not been mixed."
     },
     {
-      "id": "190884550",
-      "title": "Final Fantasy XV - Omen Trailer",
-      "duration": "4.37",
-      "description": ""
+      "id": "204839641",
+      "title": "Car Chase – Car Engines SFX Edit",
+      "duration": "2.11",
+      "description": "This is a SFX editing project about car engines. I edited the two main cars of the chase and the related SFX. The project is the finished edit and has not been mixed."
     },
     {
-      "id": "130929667",
-      "title": "Fallen Empire",
-      "duration": "4.19",
-      "description": ""
-    },
-    {
-      "id": "169575716",
-      "title": "Horizon Zero Dawn - Aloy’s Journey Trailer",
-      "duration": "3.14",
-      "description": ""
-    },
-    {
-      "id": "63942137",
-      "title": "DEAD SPACE: Chase to Death Live Action Video Game Trailer",
-      "duration": "3.25",
-      "description": "I'm a fan of Science Fiction, Filmmaking, and Video games, so I clashed it all together in one video, DEAD SPACE: Chase to Death. I hope that I will be able to continue making live action video game trailers. It's so much fun. I hope you enjoy it, especially the creators of Dead Space. Thanks for the inspiration and encouragement to travel into the horror of outer space. I also want to thank my amazing crew for sticking with me til' the bitter end of space. Onto the next one...maybe Dead Space: Collusion or Dark Souls II or ..."
+      "id": "204840076",
+      "title": "Waves Test Package – Sound Design Project",
+      "duration": "0.49",
+      "description": "This was a test project with the goal of creating a piece of sound design with a limited amount of audio assets and 24 hours of time at disposal. I used the Kyma software for the core of my sound design, mixed with other techniques."
     }
   ]
 }
