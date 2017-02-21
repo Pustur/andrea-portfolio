@@ -180,16 +180,10 @@
       "description": "This is my final sound design project that I have done at Vancouver Film School. I am responsible for all the sounds replacement from the recordings, to the editing and the final mix as well. This is a stereo LtRt version of the original 5.1 mix that I have done in a Dolby approved theater. All the rights are reserved and belongs to Sony Interactive Entertainment Europe and Guerrilla Games."
     },
     {
-      "id": "204837972",
-      "title": "World of Warcraft – Music Edit",
-      "duration": "3.22",
-      "description": "This project is an audio replacement of the original trailer but just with music. I did the music edit for the whole piece as demonstration on how important the music in a trailer can be. The music is provided by 5Alarms - www.5alarmmusic.com"
-    },
-    {
-      "id": "204839157",
-      "title": "TE Fire – Sound Design Edit",
-      "duration": "1.17",
-      "description": "This is a short piece of sound design that I edited for this specific sequence. The project is the finished edit and has not been mixed."
+      "id": "204840076",
+      "title": "Waves Test Package – Sound Design Project",
+      "duration": "0.49",
+      "description": "This was a test project with the goal of creating a piece of sound design with a limited amount of audio assets and 24 hours of time at disposal. I used the Kyma software for the core of my sound design, mixed with other techniques."
     },
     {
       "id": "204839641",
@@ -198,10 +192,16 @@
       "description": "This is a SFX editing project about car engines. I edited the two main cars of the chase and the related SFX. The project is the finished edit and has not been mixed."
     },
     {
-      "id": "204840076",
-      "title": "Waves Test Package – Sound Design Project",
-      "duration": "0.49",
-      "description": "This was a test project with the goal of creating a piece of sound design with a limited amount of audio assets and 24 hours of time at disposal. I used the Kyma software for the core of my sound design, mixed with other techniques."
+      "id": "204839157",
+      "title": "TE Fire – Sound Design Edit",
+      "duration": "1.17",
+      "description": "This is a short piece of sound design that I edited for this specific sequence. The project is the finished edit and has not been mixed."
+    },
+    {
+      "id": "204837972",
+      "title": "World of Warcraft – Music Edit",
+      "duration": "3.22",
+      "description": "This project is an audio replacement of the original trailer but just with music. I did the music edit for the whole piece as demonstration on how important the music in a trailer can be. The music is provided by 5Alarms - www.5alarmmusic.com"
     }
   ]
 }
