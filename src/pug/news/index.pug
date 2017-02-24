@@ -16,4 +16,4 @@ block main
     .news
       .container
         each newsItem in news
-          +news(newsItem.thumbnail, newsItem.alt, newsItem.title, newsItem.date, newsItem.text)
+          +news(newsItem.thumbnail, newsItem.alt, newsItem.title, newsItem.date, newsItem.isodate, newsItem.text)

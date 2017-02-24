@@ -81,18 +81,28 @@
   },
   "news": [
     {
-      "thumbnail": "https://unsplash.it/500/500",
-      "alt": "Image alt description",
-      "title": "Title of the second news",
-      "date": "March 13 2017",
-      "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      "thumbnail": "/img/news/graduation-day.jpg",
+      "alt": "Andrea with the other VFS students on graduation day",
+      "title": "Graduation Day!",
+      "date": "February 20th, 2017",
+      "isodate": "2017-02-20",
+      "text": "<p>I still can’t believe that today we graduate! I want to say thanks to all my instructors for everything they taught me and I’m sure today it will be an incredible day. I’m looking at the future with more confidence now and let’s hope it will be brighter than ever!</p>"
     },
     {
-      "thumbnail": "https://unsplash.it/500/500",
-      "alt": "Image alt description",
-      "title": "Title of the news",
-      "date": "February 24 2017",
-      "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      "thumbnail": "/img/news/almost-over.jpg",
+      "alt": "Andrea with the other VFS students in front of the Vancouver International Film Centre",
+      "title": "Almost Over",
+      "date": "January 10th, 2017",
+      "isodate": "2017-01-10",
+      "text": "<p>We’re so close to the end of this incredible year! It has been a beautiful journey full of learning and fun. I am surprised how fast this last month has been and I’m pretty sure that we will finish really soon.</p>"
+    },
+    {
+      "thumbnail": "/img/news/new-gear.jpg",
+      "alt": "Kyma’s package",
+      "title": "New Gear",
+      "date": "April 17th, 2016",
+      "isodate": "2016-04-17",
+      "text": "<p>I just received my new toy! I bought a beautiful software for sound design called <a href=\"http://kyma.symbolicsound.com/\" target=\"_blank\">Kyma made by Symbolic Sound</a> and it’s AMAZING! I’m really looking forward to play and experiment with it.</p>"
     }
   ],
   "site": {
@@ -186,16 +196,46 @@
       "description": "This was a test project with the goal of creating a piece of sound design with a limited amount of audio assets and 24 hours of time at disposal. I used the Kyma software for the core of my sound design, mixed with other techniques."
     },
     {
+      "id": "205494775",
+      "title": "Teto – Breakdown",
+      "duration": "8.03",
+      "description": "This is a breakdown of the game Teto that I made a gameplay of. In this video I show our Wwise project and basically how the audio system for the game is structured."
+    },
+    {
+      "id": "205494362",
+      "title": "Dynamic Dialogue System – Wwise Project",
+      "duration": "4.34",
+      "description": "This project is an example of a basic dynamic dialogue structure for a racing game. I started recording the actor’s performance and subsequently I edited and processed all the recorded clips. Once completed, I implemented them in Wwise and created the dialogue structure to fit the required functionality."
+    },
+    {
+      "id": "205493536",
+      "title": "Teto - Gameplay",
+      "duration": "6.11",
+      "description": "This video is a walkthrough of a game that I collaborated on and my main role was creating the Sound Design, the Foley and recording the voices. I also have been part of the implementation between Wwise and the Unity Engine. My other main role was to be the point of contact between our Sound Design group of three people, the Programmer and the Game Designers."
+    },
+    {
       "id": "204839641",
       "title": "Car Chase – Car Engines SFX Edit",
       "duration": "2.11",
       "description": "This is a SFX editing project about car engines. I edited the two main cars of the chase and the related SFX. The project is the finished edit and has not been mixed."
     },
     {
+      "id": "205494101",
+      "title": "City Soundscape - Wwise project",
+      "duration": "5.19",
+      "description": "For this project I recorded some assets for creating an RTPC based soundscape, such as cars-bys, different traffic recordings, rain and thunder. Afterwards I implemented those sounds in Wwise and structure them accordingly to the appropriate behaviours."
+    },
+    {
       "id": "204839157",
       "title": "TE Fire – Sound Design Edit",
       "duration": "1.17",
       "description": "This is a short piece of sound design that I edited for this specific sequence. The project is the finished edit and has not been mixed."
+    },
+    {
+      "id": "205495094",
+      "title": "Random Music Machine – Max MSP Patch",
+      "duration": "5.07",
+      "description": "This Max Patch is an interactive virtual music machine. It allows the user to change all the parameters and create their own saveable presets. I included as well a button to randomize all the instruments and parameters."
     },
     {
       "id": "204837972",

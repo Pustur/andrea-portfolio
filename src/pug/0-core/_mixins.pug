@@ -18,13 +18,13 @@ mixin button(text, url)
       polyline.button__polyline(points='1,4 15,4')
       polyline.button__polyline(points='11,1 15,4 11,7')
 
-mixin news(img, alt, title, date, text)
+mixin news(img, alt, title, date, isodate, text)
   article.news-item.row
     .news-item__img
       img(src=img, alt=alt)
     .news-item__body
       h4.h4= title
-      .news-item__date= date
+      time.news-item__date(datetime=isodate)= date
       .news-item__text!= text
 
 mixin work(id, title, duration, description)
