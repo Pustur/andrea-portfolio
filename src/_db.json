@@ -81,6 +81,14 @@
   },
   "news": [
     {
+      "thumbnail": "/img/news/new-equipment.jpg",
+      "alt": "Scarlett 18i20’s package",
+      "title": "New Equipment",
+      "date": "May 24th, 2017",
+      "isodate": "2017-05-24",
+      "text": "<p>The first of a series of packages has arrived! I will slowly begin to open an editing suite for my freelancing works.<br>There is a plan for the future…</p>"
+    },
+    {
       "thumbnail": "/img/news/graduation-day.jpg",
       "alt": "Andrea with the other VFS students on graduation day",
       "title": "Graduation Day!",
@@ -188,6 +196,12 @@
       "title": "Horizon Zero Dawn - VFS Final Sound Design Project",
       "duration": "4.16",
       "description": "This is my final sound design project that I have done at Vancouver Film School. I am responsible for all the sounds replacement from the recordings, to the editing and the final mix as well. This is a stereo LtRt version of the original 5.1 mix that I have done in a Dolby approved theater. All the rights are reserved and belongs to Sony Interactive Entertainment Europe and Guerrilla Games."
+    },
+    {
+      "id": "218019272",
+      "title": "Hostile Inn Episode 2 – Episodic Film Collaboration",
+      "duration": "9.18",
+      "description": "I recorded and performed Foley, edited the music and recorded ADR as well as being the Re-Recording mixer for the Episode. This is the LtRt version of the original 5.1 Mix. This is the Locked Picture and not the final version."
     },
     {
       "id": "204840076",
