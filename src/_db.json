@@ -187,74 +187,74 @@
   "works": [
     {
       "id": "205121933",
-      "title": "Andrea Colosio - Demo Reel",
-      "duration": "2.22",
+      "title": "Andrea Colosio – Demo Reel",
+      "duration": "2:22",
       "description": "This is my Sound Design Demo Reel"
     },
     {
       "id": "205120303",
-      "title": "Horizon Zero Dawn - VFS Final Sound Design Project",
-      "duration": "4.16",
+      "title": "Horizon Zero Dawn – VFS Final Sound Design Project",
+      "duration": "4:16",
       "description": "This is my final sound design project that I have done at Vancouver Film School. I am responsible for all the sounds replacement from the recordings, to the editing and the final mix as well. This is a stereo LtRt version of the original 5.1 mix that I have done in a Dolby approved theater. All the rights are reserved and belongs to Sony Interactive Entertainment Europe and Guerrilla Games."
     },
     {
       "id": "218019272",
       "title": "Hostile Inn Episode 2 – Episodic Film Collaboration",
-      "duration": "9.18",
+      "duration": "9:18",
       "description": "I recorded and performed Foley, edited the music and recorded ADR as well as being the Re-Recording mixer for the Episode. This is the LtRt version of the original 5.1 Mix. This is the Locked Picture and not the final version."
     },
     {
       "id": "204840076",
       "title": "Waves Test Package – Sound Design Project",
-      "duration": "0.49",
+      "duration": "0:49",
       "description": "This was a test project with the goal of creating a piece of sound design with a limited amount of audio assets and 24 hours of time at disposal. I used the Kyma software for the core of my sound design, mixed with other techniques."
     },
     {
       "id": "205494775",
       "title": "Teto – Breakdown",
-      "duration": "8.03",
+      "duration": "8:03",
       "description": "This is a breakdown of the game Teto that I made a gameplay of. In this video I show our Wwise project and basically how the audio system for the game is structured."
     },
     {
       "id": "205494362",
       "title": "Dynamic Dialogue System – Wwise Project",
-      "duration": "4.34",
+      "duration": "4:34",
       "description": "This project is an example of a basic dynamic dialogue structure for a racing game. I started recording the actor’s performance and subsequently I edited and processed all the recorded clips. Once completed, I implemented them in Wwise and created the dialogue structure to fit the required functionality."
     },
     {
       "id": "205493536",
-      "title": "Teto - Gameplay",
-      "duration": "6.11",
+      "title": "Teto – Gameplay",
+      "duration": "6:11",
       "description": "This video is a walkthrough of a game that I collaborated on and my main role was creating the Sound Design, the Foley and recording the voices. I also have been part of the implementation between Wwise and the Unity Engine. My other main role was to be the point of contact between our Sound Design group of three people, the Programmer and the Game Designers."
     },
     {
       "id": "204839641",
       "title": "Car Chase – Car Engines SFX Edit",
-      "duration": "2.11",
+      "duration": "2:11",
       "description": "This is a SFX editing project about car engines. I edited the two main cars of the chase and the related SFX. The project is the finished edit and has not been mixed."
     },
     {
       "id": "205494101",
-      "title": "City Soundscape - Wwise project",
-      "duration": "5.19",
+      "title": "City Soundscape – Wwise project",
+      "duration": "5:19",
       "description": "For this project I recorded some assets for creating an RTPC based soundscape, such as cars-bys, different traffic recordings, rain and thunder. Afterwards I implemented those sounds in Wwise and structure them accordingly to the appropriate behaviours."
     },
     {
       "id": "204839157",
       "title": "TE Fire – Sound Design Edit",
-      "duration": "1.17",
+      "duration": "1:17",
       "description": "This is a short piece of sound design that I edited for this specific sequence. The project is the finished edit and has not been mixed."
     },
     {
       "id": "205495094",
       "title": "Random Music Machine – Max MSP Patch",
-      "duration": "5.07",
+      "duration": "5:07",
       "description": "This Max Patch is an interactive virtual music machine. It allows the user to change all the parameters and create their own saveable presets. I included as well a button to randomize all the instruments and parameters."
     },
     {
       "id": "204837972",
       "title": "World of Warcraft – Music Edit",
-      "duration": "3.22",
+      "duration": "3:22",
       "description": "This project is an audio replacement of the original trailer but just with music. I did the music edit for the whole piece as demonstration on how important the music in a trailer can be. The music is provided by 5Alarms - www.5alarmmusic.com"
     }
   ]
