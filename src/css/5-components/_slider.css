@@ -20,6 +20,10 @@
     li {
       padding: 1px; /* Fix rounding error safari */
 
+      &::before {
+        content: none;
+      }
+
       .slider-image {
         height: 100%;
         background-repeat: no-repeat;
