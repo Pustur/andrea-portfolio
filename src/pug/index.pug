@@ -25,4 +25,4 @@ block main
         h3.h2 News
         - const latestNews = news[0];
         +news(latestNews.thumbnail, latestNews.alt, latestNews.title, latestNews.date, latestNews.isodate, latestNews.text)
-        +button('View all news', menu[3].url)
+        +button('View all news', menu[4].url)
