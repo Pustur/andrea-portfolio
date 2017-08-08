@@ -1,0 +1,24 @@
+extends ../1-layouts/_standard
+
+block meta
+  title= meta.whatIDo.title
+  meta(name='description', content=meta.whatIDo.description)
+  meta(property='og:title', content=meta.whatIDo.title)
+  meta(property='og:description', content=meta.whatIDo.description)
+  meta(property='og:url', content=`${site.url}${menu[3].url}`)
+
+block main
+  main.main
+    .parallax(data-image-src='/img/parallax-what-i-do.jpg')
+      div
+        h1.h1 What I do
+
+    .what-i-do
+      .container.smaller
+        .what-i-do__paragraph!= whatIDo.intro
+
+        ul.what-i-do-sections.unstyled-list
+          each section in whatIDo.sections
+            +whatIDoSection(section.name, section.body)
+
+        .what-i-do__paragraph!= whatIDo.outro

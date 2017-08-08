@@ -22,6 +22,7 @@
 @import '4-objects/section-spacing';
 @import '4-objects/profile-pic';
 @import '4-objects/about';
+@import '4-objects/what-i-do';
 @import '4-objects/contact';
 
 /* Import components */
@@ -32,6 +33,7 @@
 @import '5-components/video-description';
 @import '5-components/video-gallery';
 @import '5-components/work-item';
+@import '5-components/what-i-do-sections';
 @import '5-components/news-item';
 @import '5-components/menu-wrapper';
 @import '5-components/main-menu';

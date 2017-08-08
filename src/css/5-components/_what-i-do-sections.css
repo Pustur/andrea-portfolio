@@ -1,0 +1,9 @@
+.what-i-do-sections {
+  margin: 4rem 0;
+
+  > li {
+    + li {
+      margin-top: 4rem;
+    }
+  }
+}

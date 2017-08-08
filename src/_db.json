@@ -49,6 +49,10 @@
       "url": "/about"
     },
     {
+      "name": "What I do",
+      "url": "/what-i-do"
+    },
+    {
       "name": "News",
       "url": "/news"
     },
@@ -68,6 +72,10 @@
     },
     "about": {
       "title": "About me — Andrea Colosio — Sound Designer Portfolio",
+      "description": "Andrea Colosio, Sound Designer and Story Teller for Film and Games. Check out my latest works in my online portfolio."
+    },
+    "whatIDo": {
+      "title": "What I do — Andrea Colosio — Sound Designer Portfolio",
       "description": "Andrea Colosio, Sound Designer and Story Teller for Film and Games. Check out my latest works in my online portfolio."
     },
     "news": {
@@ -184,6 +192,48 @@
       "url": "http://www.imdb.com/user/ur72108005"
     }
   ],
+  "whatIDo": {
+    "intro": "<p>My job is pretty incredible but unfortunately not everybody knows what exactly I do, so I want to describe the different stages of my work:</p>",
+    "outro": "<p>At the end every single sound and detail created will help in telling the Story imagined by the Director, making a film capable of capturing the audience.</p>",
+    "sections": [
+      {
+        "name": "Boom Operator & Location Sound Mixer",
+        "body": "<p>This is the begin of everything; the Boom Operator works directly on the location and his job is to hold the boom pole (thus the microphone) capturing all the performances on set. While the Location Sound Mixer is responsible for recording and make sure that everything captured by the Boom Operator sounds good. Those two jobs are crucials and very important for the quality of the production sound.</p><ul><li><a href=\"https://www.youtube.com/watch?v=n6LqibtC-5g\" target=\"_blank\">[Video] Boom Operator</a></li><li><a href=\"https://www.youtube.com/watch?v=LOHX-fn8Ujo\" target=\"_blank\">[Video] Location Sound Mixer</a></li></ul>"
+      },
+      {
+        "name": "Dialogue Editor",
+        "body": "<p>This is the person responsible for cleaning all the production sound recorded on set and create an edit session for the final mix that will bring life to the film. The Dialogue editor is also responsible for calling the possible lines that needs to be re-recorded (ADR) and for the Walla sessions.</p><ul><li><a href=\"https://www.youtube.com/watch?v=Kn_D9md7Syw\" target=\"_blank\">[Video] Dialogue Editor</a></li></ul>"
+      },
+      {
+        "name": "BG Editor",
+        "body": "<p>The BG Editor’s role is to provide an edit session to the mix stage with all the background sounds recreated, such wind, birds chirping, rain, leaves, traffic…</p>"
+      },
+      {
+        "name": "SFX Editor",
+        "body": "<p>This editor’s job is to create a sound effect session for the final mix. With sound effects it means all the realistic sounds that are present in the movie, such a car, a dog barking, a gunshot, a “hit” sound, … Those sounds are useful to help enhancing particular moments or actions in the film.</p><ul><li><a href=\"https://vimeo.com/204839641\" target=\"_blank\">[Video] SFX Editor</a></li></ul>"
+      },
+      {
+        "name": "Foley Artist & Foley Recordist",
+        "body": "<p>Foley is the art of performing sounds live to a picture, related to the characters in a film. Those sounds are a subtle but crucial layer in the final mix and they really helps in giving some life and movement to the characters. Foley artists records all the sounds like footsteps, clothes, hand touches, objects that the characters have on and sometimes even some sound effects.</p><ul><li><a href=\"https://www.youtube.com/watch?v=UO3N_PRIgX0\" target=\"_blank\">[Video] Foley Artist & Recordist</a></li></ul>"
+      },
+      {
+        "name": "Music Editor",
+        "body": "<p>The Music Editor takes the music chosen from the Music Supervisor or composed by the Composer and edits it so that it fits within the picture, thus in the places where the music is the most effective in telling the story.</p><ul><li><a href=\"https://www.youtube.com/watch?v=ZP5WYa2Z1VY\" target=\"_blank\">[Video] Music Editor</a></li></ul>"
+      },
+      {
+        "name": "ADR & Walla Recordist",
+        "body": "<p>The ADR & Walla Recordists are responsible to record the Automated Dialogue Recording and the Walla sessions for the Dialogue Editor. An ADR session is the process of re-record all the requested lines of dialogue of an actor in post production. The Walla session instead, is a technique used for record a group of people reacting in a specific way to the scenes, it’s useful for having a more specific and controlled background sounds.</p><ul><li><a href=\"https://www.youtube.com/watch?v=Sf76Ptslk2Y\" target=\"_blank\">[Video] ADR</a></li><li><a href=\"https://www.youtube.com/watch?v=wyH9Uc4JvAA\" target=\"_blank\">[Video] Walla</a></li></ul>"
+      },
+      {
+        "name": "Sound Designer",
+        "body": "<p>The Sound Designer’s job is to provide and create all those sounds that do not exist and they could have emotional purposes (like drones) or they can be specifically for something like a creature or a monster. He needs to be creative in manipulating the sounds or generate some of them to achieve his goals.</p><ul><li><a href=\"https://www.youtube.com/watch?v=vvsizzCoXpw\" target=\"_blank\">[Video] Sound Designer</a></li></ul>"
+      },
+      {
+        "name": "Re-Recording Mixer",
+        "body": "<p>This is the final step of the audio post production, the Re-Recording Mixer receive the music and all the sounds from the editors and from that point, he works with the directors and the producers to tell the story that they have imagined. To do so he needs to mix (balance) all those sounds together throughout the whole film.</p><ul><li><a href=\"https://www.youtube.com/watch?v=ZNXBemqzkSs\" target=\"_blank\">[Video] Re-Recording Mixer</a></li></ul>"
+      }
+    ]
+  },
   "works": [
     {
       "id": "205121933",
