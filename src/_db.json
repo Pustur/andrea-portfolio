@@ -35,32 +35,32 @@
     "firstName": "Andrea",
     "lastName": "Colosio"
   },
-  "menu": [
-    {
+  "menu": {
+    "home": {
       "name": "Home",
       "url": "/"
     },
-    {
+    "works": {
       "name": "Works",
       "url": "/works"
     },
-    {
+    "about": {
       "name": "About",
       "url": "/about"
     },
-    {
+    "whatIDo": {
       "name": "What I do",
       "url": "/what-i-do"
     },
-    {
+    "news": {
       "name": "News",
       "url": "/news"
     },
-    {
+    "contact": {
       "name": "Contact",
       "url": "/contact"
     }
-  ],
+  },
   "meta": {
     "home": {
       "title": "Andrea Colosio — Sound Designer Portfolio",

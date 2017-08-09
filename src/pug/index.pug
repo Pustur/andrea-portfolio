@@ -5,7 +5,7 @@ block meta
   meta(name='description', content=meta.home.description)
   meta(property='og:title', content=meta.home.title)
   meta(property='og:description', content=meta.home.description)
-  meta(property='og:url', content=`${site.url}${menu[0].url}`)
+  meta(property='og:url', content=`${site.url}${menu.home.url}`)
 
 block main
   main.main
@@ -18,11 +18,11 @@ block main
       .container
         h3.h2.no-margin-top Home
         +videoPlayer(works.slice(0, 3))
-        +button('View all works', menu[1].url)
+        +button('View all works', menu.works.url)
 
     .news
       .container
         h3.h2 News
         - const latestNews = news[0];
         +news(latestNews.thumbnail, latestNews.alt, latestNews.title, latestNews.date, latestNews.isodate, latestNews.text)
-        +button('View all news', menu[4].url)
+        +button('View all news', menu.news.url)
