@@ -2,11 +2,4 @@
   a {
     color: $blue;
   }
-
-  &__paragraph {
-    font-size: 120%;
-    font-family: $avenir-font;
-    font-style: italic;
-    font-weight: 300;
-  }
 }

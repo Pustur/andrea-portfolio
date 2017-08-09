@@ -10,6 +10,13 @@
   @neat-row;
 }
 
+.large-paragraph {
+  font-size: 120%;
+  font-family: $avenir-font;
+  font-style: italic;
+  font-weight: 300;
+}
+
 @media (--md-min) {
   .half {
     width: 50%;

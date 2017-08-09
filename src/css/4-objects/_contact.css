@@ -2,8 +2,6 @@
   &-paragraph {
     text-align: center;
     margin-bottom: 30px;
-    opacity: 0.7;
-    font-size: 14px;
 
     a {
       color: $blue;
@@ -14,7 +12,6 @@
 @media (--md-min) {
   .contact {
     &-paragraph {
-      font-size: 16px;
       margin-bottom: 50px;
     }
   }

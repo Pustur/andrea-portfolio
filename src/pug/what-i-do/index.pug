@@ -15,10 +15,10 @@ block main
 
     .what-i-do
       .container.smaller
-        .what-i-do__paragraph!= whatIDo.intro
+        .large-paragraph!= whatIDo.intro
 
         ul.what-i-do-sections.unstyled-list
           each section in whatIDo.sections
             +whatIDoSection(section.name, section.body)
 
-        .what-i-do__paragraph!= whatIDo.outro
+        .large-paragraph!= whatIDo.outro
