@@ -192,6 +192,7 @@ gulp.task('clean-dist', () => del(config.dist));
 
 /* WATCH TASKS */
 gulp.task('watch', () => {
+  gulp.watch(`${config.src}${config.db}`, ['reload-html']);
   gulp.watch(`${config.src}${config.html.path}${config.html.watchPattern}`, ['reload-html']);
   gulp.watch(`${config.src}${config.css.path}${config.css.watchPattern}`, ['reload-css']);
   gulp.watch(`${config.src}${config.js.path}${config.js.watchPattern}`, ['reload-js']);
