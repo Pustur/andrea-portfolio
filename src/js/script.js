@@ -5,6 +5,7 @@
   const $html = $('html');
   const $header = $('.header');
   const $hamburger = $('.hamburger');
+  const $inDocumentLinks = $('a[href^="#"]:not([href="#"])');
   const $videoDescription = $('.video-description');
   const $workItemLinks = $('.work-item__link');
   const $inputs = $('.contact-form__input, .contact-form__textarea');
@@ -127,6 +128,20 @@
     }, 1000);
 
     return false;
+  });
+
+  $inDocumentLinks.on('click', (e) => {
+    const hash = e.currentTarget.hash;
+    const $target = $(hash);
+
+    if ($target.length) {
+      e.preventDefault();
+      $root.animate({
+        scrollTop: $target.offset().top,
+      }, 1000, () => {
+        window.location.hash = hash; // eslint-disable-line no-param-reassign
+      });
+    }
   });
 
   $hamburger.on('click', toggleMenu);
