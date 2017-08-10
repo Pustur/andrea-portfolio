@@ -54,7 +54,7 @@ mixin slide(url, alt)
     .slider-image(style=`background-image: url(${url});`, title=alt)
 
 mixin whatIDoSection(name, body)
-  - const id = name.toLowerCase().replace(/&/g, '').replace(/-+| +/g, '-')
+  - const id = name.toLowerCase().replace(/\W+/g, '-')
   li(id=id)
     h2.h5= name
     div!= body
