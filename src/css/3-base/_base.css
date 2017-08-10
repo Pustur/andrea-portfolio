@@ -1,7 +1,7 @@
 body {
   color: $blue-darker;
   font-family: $helvetica-font;
-  background-color: $blue-lighter;
+  background-color: $blue-lightest;
   font-size: 15px;
   line-height: 1.6;
   transition: background-color $slow ease, color $slow ease;

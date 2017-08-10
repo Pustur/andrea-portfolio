@@ -41,7 +41,7 @@
     position: absolute;
     border-width: calc($button-mask-size / 2);
     border-style: solid;
-    border-color: transparent $blue-lighter transparent transparent;
+    border-color: transparent $blue-lightest transparent transparent;
     transition: border-color $slow ease;
 
     .dark-mode & {
