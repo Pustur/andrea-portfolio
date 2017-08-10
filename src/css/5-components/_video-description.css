@@ -1,6 +1,5 @@
 .video-description {
   font-size: 12px;
-  opacity: 0.7;
 
   &:empty {
     display: none;
