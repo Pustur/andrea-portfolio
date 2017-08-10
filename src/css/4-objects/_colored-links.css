@@ -1,0 +1,26 @@
+.credits__link,
+.about a,
+.contact-paragraph a,
+.news-item__text a,
+.video-description a,
+.what-i-do a {
+  transition: color $fast ease;
+  color: $blue;
+
+  &:hover,
+  &:focus {
+    color: $blue-lighter;
+  }
+}
+
+.about a,
+.video-description a {
+  .dark-mode & {
+    color: $gray-light;
+
+    &:hover,
+    &:focus {
+      color: white;
+    }
+  }
+}

@@ -15,12 +15,6 @@
     opacity: 0.5;
     font-size: 12px;
   }
-
-  &__text {
-    a {
-      color: $blue;
-    }
-  }
 }
 
 @media (--sm-max) {
