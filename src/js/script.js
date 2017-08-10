@@ -6,7 +6,7 @@
   const $header = $('.header');
   const $hamburger = $('.hamburger');
   const $videoDescription = $('.video-description');
-  const $workItems = $('.work-item');
+  const $workItemLinks = $('.work-item__link');
   const $inputs = $('.contact-form__input, .contact-form__textarea');
   const $toTop = $('.to-top');
   const $parallax = $('.parallax');
@@ -57,14 +57,14 @@
     });
   }
 
-  $workItems.hover(function mouseEnter() {
-    $workItems.addClass('disabled');
+  $workItemLinks.hover(function mouseEnter() {
+    $workItemLinks.addClass('disabled');
     $(this).removeClass('disabled');
   }, () => {
-    $workItems.removeClass('disabled');
+    $workItemLinks.removeClass('disabled');
   });
 
-  $workItems.on('click', function selectVideo() {
+  $workItemLinks.on('click', function selectVideo() {
     const $this = $(this);
     const $videoPlayer = $('.video-player');
     const videoOffset = $videoPlayer.offset().top;
@@ -75,7 +75,7 @@
     $root.animate({
       scrollTop: scrollPosition,
     }, 1000).promise().then(() => {
-      $videoDescription.html($this.find('.work-item__description').html());
+      $videoDescription.html($this.next().html());
 
       plyrInstance.source({
         type: 'video',

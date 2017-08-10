@@ -1,5 +1,12 @@
 .work-item {
-  transition: filter $medium ease, opacity $medium ease;
+  &__link {
+    transition: filter $medium ease, opacity $medium ease;
+
+    &.disabled {
+      filter: grayscale(1);
+      opacity: 0.5;
+    }
+  }
 
   &__img {
     background-size: cover;
@@ -30,21 +37,18 @@
   &__description {
     display: none;
   }
-
-  &.disabled {
-    filter: grayscale(1);
-    opacity: 0.5;
-  }
 }
 
 @media (--sm-max) {
   .work-item {
-    @mixin aspect-ratio 16, 9;
-
-    color: white;
-
     & + & {
       margin-top: $container-padding;
+    }
+
+    &__link {
+      @mixin aspect-ratio 16, 9;
+
+      color: white;
     }
 
     &__body {
@@ -83,9 +87,12 @@
       transform: translate(-50%, -50%) scale(0);
     }
 
-    &:hover {
-      .plyr__play-custom {
-        transform: translate(-50%, -50%) scale(1);
+    &__link {
+      &:hover,
+      &:focus {
+        .plyr__play-custom {
+          transform: translate(-50%, -50%) scale(1);
+        }
       }
     }
   }

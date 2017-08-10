@@ -28,23 +28,24 @@ mixin news(img, alt, title, date, isodate, text)
       .news-item__text!= text
 
 mixin work(id, title, duration, description)
-  a.work-item.row(href='#', data-work-id=id)
-    .work-item__img(style=`background-image: url(/img/works/${id}.jpg)`)
-      button.plyr__play-large.plyr__play-custom(type='button', aria-label='Play')
-        include ../2-components/_icon-play
-        span.plyr__sr-only Play
-      .work-item__duration= duration
-    .work-item__body
-      h4.work-item__title= title
-      p.work-item__description= description
+  li.work-item
+    a.work-item__link.row(href='#', data-work-id=id)
+      .work-item__img(style=`background-image: url(/img/works/${id}.jpg)`)
+        button.plyr__play-large.plyr__play-custom(type='button', aria-label='Play')
+          include ../2-components/_icon-play
+          span.plyr__sr-only Play
+        .work-item__duration= duration
+      .work-item__body
+        h4.work-item__title= title
+    .work-item__description!= description
 
 mixin videoPlayer(videos)
   - const preloadedVideo = videos[0];
   .video-player
     div(data-type='vimeo', data-video-id=preloadedVideo.id)
   .row
-    p.video-description!= String(preloadedVideo.description).replace(/\n/g, '<br>')
-  .video-gallery.row
+    .video-description!= preloadedVideo.description
+  ul.video-gallery.row.unstyled-list
     each video in videos
       +work(video.id, video.title, video.duration, video.description)
 
