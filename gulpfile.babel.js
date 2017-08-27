@@ -157,7 +157,7 @@ gulp.task('move', () => (
   gulp.src([
     `${config.src}humans.txt`,
   ])
-    .pipe(gulp.dest(`${config.dist}`))
+    .pipe(gulp.dest(config.dist))
 ));
 
 /* SERVER TASK */
