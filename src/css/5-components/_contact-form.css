@@ -6,7 +6,7 @@
   }
 
   &__label {
-    color: $gray;
+    color: $blue-light;
     text-transform: uppercase;
     position: absolute;
     pointer-events: none;
@@ -27,7 +27,7 @@
     width: 100%;
     background-color: white;
     margin: 0;
-    border: 0;
+    border: 1px solid $blue-lighter;
     border-radius: 4px;
     padding: $input-padding;
 
