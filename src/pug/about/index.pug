@@ -1,0 +1,10 @@
+doctype html
+
+- const language = 'en'
+
+html(lang=language)
+  head
+    title Redirecting, please wait
+    meta(http-equiv='refresh', content=`0; url=${site.url}${language}${menu.about.url}`)
+  body
+    p Redirecting...
