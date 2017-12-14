@@ -2,4 +2,4 @@
 
 > Portfolio for Andrea Colosio, Sound Designer
 
-View it [here](http://andreacolosiosound.com/)
+You can view it [here](http://andreacolosiosound.com/en)
