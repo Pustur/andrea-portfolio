@@ -16,6 +16,7 @@
 @import '3-base/typography';
 
 /* Import objects */
+@import '4-objects/small';
 @import '4-objects/container';
 @import '4-objects/colored-links';
 @import '4-objects/unstyled-list';
