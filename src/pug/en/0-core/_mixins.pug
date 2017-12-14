@@ -31,7 +31,7 @@ mixin work(id, title, duration, description)
   li.work-item
     a.work-item__link.row(href='#', data-work-id=id)
       .work-item__img(style=`background-image: url(/img/works/${id}.jpg)`)
-        button.plyr__play-large.plyr__play-custom(type='button', aria-label='Play')
+        .plyr__play-large.plyr__play-custom(aria-label='Play')
           include ../2-components/_icon-play
           span.plyr__sr-only Play
         .work-item__duration= duration
