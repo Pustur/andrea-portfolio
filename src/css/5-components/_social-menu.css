@@ -45,6 +45,14 @@
         fill: $fb-icon;
       }
 
+      .tw-background {
+        fill: $tw-background;
+      }
+
+      .tw-icon {
+        fill: $tw-icon;
+      }
+
       .sc-background {
         fill: $sc-background;
       }
