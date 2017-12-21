@@ -1,6 +1,7 @@
 import fs from 'fs';
 import del from 'del';
 import marked from 'marked';
+import moment from 'moment';
 import precss from 'precss';
 import cssnano from 'cssnano';
 import at2x from 'postcss-at2x';
@@ -73,6 +74,7 @@ gulp.task('html', ['contentful'], () => (
     .pipe(data(() => {
       const dataObj = JSON.parse(fs.readFileSync(config.contentfulFile));
       dataObj.marked = marked;
+      dataObj.moment = moment;
       return dataObj;
     }))
     .pipe(pug(config.production ? {} : config.html.devOptions))

@@ -24,7 +24,7 @@ mixin news(img, alt, title, isodate, text)
       img(src=img, alt=alt)
     .news-item__body
       h4.h4= title
-      time.news-item__date(datetime=isodate)= isodate
+      time.news-item__date(datetime=isodate)= moment(isodate).format('LL')
       .news-item__text!= marked(text)
 
 mixin work(id, title, description, image)
