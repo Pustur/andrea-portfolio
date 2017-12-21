@@ -1,5 +1,6 @@
 import fs from 'fs';
 import del from 'del';
+import marked from 'marked';
 import precss from 'precss';
 import cssnano from 'cssnano';
 import at2x from 'postcss-at2x';
@@ -69,9 +70,11 @@ const config = {
 gulp.task('html', ['contentful'], () => (
   gulp.src(`${config.src}${config.html.path}${config.html.srcPattern}`)
     .pipe(plumber())
-    .pipe(data(() => (
-      JSON.parse(fs.readFileSync(config.contentfulFile))
-    )))
+    .pipe(data(() => {
+      const dataObj = JSON.parse(fs.readFileSync(config.contentfulFile));
+      dataObj.marked = marked;
+      return dataObj;
+    }))
     .pipe(pug(config.production ? {} : config.html.devOptions))
     .pipe(gulp.dest(config.dist))
 ));

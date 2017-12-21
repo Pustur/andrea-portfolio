@@ -39,6 +39,7 @@
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.8",
+    "marked": "^0.3.7",
     "postcss-at2x": "^2.0.2",
     "postcss-fixes": "^1.4.2",
     "postcss-neat": "^2.5.2",

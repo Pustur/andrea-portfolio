@@ -25,7 +25,7 @@ mixin news(img, alt, title, isodate, text)
     .news-item__body
       h4.h4= title
       time.news-item__date(datetime=isodate)= isodate
-      .news-item__text!= text
+      .news-item__text!= marked(text)
 
 mixin work(id, title, description, image)
   li.work-item
@@ -33,7 +33,7 @@ mixin work(id, title, description, image)
       .work-item__img(style=`background-image: url(${image})`)
       .work-item__body
         h4.work-item__title= title
-    .work-item__description!= description
+    .work-item__description!= marked(description)
 
 mixin videoPlayer(videos)
   - const preloadedVideo = videos[0];
@@ -60,4 +60,4 @@ mixin whatIDoSection(name, body)
   - const id = name.toLowerCase().replace(/\W+/g, '-')
   li(id=id)
     h2.h5= name
-    div!= body
+    div!= marked(body)
