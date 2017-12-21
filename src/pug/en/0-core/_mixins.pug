@@ -18,36 +18,39 @@ mixin button(text, url)
       polyline.button__polyline(points='1,4 15,4')
       polyline.button__polyline(points='11,1 15,4 11,7')
 
-mixin news(img, alt, title, date, isodate, text)
+mixin news(img, alt, title, isodate, text)
   article.news-item.row
     .news-item__img
       img(src=img, alt=alt)
     .news-item__body
       h4.h4= title
-      time.news-item__date(datetime=isodate)= date
+      time.news-item__date(datetime=isodate)= isodate
       .news-item__text!= text
 
-mixin work(id, title, duration, description)
+mixin work(id, title, description, image)
   li.work-item
     a.work-item__link.row(href='#', data-work-id=id)
-      .work-item__img(style=`background-image: url(/img/works/${id}.jpg)`)
-        .plyr__play-large.plyr__play-custom(aria-label='Play')
-          include ../2-components/_icon-play
-          span.plyr__sr-only Play
-        .work-item__duration= duration
+      .work-item__img(style=`background-image: url(${image})`)
       .work-item__body
         h4.work-item__title= title
     .work-item__description!= description
 
 mixin videoPlayer(videos)
   - const preloadedVideo = videos[0];
+  - const preloadedVideoId = langFallback(preloadedVideo.fields.videoUrl).replace(/[^\d]+/g, '');
+
   .video-player
-    div(data-type='vimeo', data-video-id=preloadedVideo.id)
+    div(data-type='vimeo', data-video-id=preloadedVideoId)
   .row
-    .video-description!= preloadedVideo.description
+    .video-description!= langFallback(preloadedVideo.fields.description)
   ul.video-gallery.row.unstyled-list
     each video in videos
-      +work(video.id, video.title, video.duration, video.description)
+      +work(
+        langFallback(video.fields.videoUrl).replace(/[^\d]+/g, ''),
+        langFallback(video.fields.coverTitle),
+        langFallback(video.fields.description),
+        langFallback(langFallback(video.fields.cover).fields.file).url
+      )
 
 mixin slide(url, alt)
   li

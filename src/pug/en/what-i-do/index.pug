@@ -1,24 +1,27 @@
 extends ../1-layouts/_standard
 
 block meta
-  title= meta.whatIDo.title
-  meta(name='description', content=meta.whatIDo.description)
-  meta(property='og:title', content=meta.whatIDo.title)
-  meta(property='og:description', content=meta.whatIDo.description)
-  meta(property='og:url', content=`${site.url}${language}${menu.whatIDo.url}`)
+  title= `${langFallback(langFallback(menu[0].fields.whatIDo).fields.name)} — ${langFallback(site[0].fields.metaTitle)}`
+  meta(name='description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:title', content=langFallback(site[0].fields.metaTitle))
+  meta(property='og:description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:url', content=`${langFallback(site[0].fields.url)}${language}${langFallback(langFallback(menu[0].fields.whatIDo).fields.url)}`)
 
 block main
   main.main
-    .parallax(data-image-src='/img/parallax-what-i-do.jpg')
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.whatIDo).fields.file).url)
       div
-        h1.h1 What I do
+        h1.h1= langFallback(langFallback(menu[0].fields.whatIDo).fields.name)
 
     .what-i-do
       .container.smaller
-        .large-paragraph!= whatIDo.intro
+        .large-paragraph!= langFallback(whatIDo[0].fields.intro)
 
         ul.what-i-do-sections.unstyled-list
-          each section in whatIDo.sections
-            +whatIDoSection(section.name, section.body)
+          each job in langFallback(whatIDo[0].fields.jobs)
+            +whatIDoSection(
+              langFallback(job.fields.name),
+              langFallback(job.fields.description)
+            )
 
-        .large-paragraph!= whatIDo.outro
+        .large-paragraph!= langFallback(whatIDo[0].fields.outro)

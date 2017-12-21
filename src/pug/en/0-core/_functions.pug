@@ -1,0 +1,9 @@
+- function langFallback(prop, defaultLang = 'en') {
+-   const result = prop[language];
+-
+-   if (typeof result === 'undefined') {
+-     return prop[defaultLang];
+-   }
+-
+-   return result;
+- }

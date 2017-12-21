@@ -17,17 +17,6 @@
     left: 0;
   }
 
-  &__duration {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 0 0.67em;
-    border-radius: 4px;
-    font-family: $plyr-font;
-    font-size: 12px;
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-  }
-
   &__title {
     margin-top: $work-padding;
     margin-bottom: 0;
@@ -75,25 +64,6 @@
 
     &__img {
       @mixin aspect-ratio 16, 9;
-    }
-
-    &__duration {
-      color: white;
-    }
-
-    .plyr__play-custom {
-      display: block;
-      cursor: pointer;
-      transform: translate(-50%, -50%) scale(0);
-    }
-
-    &__link {
-      &:hover,
-      &:focus {
-        .plyr__play-custom {
-          transform: translate(-50%, -50%) scale(1);
-        }
-      }
     }
   }
 }

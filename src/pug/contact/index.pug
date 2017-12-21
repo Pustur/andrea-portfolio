@@ -5,6 +5,6 @@ doctype html
 html(lang=language)
   head
     title Redirecting, please wait
-    meta(http-equiv='refresh', content=`0; url=${site.url}${language}${menu.contact.url}`)
+    meta(http-equiv='refresh', content=`0; url=${site[0].fields.url.en}${language}${menu[0].fields.contact.en.fields.url.en}`)
   body
     p Redirecting...

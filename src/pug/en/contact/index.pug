@@ -1,29 +1,25 @@
 extends ../1-layouts/_standard
 
 block meta
-  title= meta.contact.title
-  meta(name='description', content=meta.contact.description)
-  meta(property='og:title', content=meta.contact.title)
-  meta(property='og:description', content=meta.contact.description)
-  meta(property='og:url', content=`${site.url}${language}${menu.contact.url}`)
+  title= `${langFallback(langFallback(menu[0].fields.contact).fields.name)} — ${langFallback(site[0].fields.metaTitle)}`
+  meta(name='description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:title', content=langFallback(site[0].fields.metaTitle))
+  meta(property='og:description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:url', content=`${langFallback(site[0].fields.url)}${language}${langFallback(langFallback(menu[0].fields.contact).fields.url)}`)
 
 block main
   main.main
-    .parallax(data-image-src='/img/parallax-contact.jpg')
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.contact).fields.file).url)
       div
-        h1.h1 Contact
+        h1.h1= langFallback(langFallback(menu[0].fields.contact).fields.name)
 
     .contact
       .container
-        p.large-paragraph.contact-paragraph Hey! I'm always available to talk about work or simply to chat.
-          br
-          | Leave me a message here or contact me at my email:
-          = ' '
-          a(href=`mailto:${client.email}`)= client.email
-        form.contact-form(action=`https://formspree.io/${client.email}`, method='POST')
+        .large-paragraph.contact-paragraph= langFallback(contact[0].fields.intro)
+        form.contact-form(action=`https://formspree.io/${langFallback(client[0].fields.email)}`, method='POST')
           input(type='text', name='_gotcha', style='display: none')
           .contact-form__row
-            +input('name-input', 'Name')(type='text', name='name', required)
+            +input('name-input', langFallback(label[0].fields.name))(type='text', name='name', required)
             +input('email-input', 'Email')(type='email', name='email', required)
-          +textarea('message-input', 'Message')(name='message', rows='5', required)
-          input.button(type='submit', value='Send')
+          +textarea('message-input', langFallback(label[0].fields.message))(name='message', rows='5', required)
+          input.button(type='submit', value=langFallback(label[0].fields.send))

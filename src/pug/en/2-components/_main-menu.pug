@@ -1,3 +1,8 @@
 ul.main-menu.unstyled-list
-  each menuItem in menu
-    +listLink(`/${language}${menuItem.url}`, menuItem.name, 'main-menu__item', 'main-menu__link')
+  each menuItem in langFallback(menu[0].fields.menu)
+    +listLink(
+      `/${language}${langFallback(menuItem.fields.url)}`,
+      langFallback(menuItem.fields.name),
+      'main-menu__item',
+      'main-menu__link'
+    )

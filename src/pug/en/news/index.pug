@@ -1,19 +1,25 @@
 extends ../1-layouts/_standard
 
 block meta
-  title= meta.news.title
-  meta(name='description', content=meta.news.description)
-  meta(property='og:title', content=meta.news.title)
-  meta(property='og:description', content=meta.news.description)
-  meta(property='og:url', content=`${site.url}${language}${menu.news.url}`)
+  title= `${langFallback(langFallback(menu[0].fields.news).fields.name)} — ${langFallback(site[0].fields.metaTitle)}`
+  meta(name='description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:title', content=langFallback(site[0].fields.metaTitle))
+  meta(property='og:description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:url', content=`${langFallback(site[0].fields.url)}${language}${langFallback(langFallback(menu[0].fields.news).fields.url)}`)
 
 block main
   main.main
-    .parallax(data-image-src='/img/parallax-news.jpg')
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.news).fields.file).url)
       div
-        h1.h1 News
+        h1.h1= langFallback(langFallback(menu[0].fields.news).fields.name)
 
     .news
       .container
         each newsItem in news
-          +news(newsItem.thumbnail, newsItem.alt, newsItem.title, newsItem.date, newsItem.isodate, newsItem.text)
+          +news(
+            langFallback(langFallback(newsItem.fields.image).fields.file).url,
+            langFallback(langFallback(newsItem.fields.image).fields.description),
+            langFallback(newsItem.fields.title),
+            langFallback(newsItem.fields.date),
+            langFallback(newsItem.fields.description)
+          )

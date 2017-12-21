@@ -1,18 +1,18 @@
 extends ../1-layouts/_standard
 
 block meta
-  title= meta.works.title
-  meta(name='description', content=meta.works.description)
-  meta(property='og:title', content=meta.works.title)
-  meta(property='og:description', content=meta.works.description)
-  meta(property='og:url', content=`${site.url}${language}${menu.works.url}`)
+  title= `${langFallback(langFallback(menu[0].fields.works).fields.name)} — ${langFallback(site[0].fields.metaTitle)}`
+  meta(name='description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:title', content=langFallback(site[0].fields.metaTitle))
+  meta(property='og:description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:url', content=`${langFallback(site[0].fields.url)}${language}${langFallback(langFallback(menu[0].fields.works).fields.url)}`)
 
 block main
   main.main
-    .parallax(data-image-src='/img/parallax-works.jpg')
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.works).fields.file).url)
       div
-        h1.h1 Works
+        h1.h1= langFallback(langFallback(menu[0].fields.works).fields.name)
 
     .works
       .container
-        +videoPlayer(works)
+        +videoPlayer(langFallback(work[0].fields.works))

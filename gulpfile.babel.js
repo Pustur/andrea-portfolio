@@ -6,6 +6,7 @@ import at2x from 'postcss-at2x';
 import neat from 'postcss-neat';
 import fixes from 'postcss-fixes';
 import autoprefixer from 'autoprefixer';
+import * as contentful from 'contentful';
 
 import gulp from 'gulp';
 import pug from 'gulp-pug';
@@ -20,7 +21,6 @@ import connect from 'gulp-connect';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import imagemin from 'gulp-imagemin';
-import jsonminify from 'gulp-jsonminify';
 import sourcemaps from 'gulp-sourcemaps';
 
 const config = {
@@ -29,7 +29,7 @@ const config = {
   src: 'src/',
   dist: 'dist/',
 
-  db: '_db.json',
+  contentfulFile: 'contentful.json',
 
   html: {
     path: 'pug/',
@@ -66,11 +66,11 @@ const config = {
 };
 
 /* HTML TASK */
-gulp.task('html', () => (
+gulp.task('html', ['contentful'], () => (
   gulp.src(`${config.src}${config.html.path}${config.html.srcPattern}`)
     .pipe(plumber())
     .pipe(data(() => (
-      JSON.parse(fs.readFileSync(`${config.src}${config.db}`))
+      JSON.parse(fs.readFileSync(config.contentfulFile))
     )))
     .pipe(pug(config.production ? {} : config.html.devOptions))
     .pipe(gulp.dest(config.dist))
@@ -135,12 +135,62 @@ gulp.task('fonts', () => (
     .pipe(gulp.dest(`${config.dist}${config.fonts.path}`))
 ));
 
-gulp.task('db', () => (
-  gulp.src(`${config.src}${config.db}`)
-    .pipe(plumber())
-    .pipe(config.production ? jsonminify() : util.noop())
-    .pipe(gulp.dest(config.dist))
-));
+/* CONTENTFUL TASK */
+gulp.task('contentful', (done) => {
+  const clientOptions = {
+    space: 'x66g2wq4vwn7',
+    accessToken: 'e5b613db89bff91e4ed471c03ceda5fa4b4646b07da106f9bd21db6655c8b1b3',
+  };
+
+  const client = contentful.createClient(clientOptions);
+
+  function logError(error) {
+    console.error(error);
+  }
+
+  function getContentTypes() {
+    return client.getContentTypes()
+      .then(response => response.items.map(contentType => contentType.sys.id))
+      .catch(logError);
+  }
+
+  async function getEntriesOfContentType(contentTypes) {
+    const entriesByContentType = {};
+
+    await Promise.all(contentTypes.map((contentType) => {
+      let options = {
+        content_type: contentType,
+        locale: '*',
+      };
+
+      if (contentType === 'news') {
+        options = Object.assign({}, options, {
+          order: '-fields.date',
+        });
+      }
+
+      return client.getEntries(options)
+        .then((entries) => {
+          entriesByContentType[contentType] = entries.items;
+        })
+        .catch(logError);
+    }))
+      .then(response => response)
+      .catch(logError);
+
+    return entriesByContentType;
+  }
+
+  async function writeContentfulFile() {
+    const contentTypes = await getContentTypes();
+    const entries = await getEntriesOfContentType(contentTypes);
+
+    fs.writeFileSync(config.contentfulFile, JSON.stringify(entries, null, 2));
+    done();
+  }
+
+  writeContentfulFile();
+});
 
 /* IMAGES TASK */
 gulp.task('img', () => (
@@ -192,11 +242,10 @@ gulp.task('clean-dist', () => del(config.dist));
 
 /* WATCH TASKS */
 gulp.task('watch', () => {
-  gulp.watch(`${config.src}${config.db}`, ['reload-html']);
   gulp.watch(`${config.src}${config.html.path}${config.html.watchPattern}`, ['reload-html']);
   gulp.watch(`${config.src}${config.css.path}${config.css.watchPattern}`, ['reload-css']);
   gulp.watch(`${config.src}${config.js.path}${config.js.watchPattern}`, ['reload-js']);
 });
 
 /* DEFAULT TASK */
-gulp.task('default', ['html', 'css', 'js', 'fonts', 'db', 'img', 'move', 'server', 'watch']);
+gulp.task('default', ['html', 'css', 'js', 'fonts', 'img', 'move', 'server', 'watch']);

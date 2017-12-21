@@ -1,28 +1,40 @@
 extends 1-layouts/_standard
 
 block meta
-  title= meta.home.title
-  meta(name='description', content=meta.home.description)
-  meta(property='og:title', content=meta.home.title)
-  meta(property='og:description', content=meta.home.description)
-  meta(property='og:url', content=`${site.url}${language}${menu.home.url}`)
+  title= langFallback(site[0].fields.metaTitle)
+  meta(name='description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:title', content=langFallback(site[0].fields.metaTitle))
+  meta(property='og:description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:url', content=`${langFallback(site[0].fields.url)}${language}${langFallback(langFallback(menu[0].fields.home).fields.url)}`)
 
 block main
   main.main
-    .parallax(data-image-src='/img/parallax-home.jpg')
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.home).fields.file).url)
       div
-        h1.h1= slogan.main
-        p.h3= slogan.secondary
+        h1.h1= langFallback(client[0].fields.name)
+        p.h3= langFallback(client[0].fields.profession)
 
     .works
       .container
-        h3.h2.no-margin-top Home
-        +videoPlayer(works.slice(0, 3))
-        +button('View all works', `/${language}${menu.works.url}`)
+        h3.h2.no-margin-top= langFallback(langFallback(menu[0].fields.home).fields.name)
+        +videoPlayer(langFallback(work[0].fields.works).slice(0, 3))
+        +button(
+          langFallback(label[0].fields.viewAllWorks),
+          `/${language}${langFallback(langFallback(menu[0].fields.works).fields.url)}`
+        )
 
     .news
       .container
-        h3.h2 News
+        h3.h2= langFallback(langFallback(menu[0].fields.news).fields.name)
         - const latestNews = news[0];
-        +news(latestNews.thumbnail, latestNews.alt, latestNews.title, latestNews.date, latestNews.isodate, latestNews.text)
-        +button('View all news', `/${language}${menu.news.url}`)
+        +news(
+          langFallback(langFallback(latestNews.fields.image).fields.file).url,
+          langFallback(langFallback(latestNews.fields.image).fields.description),
+          langFallback(latestNews.fields.title),
+          langFallback(latestNews.fields.date),
+          langFallback(latestNews.fields.description)
+        )
+        +button(
+          langFallback(label[0].fields.viewAllNews),
+          `/${language}${langFallback(langFallback(menu[0].fields.news).fields.url)}`
+        )
