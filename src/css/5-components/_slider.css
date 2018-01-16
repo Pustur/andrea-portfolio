@@ -37,7 +37,7 @@
 .slick-arrow {
   @mixin hide-text;
 
-  background-image: url(../img/slider/arrows.png);
+  background-image: url(/img/icons/arrows.png);
   background-size: calc($slider-arrow-width / 2) calc($slider-arrow-height / 2);
   background-repeat: no-repeat;
   display: block;
