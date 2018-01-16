@@ -14,6 +14,10 @@
   .container {
     @neat-outer-container 80%;
 
+    &.bigger {
+      @neat-outer-container 90%;
+    }
+
     &.smaller {
       @neat-outer-container 60%;
     }
