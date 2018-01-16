@@ -15,4 +15,12 @@ block main
 
     .works
       .container.bigger
-        +videoPlayer(langFallback(work[0].fields.works))
+        ul.video-gallery.unstyled-list
+          each video in langFallback(work[0].fields.works)
+            +work(
+              langFallback(video.fields.videoUrl),
+              langFallback(video.fields.coverTitle),
+              langFallback(video.fields.description),
+              langFallback(langFallback(video.fields.cover).fields.file).url,
+              langFallback(video.fields.category)
+            )

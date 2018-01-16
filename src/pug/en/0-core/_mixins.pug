@@ -27,10 +27,10 @@ mixin news(img, alt, title, isodate, text)
       time.news-item__date(datetime=isodate)= moment(isodate).format('LL')
       .news-item__text!= marked(text)
 
-mixin work(id, title, description, image)
-  li.work-item
-    a.work-item__link.row(href='#', data-work-id=id)
-      .work-item__img(style=`background-image: url(${image})`)
+mixin work(id, title, description, image, category)
+  li.work-item(data-category=category.toLowerCase().replace(/\s/g, '-'))
+    a.work-item__link(href='#', data-work-id=id)
+      img(src=image, alt=title)
       .work-item__body
         h4.work-item__title= title
     .work-item__description!= marked(description)
@@ -42,15 +42,7 @@ mixin videoPlayer(videos)
   .video-player
     div(data-type='vimeo', data-video-id=preloadedVideoId)
   .row
-    .video-description!= langFallback(preloadedVideo.fields.description)
-  ul.video-gallery.row.unstyled-list
-    each video in videos
-      +work(
-        langFallback(video.fields.videoUrl).replace(/[^\d]+/g, ''),
-        langFallback(video.fields.coverTitle),
-        langFallback(video.fields.description),
-        langFallback(langFallback(video.fields.cover).fields.file).url
-      )
+    .video-description!= marked(langFallback(preloadedVideo.fields.description))
 
 mixin slide(url, alt)
   li

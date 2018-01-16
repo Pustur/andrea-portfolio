@@ -1,5 +1,6 @@
 .work-item {
   &__link {
+    display: inline-block;
     transition: filter $medium ease, opacity $medium ease;
 
     &.disabled {
@@ -21,6 +22,7 @@
     margin-top: $work-padding;
     margin-bottom: 0;
     font-size: 15px;
+    text-align: center;
   }
 
   &__description {
@@ -31,13 +33,7 @@
 @media (--sm-max) {
   .work-item {
     & + & {
-      margin-top: $container-padding;
-    }
-
-    &__link {
-      @mixin aspect-ratio 16, 9;
-
-      color: white;
+      margin-top: calc($container-padding * 2);
     }
 
     &__body {
@@ -48,22 +44,12 @@
 
     &__title {
       padding: 0 $work-padding;
-      text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
     }
   }
 }
 
 @media (--md-min) {
   .work-item {
-    @neat-span-columns 4;
-    @neat-omega 3n;
-
-    &:nth-child(n+4) {
-      margin-top: $container-padding-md;
-    }
-
-    &__img {
-      @mixin aspect-ratio 16, 9;
-    }
+    margin-bottom: calc($work-padding * 2);
   }
 }

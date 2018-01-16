@@ -1,9 +1,6 @@
 .video-description {
+  text-align: center;
   font-size: 12px;
-
-  &:empty {
-    display: none;
-  }
 }
 
 @media (--md-min) {
@@ -12,7 +9,7 @@
     @neat-shift 1;
 
     font-size: 16px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 }
 
@@ -21,6 +18,6 @@
     @neat-span-columns 8;
     @neat-shift 2;
 
-    margin-top: 60px;
+    margin-top: 30px;
   }
 }

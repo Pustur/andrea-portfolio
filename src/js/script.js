@@ -6,7 +6,6 @@
   const $header = $('.header');
   const $hamburger = $('.hamburger');
   const $inDocumentLinks = $('a[href^="#"]:not([href="#"])');
-  const $videoDescription = $('.video-description');
   const $workItemLinks = $('.work-item__link');
   const $inputs = $('.contact-form__input, .contact-form__textarea');
   const $toTop = $('.to-top');
@@ -15,7 +14,6 @@
 
   // Variables
   let yPosition = 0;
-  let eventAttached = false;
   const plyrInstance = plyr.setup()[0];
   const parallaxHeight = $parallax.height();
   const headerHeight = $header.height();
@@ -65,37 +63,8 @@
     $workItemLinks.removeClass('disabled');
   });
 
-  $workItemLinks.on('click', function selectVideo() {
-    const $this = $(this);
-    const $videoPlayer = $('.video-player');
-    const videoOffset = $videoPlayer.offset().top;
-    const videoHeight = $videoPlayer.height();
-    const windowHeight = $window.height();
-    const scrollPosition = (videoOffset + (videoHeight / 2)) - (windowHeight / 2);
-
-    $root.animate({
-      scrollTop: scrollPosition,
-    }, 1000).promise().then(() => {
-      $videoDescription.html($this.next().html());
-
-      plyrInstance.source({
-        type: 'video',
-        title: $this.find('.work-item__title').text(),
-        sources: [
-          {
-            src: $this.attr('data-work-id'),
-            type: 'vimeo',
-          },
-        ],
-      });
-
-      if (!eventAttached) {
-        plyrInstance.on('ready', () => plyrInstance.play());
-        eventAttached = true;
-      }
-    });
-
-    return false;
+  $workItemLinks.on('click', (e) => {
+    // TODO: implement opening modal
   });
 
   if ($inputs.length) {
