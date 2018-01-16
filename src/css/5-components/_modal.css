@@ -1,0 +1,68 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  z-index: 20;
+
+  &__scrolling-container {
+    position: relative;
+    height: 100%;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__close {
+    background-image: url(/img/icons/close.png);
+    background-size: calc($modal-close-width / 2) calc($modal-close-height / 2);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: $modal-close-width;
+    height: $modal-close-height;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    white-space: nowrap;
+    text-indent: 101%;
+    overflow: hidden;
+  }
+}
+
+@media (--md-max) {
+  .modal {
+    &__work-video {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media (--lg-min) {
+  .modal {
+    &__close {
+      right: 30px;
+    }
+
+    &__work-info {
+      @neat-span-columns 4;
+    }
+
+    &__work-video {
+      @neat-span-columns 8;
+
+      min-height: 1px;
+
+      .plyr {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 55%; /* Magic number */
+      }
+    }
+  }
+}

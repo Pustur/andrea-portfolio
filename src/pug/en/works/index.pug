@@ -18,9 +18,13 @@ block main
         ul.video-gallery.unstyled-list
           each video in langFallback(work[0].fields.works)
             +work(
-              langFallback(video.fields.videoUrl),
+              (langFallback(video.fields.videoUrl) || '').replace(/[^\d]+/g, ''),
               langFallback(video.fields.coverTitle),
               langFallback(video.fields.description),
+              langFallback(video.fields.technicalDescription) || '',
               langFallback(langFallback(video.fields.cover).fields.file).url,
-              langFallback(video.fields.category)
+              langFallback(video.fields.detailImage) ? langFallback(langFallback(video.fields.detailImage).fields.file).url : undefined,
+              langFallback(video.fields.category),
+              langFallback(label[0].fields.close),
+              langFallback(label[0].fields.myRole)
             )

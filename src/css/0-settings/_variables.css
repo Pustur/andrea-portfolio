@@ -74,6 +74,10 @@ $input-padding: 10px;
 $slider-arrow-width: 186px;
 $slider-arrow-height: 50px;
 
+/* modal */
+$modal-close-width: 32px;
+$modal-close-height: 32px;
+
 /* to-top */
 $to-top-size: 70px;
 

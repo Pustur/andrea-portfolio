@@ -1,8 +1,10 @@
-(($, window, plyr) => {
+(($, window, document, plyr) => {
   // Cache DOM
   const $window = $(window);
-  const $root = $('html, body');
+  const $document = $(document);
   const $html = $('html');
+  const $body = $('body');
+  const $root = $html.add($body);
   const $header = $('.header');
   const $hamburger = $('.hamburger');
   const $inDocumentLinks = $('a[href^="#"]:not([href="#"])');
@@ -17,6 +19,7 @@
   const plyrInstance = plyr.setup()[0];
   const parallaxHeight = $parallax.height();
   const headerHeight = $header.height();
+  const modalFadeInTime = 300;
 
   // Functions
   function toggleMenu() {
@@ -25,6 +28,60 @@
     setTimeout(() => {
       $html.toggleClass('menu-animation');
     }, 30);
+  }
+
+  function openModal(contents) {
+    const {
+      title,
+      description,
+      technicalDescription,
+      videoId,
+      imageUrl,
+      closeLabel,
+      myRoleLabel,
+    } = contents;
+    const html = `
+      <div class="modal" style="display: none;">
+        <div class="modal__scrolling-container">
+          <a href="javascript:;" class="modal__close">${closeLabel}</a>
+          <div class="container bigger">
+            <div class="row">
+              <div class="modal__work-video">
+                ${
+                  videoId ?
+                  `<div data-type="vimeo" data-video-id="${videoId}"></div>` :
+                  `<img src="${imageUrl}" alt />`
+                }
+              </div>
+              <div class="modal__work-info">
+                <h2 class="modal__work-title no-margin-top">${title}</h2>
+                <div class="modal__work-description">${description}</div>
+                ${
+                  technicalDescription ?
+                  `<h3>${myRoleLabel}</h3>
+                  <div class="modal__work-technical-description">${technicalDescription}</div>` :
+                  ''
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    const $modal = $(html);
+
+    $body.addClass('overflow-hidden');
+    $modal.appendTo($body).fadeIn(modalFadeInTime);
+    plyr.setup();
+  }
+
+  function closeModal() {
+    const $modal = $('.modal');
+
+    $modal.fadeOut(modalFadeInTime, () => {
+      $modal.remove();
+      $body.removeClass('overflow-hidden');
+    });
   }
 
   // Event listeners
@@ -47,6 +104,14 @@
 
   $window.on('resize', () => $window.scroll());
 
+  $window.on('keydown', (e) => {
+    if (e.which === 27) {
+      closeModal();
+    }
+  });
+
+  $document.on('click', '.modal__close', closeModal);
+
   if (plyrInstance) {
     plyrInstance.on('playing', () => {
       $html.addClass('dark-mode');
@@ -64,7 +129,26 @@
   });
 
   $workItemLinks.on('click', (e) => {
-    // TODO: implement opening modal
+    const $target = $(e.currentTarget);
+    const $metadata = $target.closest('li').find('.work-item__metadata');
+    const title = $target.find('.work-item__title').html();
+    const description = $metadata.find('.work-item__description').html();
+    const technicalDescription = $metadata.find('.work-item__technical-description').html();
+    const closeLabel = $metadata.find('.work-item__close-label').html();
+    const myRoleLabel = $metadata.find('.work-item__my-role-label').html();
+    const videoId = $target.attr('data-work-id');
+    const imageUrl = $target.attr('data-work-image');
+
+    e.preventDefault();
+    openModal({
+      title,
+      description,
+      technicalDescription,
+      videoId,
+      imageUrl,
+      closeLabel,
+      myRoleLabel,
+    });
   });
 
   if ($inputs.length) {
@@ -130,4 +214,4 @@
     prevArrow: '<a class="slick-prev" href="javascript:;">Previous</a>',
     nextArrow: '<a class="slick-next" href="javascript:;">Next</a>',
   });
-})(jQuery, window, plyr); // eslint-disable-line no-undef
+})(jQuery, window, document, plyr); // eslint-disable-line no-undef

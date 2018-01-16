@@ -27,3 +27,7 @@
 .no-margin-top {
   margin-top: 0;
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}

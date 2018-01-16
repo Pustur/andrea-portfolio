@@ -25,7 +25,7 @@
     text-align: center;
   }
 
-  &__description {
+  &__metadata {
     display: none;
   }
 }

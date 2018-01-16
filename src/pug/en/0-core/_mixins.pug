@@ -27,13 +27,17 @@ mixin news(img, alt, title, isodate, text)
       time.news-item__date(datetime=isodate)= moment(isodate).format('LL')
       .news-item__text!= marked(text)
 
-mixin work(id, title, description, image, category)
+mixin work(id, title, description, technicalDescription, image, detailImage, category, closeLabel, myRoleLabel)
   li.work-item(data-category=category.toLowerCase().replace(/\s/g, '-'))
-    a.work-item__link(href='#', data-work-id=id)
+    a.work-item__link(href='#', data-work-id=id, data-work-image=detailImage)
       img(src=image, alt=title)
       .work-item__body
         h4.work-item__title= title
-    .work-item__description!= marked(description)
+    .work-item__metadata
+      .work-item__close-label!= closeLabel
+      .work-item__my-role-label!= myRoleLabel
+      .work-item__description!= marked(description)
+      .work-item__technical-description!= marked(technicalDescription)
 
 mixin videoPlayer(videos)
   - const preloadedVideo = videos[0];
