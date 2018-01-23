@@ -18,6 +18,8 @@
   }
 
   &__close {
+    @mixin hide-text;
+
     background-image: url(/img/icons/close.png);
     background-size: calc($modal-close-width / 2) calc($modal-close-height / 2);
     background-repeat: no-repeat;
@@ -28,9 +30,6 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    white-space: nowrap;
-    text-indent: 101%;
-    overflow: hidden;
   }
 }
 

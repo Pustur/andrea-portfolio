@@ -8,10 +8,6 @@
     width: 100%;
     padding-top: calc(($height / $width) * 100%);
   }
-
-  & > * {
-    position: absolute;
-  }
 }
 
 @define-mixin hide-text {
