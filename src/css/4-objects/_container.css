@@ -18,6 +18,12 @@
       @neat-outer-container 90%;
     }
 
+    &.full {
+      @neat-outer-container 100%;
+
+      padding: 0.92990627%; /* Magic number */
+    }
+
     &.smaller {
       @neat-outer-container 60%;
     }

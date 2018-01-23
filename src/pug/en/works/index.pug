@@ -14,7 +14,7 @@ block main
         h1.h1= langFallback(langFallback(menu[0].fields.works).fields.name)
 
     .works
-      .container.bigger
+      .container.full
         ul.video-gallery.unstyled-list
           each video in langFallback(work[0].fields.works)
             +work(
