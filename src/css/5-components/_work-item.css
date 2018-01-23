@@ -2,11 +2,6 @@
   &__link {
     display: inline-block;
     transition: filter $medium ease, opacity $medium ease;
-
-    &.disabled {
-      filter: grayscale(1);
-      opacity: 0.5;
-    }
   }
 
   &__img {

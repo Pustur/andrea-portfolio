@@ -121,13 +121,6 @@
     });
   }
 
-  $workItemLinks.hover(function mouseEnter() {
-    $workItemLinks.addClass('disabled');
-    $(this).removeClass('disabled');
-  }, () => {
-    $workItemLinks.removeClass('disabled');
-  });
-
   $workItemLinks.on('click', (e) => {
     const $target = $(e.currentTarget);
     const $metadata = $target.closest('li').find('.work-item__metadata');
