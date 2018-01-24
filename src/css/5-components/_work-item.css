@@ -23,7 +23,7 @@
     height: 48px;
   }
 
-  &__title {
+  &__cover-title {
     margin-top: $work-padding;
     margin-bottom: 0;
     font-size: 15px;
@@ -48,7 +48,7 @@
       left: 0;
     }
 
-    &__title {
+    &__cover-title {
       padding: 0 $work-padding;
     }
   }
@@ -83,7 +83,7 @@
       transition: opacity $slow ease;
     }
 
-    &__title {
+    &__cover-title {
       margin-top: 0;
       color: white;
       position: absolute;

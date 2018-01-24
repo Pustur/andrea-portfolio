@@ -125,7 +125,7 @@
   $workItemLinks.on('click', (e) => {
     const $target = $(e.currentTarget);
     const $metadata = $target.closest('li').find('.work-item__metadata');
-    const title = $target.find('.work-item__title').html();
+    const title = $metadata.find('.work-item__title').html() || $target.find('.work-item__cover-title').html();
     const description = $metadata.find('.work-item__description').html();
     const technicalDescription = $metadata.find('.work-item__technical-description').html();
     const closeLabel = $metadata.find('.work-item__close-label').html();

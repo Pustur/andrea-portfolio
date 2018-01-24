@@ -19,6 +19,7 @@ block main
           each video in langFallback(work[0].fields.works)
             +work(
               (langFallback(video.fields.videoUrl) || '').replace(/[^\d]+/g, ''),
+              langFallback(video.fields.title),
               langFallback(video.fields.coverTitle),
               langFallback(video.fields.description),
               langFallback(video.fields.technicalDescription) || '',
