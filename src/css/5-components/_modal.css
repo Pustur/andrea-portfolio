@@ -44,11 +44,15 @@
 @media (--lg-min) {
   .modal {
     &__close {
+      position: fixed;
       right: 30px;
     }
 
     &__work-info {
       @neat-span-columns 4;
+
+      margin: auto;
+      padding-bottom: 3.5rem;
     }
 
     &__work-video {
@@ -56,12 +60,31 @@
 
       min-height: 1px;
 
+      img,
       .plyr {
         position: fixed;
         top: 50%;
         transform: translateY(-50%);
-        width: 55%; /* Magic number */
+        width: 54%; /* Magic number */
       }
+
+      .plyr {
+        &.plyr--fullscreen-active {
+          width: 100%;
+          transform: none;
+          top: auto;
+          position: static;
+        }
+      }
+    }
+
+    .container,
+    .row {
+      height: 100%;
+    }
+
+    .row {
+      display: flex;
     }
   }
 }

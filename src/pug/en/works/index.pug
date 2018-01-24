@@ -13,7 +13,7 @@ block main
       div
         h1.h1= langFallback(langFallback(menu[0].fields.works).fields.name)
 
-    .works
+    .works.no-spacing
       .container.full
         ul.video-gallery.unstyled-list
           each video in langFallback(work[0].fields.works)
@@ -26,5 +26,6 @@ block main
               langFallback(video.fields.detailImage) ? langFallback(langFallback(video.fields.detailImage).fields.file).url : undefined,
               langFallback(video.fields.category),
               langFallback(label[0].fields.close),
-              langFallback(label[0].fields.myRole)
+              langFallback(label[0].fields.myRole),
+              langFallback(video.fields.isVfsWork)
             )

@@ -6,3 +6,13 @@
 .works {
   padding-top: 80px;
 }
+
+.works.no-spacing {
+  padding-top: 0;
+}
+
+@media (--sm-max) {
+  .works.no-spacing {
+    padding-top: 40px;
+  }
+}

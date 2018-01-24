@@ -27,10 +27,12 @@ mixin news(img, alt, title, isodate, text)
       time.news-item__date(datetime=isodate)= moment(isodate).format('LL')
       .news-item__text!= marked(text)
 
-mixin work(id, title, description, technicalDescription, image, detailImage, category, closeLabel, myRoleLabel)
+mixin work(id, title, description, technicalDescription, image, detailImage, category, closeLabel, myRoleLabel, isVFS)
   li.work-item(data-category=category.toLowerCase().replace(/\s/g, '-'))
     a.work-item__link(href='#', data-work-id=id, data-work-image=detailImage)
-      img(src=image, alt=title)
+      .work-item__img(style=`background-image: url(${image})`)
+      - if (isVFS)
+        img.work-item__vfs-logo(src='/img/logos/vfs.svg', alt='VFS logo')
       .work-item__body
         h4.work-item__title= title
     .work-item__metadata
