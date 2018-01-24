@@ -8,7 +8,8 @@
   const $header = $('.header');
   const $hamburger = $('.hamburger');
   const $inDocumentLinks = $('a[href^="#"]:not([href="#"])');
-  const $workItemLinks = $('.work-item__link');
+  const $workItems = $('.work-item');
+  const $workItemLinks = $workItems.find('.work-item__link');
   const $inputs = $('.contact-form__input, .contact-form__textarea');
   const $toTop = $('.to-top');
   const $parallax = $('.parallax');
@@ -83,6 +84,17 @@
       $modal.remove();
       $body.removeClass('overflow-hidden');
     });
+  }
+
+  function getUrlParam(url, name) {
+    const regex = new RegExp(`${name}=([^&]*)`);
+    const matches = regex.exec(url);
+
+    if (matches) {
+      return matches[1];
+    }
+
+    return undefined;
   }
 
   // Event listeners
@@ -215,4 +227,13 @@
     prevArrow: '<a class="slick-prev" href="javascript:;">Previous</a>',
     nextArrow: '<a class="slick-next" href="javascript:;">Next</a>',
   });
+
+  if ($workItems.length) {
+    const query = window.location.search;
+    const category = getUrlParam(query, 'category');
+
+    if (category) {
+      $workItems.not(`[data-category=${category}]`).remove();
+    }
+  }
 })(jQuery, window, document, plyr); // eslint-disable-line no-undef
