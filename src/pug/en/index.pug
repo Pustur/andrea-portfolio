@@ -23,6 +23,16 @@ block main
           `/${language}${langFallback(langFallback(menu[0].fields.works).fields.url)}`
         )
 
+    .recommendations
+      .container
+        h3.h2= langFallback(label[0].fields.recommendations)
+        ul.slider-recommendations.unstyled-list
+          each recommendation in langFallback(recommendations[0].fields.recommendations)
+            li
+              blockquote
+                p.large-paragraph= langFallback(recommendation.fields.description)
+                cite.recommended-by= langFallback(recommendation.fields.recommendedBy)
+
     .news
       .container
         h3.h2= langFallback(langFallback(menu[0].fields.news).fields.name)

@@ -1,0 +1,47 @@
+.slider-recommendations {
+  max-width: 800px;
+  margin: 30px auto 0;
+  position: relative;
+
+  .slick-track {
+    li {
+      padding: 1px; /* Fix rounding error safari */
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  .large-paragraph {
+    margin-top: 0;
+
+    &::before {
+      content: '“';
+    }
+
+    &::after {
+      content: '”';
+    }
+  }
+
+  .recommended-by {
+    display: block;
+    position: relative;
+    padding-left: 1.5em;
+
+    &::before {
+      color: $blue;
+      content: '—';
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+@media (--lg-min) {
+  .slider-recommendations {
+    padding-top: 0;
+    margin-top: 60px;
+  }
+}

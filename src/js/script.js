@@ -13,6 +13,7 @@
   const $toTop = $('.to-top');
   const $parallax = $('.parallax');
   const $slider = $('.slider');
+  const $sliderRecommendations = $('.slider-recommendations');
 
   // Variables
   let yPosition = 0;
@@ -204,6 +205,13 @@
     pauseOnFocus: true,
     autoplay: true,
     autoplaySpeed: 4000,
+    prevArrow: '<a class="slick-prev" href="javascript:;">Previous</a>',
+    nextArrow: '<a class="slick-next" href="javascript:;">Next</a>',
+  });
+
+  $sliderRecommendations.slick({
+    autoplay: false,
+    adaptiveHeight: true,
     prevArrow: '<a class="slick-prev" href="javascript:;">Previous</a>',
     nextArrow: '<a class="slick-next" href="javascript:;">Next</a>',
   });

@@ -64,7 +64,7 @@
   }
 
   .slick-arrow {
-    top: calc(50% - ($slider-arrow-height / 2));
+    top: calc(50% - ($slider-arrow-height / 4));
 
     &.slick-prev {
       left: calc(-$slider-arrow-width / 2);
