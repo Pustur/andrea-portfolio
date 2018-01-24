@@ -4,6 +4,23 @@
 
   &__item {
     display: inline-block;
+    position: relative;
+
+    > ul {
+      position: absolute;
+      line-height: 2;
+      padding: 0.3rem 0.6rem;
+      left: -0.6rem;
+      display: none;
+
+      .main-menu__item {
+        margin-right: 0;
+      }
+
+      .main-menu__link {
+        white-space: nowrap;
+      }
+    }
   }
 
   &__link {

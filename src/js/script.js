@@ -15,6 +15,8 @@
   const $parallax = $('.parallax');
   const $slider = $('.slider');
   const $sliderRecommendations = $('.slider-recommendations');
+  const $menuItems = $('.main-menu__item');
+  const $menuWorksItem = $menuItems.eq(1);
 
   // Variables
   let yPosition = 0;
@@ -22,6 +24,7 @@
   const parallaxHeight = $parallax.height();
   const headerHeight = $header.height();
   const modalFadeInTime = 300;
+  const language = $html.attr('lang');
 
   // Functions
   function toggleMenu() {
@@ -95,6 +98,21 @@
     }
 
     return undefined;
+  }
+
+  function handleSubMenu(e) {
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      const $target = $(e.currentTarget);
+      const $subMenu = $target.find('> ul');
+
+      $subMenu.stop(true);
+
+      if (e.type === 'mouseenter') {
+        $subMenu.slideDown();
+      } else {
+        $subMenu.slideUp();
+      }
+    }
   }
 
   // Event listeners
@@ -205,6 +223,10 @@
 
   $hamburger.on('click', toggleMenu);
 
+  $menuItems.on('mouseenter', handleSubMenu);
+
+  $menuItems.on('mouseleave', handleSubMenu);
+
   // Body
   $window.scroll();
 
@@ -227,6 +249,17 @@
     prevArrow: '<a class="slick-prev" href="javascript:;">Previous</a>',
     nextArrow: '<a class="slick-next" href="javascript:;">Next</a>',
   });
+
+  $menuWorksItem.append(`
+    <ul class="unstyled-list">
+      <li class="main-menu__item">
+        <a class="main-menu__link" href="/${language}/works?category=linear-audio">Linear Audio</a>
+      </li>
+      <li class="main-menu__item">
+        <a class="main-menu__link" href="/${language}/works?category=game-audio">Game Audio</a>
+      </li>
+    </ul>
+  `);
 
   if ($workItems.length) {
     const query = window.location.search;
