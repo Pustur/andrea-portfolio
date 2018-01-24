@@ -27,15 +27,18 @@ block main
           each slide in langFallback(about[0].fields.slideshow)
             +slide(langFallback(slide.fields.file).url, langFallback(slide.fields.description))
 
+      .container
         h2.h2= `${langFallback(label[0].fields.skills)} & ${langFallback(label[0].fields.knowledge)}`
-        .row
+        .row.skills-knowledge
           .half
-            h3.h4= langFallback(label[0].fields.skills)
-            ul
-              each skill in langFallback(about[0].fields.skills)
-                li= skill
+            div
+              h3.h4= langFallback(label[0].fields.skills)
+              ul
+                each skill in langFallback(about[0].fields.skills)
+                  li= skill
           .half
-            h3.h4= langFallback(label[0].fields.knowledge)
-            ul
-              each knowledge in langFallback(about[0].fields.knowledges)
-                li= knowledge
+            div
+              h3.h4= langFallback(label[0].fields.knowledge)
+              ul
+                each knowledge in langFallback(about[0].fields.knowledges)
+                  li= knowledge

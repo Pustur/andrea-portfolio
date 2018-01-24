@@ -1,0 +1,21 @@
+@media (--md-min) {
+  .skills-knowledge {
+    .half {
+      > div {
+        display: inline-block;
+      }
+
+      &:first-child {
+        text-align: right;
+
+        > div {
+          text-align: left;
+        }
+      }
+
+      &:last-child {
+        padding-left: 6rem;
+      }
+    }
+  }
+}
