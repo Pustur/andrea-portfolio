@@ -31,3 +31,7 @@
 .overflow-hidden {
   overflow: hidden;
 }
+
+.plyr .plyr__play-large {
+  display: none;
+}
