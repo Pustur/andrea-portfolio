@@ -115,6 +115,14 @@
     }
   }
 
+  function changeLanguage(lang) {
+    const currentUrl = window.location.href;
+    const regex = /(\/)[a-z]{2}(?=\/|$)/;
+    const newUrl = currentUrl.replace(regex, (match, p1) => `${p1}${lang}`);
+
+    window.location.href = newUrl; // eslint-disable-line no-param-reassign
+  }
+
   // Event listeners
   $window.on('scroll', function scrollHandler() {
     yPosition = $(this).scrollTop();
@@ -142,6 +150,19 @@
   });
 
   $document.on('click', '.modal__close', closeModal);
+
+  $document.on('click', '.languages-menu__link', (e) => {
+    const selectedLanguage = $(e.currentTarget).text();
+
+    e.preventDefault();
+    changeLanguage(selectedLanguage);
+  });
+
+  $document.on('change', '.languages-select', (e) => {
+    const selectedLanguage = $(e.currentTarget).find(':selected').val();
+
+    changeLanguage(selectedLanguage);
+  });
 
   if (plyrInstance) {
     plyrInstance.on('playing', () => {

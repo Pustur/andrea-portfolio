@@ -1,0 +1,7 @@
+select.languages-select.unstyled-list
+  each lang in languages
+    +selectOption(
+      lang.code,
+      lang.code.toUpperCase(),
+      'languages-select__option'
+    )&attributes(lang.code === language ? { selected: '' } : {})

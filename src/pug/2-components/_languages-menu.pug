@@ -1,0 +1,8 @@
+ul.languages-menu.unstyled-list
+  each language in languages
+    +listLink(
+      `/${language.code}`,
+      language.code,
+      'languages-menu__item',
+      'languages-menu__link'
+    )

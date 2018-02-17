@@ -75,6 +75,10 @@ gulp.task('html', ['contentful'], () => (
       const dataObj = JSON.parse(fs.readFileSync(config.contentfulFile));
       dataObj.marked = marked;
       dataObj.moment = moment;
+      dataObj.languages = [
+        { name: 'English', code: 'en' },
+        { name: 'Italiano', code: 'it' },
+      ];
       return dataObj;
     }))
     .pipe(pug(config.production ? {} : config.html.devOptions))

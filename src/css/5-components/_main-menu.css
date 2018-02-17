@@ -82,7 +82,7 @@
       }
 
       &__link {
-        padding: 10px;
+        padding: 6px;
         opacity: 0;
         transition: transform $medium cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity $medium ease;
       }
@@ -119,15 +119,29 @@
 
     .header & {
       position: absolute;
-      right: 0;
+      right: 3rem;
       top: 50%;
       transform: translateY(-50%);
+      padding-right: 16px;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: currentColor;
+      }
     }
   }
 
   @media (--md-max) {
     .main-menu {
       &__item {
+        margin-right: 20px;
+
         &:first-child {
           display: none;
         }

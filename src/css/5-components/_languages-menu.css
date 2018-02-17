@@ -1,0 +1,36 @@
+.languages-menu {
+  margin-top: 1rem;
+  color: white;
+  white-space: nowrap;
+
+  &__item {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    @extend %wide-caps;
+  }
+
+  .header & {
+    &__link {
+      transition: opacity $fast ease;
+
+      &:hover,
+      &:focus {
+        outline: 0;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+@media (--md-min) {
+  .languages-menu {
+    display: none;
+  }
+}

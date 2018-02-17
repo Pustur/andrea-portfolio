@@ -38,6 +38,8 @@
 @import '5-components/news-item';
 @import '5-components/menu-wrapper';
 @import '5-components/main-menu';
+@import '5-components/languages-menu';
+@import '5-components/languages-select';
 @import '5-components/social-menu';
 @import '5-components/contact-form';
 @import '5-components/slider';

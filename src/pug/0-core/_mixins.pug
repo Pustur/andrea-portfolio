@@ -2,6 +2,9 @@ mixin listLink(url, text, liClass, aClass)
   li(class=liClass)
     a(class=aClass, href=url)&attributes(attributes)= text
 
+mixin selectOption(value, text, optionClass)
+  option(value=value, class=optionClass)&attributes(attributes)= text
+
 mixin textarea(inputId, labelText)
   .contact-form__input-wrap
     label.contact-form__label(for=inputId)= labelText
