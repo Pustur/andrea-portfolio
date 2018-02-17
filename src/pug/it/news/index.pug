@@ -1,0 +1,25 @@
+extends ../1-layouts/_standard
+
+block meta
+  title= `${langFallback(langFallback(menu[0].fields.news).fields.name)} — ${langFallback(site[0].fields.metaTitle)}`
+  meta(name='description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:title', content=langFallback(site[0].fields.metaTitle))
+  meta(property='og:description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:url', content=`${langFallback(site[0].fields.url)}${language}${langFallback(langFallback(menu[0].fields.news).fields.url)}`)
+
+block main
+  main.main
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.news).fields.file).url)
+      div
+        h1.h1= langFallback(langFallback(menu[0].fields.news).fields.name)
+
+    .news
+      .container
+        each newsItem in news
+          +news(
+            langFallback(langFallback(newsItem.fields.image).fields.file).url,
+            langFallback(langFallback(newsItem.fields.image).fields.description),
+            langFallback(newsItem.fields.title),
+            langFallback(newsItem.fields.date),
+            langFallback(newsItem.fields.description)
+          )

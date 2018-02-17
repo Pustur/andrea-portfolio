@@ -1,0 +1,32 @@
+extends ../1-layouts/_standard
+
+block meta
+  title= `${langFallback(langFallback(menu[0].fields.works).fields.name)} — ${langFallback(site[0].fields.metaTitle)}`
+  meta(name='description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:title', content=langFallback(site[0].fields.metaTitle))
+  meta(property='og:description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:url', content=`${langFallback(site[0].fields.url)}${language}${langFallback(langFallback(menu[0].fields.works).fields.url)}`)
+
+block main
+  main.main
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.works).fields.file).url)
+      div
+        h1.h1= langFallback(langFallback(menu[0].fields.works).fields.name)
+
+    .works.no-spacing
+      .container.full
+        ul.video-gallery.unstyled-list
+          each video in langFallback(work[0].fields.works)
+            +work(
+              (langFallback(video.fields.videoUrl) || '').replace(/[^\d]+/g, ''),
+              langFallback(video.fields.title),
+              langFallback(video.fields.coverTitle),
+              langFallback(video.fields.description),
+              langFallback(video.fields.technicalDescription) || '',
+              langFallback(langFallback(video.fields.cover).fields.file).url,
+              langFallback(video.fields.detailImage) ? langFallback(langFallback(video.fields.detailImage).fields.file).url : undefined,
+              langFallback(video.fields.category),
+              langFallback(label[0].fields.close),
+              langFallback(label[0].fields.myRole),
+              langFallback(video.fields.isVfsWork)
+            )

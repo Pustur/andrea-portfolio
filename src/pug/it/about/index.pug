@@ -1,0 +1,44 @@
+extends ../1-layouts/_standard
+
+block meta
+  title= `${langFallback(langFallback(menu[0].fields.about).fields.name)} — ${langFallback(site[0].fields.metaTitle)}`
+  meta(name='description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:title', content=langFallback(site[0].fields.metaTitle))
+  meta(property='og:description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:url', content=`${langFallback(site[0].fields.url)}${language}${langFallback(langFallback(menu[0].fields.about).fields.url)}`)
+
+block main
+  main.main
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.about).fields.file).url)
+      div
+        h1.h1= langFallback(langFallback(menu[0].fields.about).fields.name)
+
+    .about
+      .container
+        img.profile-pic(src=langFallback(langFallback(about[0].fields.introImage).fields.file).url, alt=langFallback(langFallback(about[0].fields.introImage).fields.description))
+        .large-paragraph.intro!= langFallback(about[0].fields.intro)
+
+      .container.smaller
+        h2.h2= langFallback(label[0].fields.originStory)
+        div!= marked(langFallback(about[0].fields.originStory))
+
+      .container
+        ul.slider.unstyled-list
+          each slide in langFallback(about[0].fields.slideshow)
+            +slide(langFallback(slide.fields.file).url, langFallback(slide.fields.description))
+
+      .container
+        h2.h2= `${langFallback(label[0].fields.skills)} & ${langFallback(label[0].fields.knowledge)}`
+        .row.skills-knowledge
+          .half
+            div
+              h3.h4= langFallback(label[0].fields.skills)
+              ul
+                each skill in langFallback(about[0].fields.skills)
+                  li= skill
+          .half
+            div
+              h3.h4= langFallback(label[0].fields.knowledge)
+              ul
+                each knowledge in langFallback(about[0].fields.knowledges)
+                  li= knowledge

@@ -1,0 +1,14 @@
+include ../../0-core/_functions
+include ../../0-core/_mixins
+
+- const language = 'it';
+- moment.locale(language);
+
+doctype html
+html(lang=language)
+  head
+    include ../../0-core/_meta
+    block meta
+    link(rel='stylesheet', href='/css/style.min.css')
+
+  block body

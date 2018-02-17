@@ -1,0 +1,50 @@
+extends 1-layouts/_standard
+
+block meta
+  title= langFallback(site[0].fields.metaTitle)
+  meta(name='description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:title', content=langFallback(site[0].fields.metaTitle))
+  meta(property='og:description', content=langFallback(site[0].fields.metaDescription))
+  meta(property='og:url', content=`${langFallback(site[0].fields.url)}${language}${langFallback(langFallback(menu[0].fields.home).fields.url)}`)
+
+block main
+  main.main
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.home).fields.file).url)
+      div
+        h1.h1= langFallback(client[0].fields.name)
+        p.h3= langFallback(client[0].fields.profession)
+
+    .works
+      .container
+        h3.h2.no-margin-top= langFallback(langFallback(menu[0].fields.home).fields.name)
+        +videoPlayer(langFallback(work[0].fields.works).slice(0, 3))
+        +button(
+          langFallback(label[0].fields.viewAllWorks),
+          `/${language}${langFallback(langFallback(menu[0].fields.works).fields.url)}`
+        )
+
+    .recommendations
+      .container
+        h3.h2= langFallback(label[0].fields.recommendations)
+        ul.slider-recommendations.unstyled-list
+          each recommendation in langFallback(recommendations[0].fields.recommendations)
+            li
+              blockquote
+                p.large-paragraph= langFallback(recommendation.fields.description)
+                cite.recommended-by= langFallback(recommendation.fields.recommendedBy)
+
+    .news
+      .container
+        h3.h2= langFallback(langFallback(menu[0].fields.news).fields.name)
+        - const latestNews = news[0];
+        +news(
+          langFallback(langFallback(latestNews.fields.image).fields.file).url,
+          langFallback(langFallback(latestNews.fields.image).fields.description),
+          langFallback(latestNews.fields.title),
+          langFallback(latestNews.fields.date),
+          langFallback(latestNews.fields.description)
+        )
+        +button(
+          langFallback(label[0].fields.viewAllNews),
+          `/${language}${langFallback(langFallback(menu[0].fields.news).fields.url)}`
+        )
