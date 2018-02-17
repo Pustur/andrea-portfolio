@@ -214,7 +214,9 @@ gulp.task('img', () => (
 /* MOVE TASK */
 gulp.task('move', () => (
   gulp.src([
+    `${config.src}CNAME`,
     `${config.src}humans.txt`,
+    `${config.src}sitemap.xml`,
   ])
     .pipe(gulp.dest(config.dist))
 ));
