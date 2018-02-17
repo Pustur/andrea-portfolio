@@ -3,19 +3,16 @@
   margin: 60px auto 0;
   position: relative;
 
-  .slick-track {
-    li {
-      padding: 1px; /* Fix rounding error safari */
-
-      &::before {
-        content: none;
-      }
+  li {
+    + li {
+      margin-top: 4rem;
     }
   }
 
   .large-paragraph {
     margin-top: 0;
     text-align: justify;
+    margin-bottom: 0.5rem;
 
     &::before {
       content: '“';
@@ -36,14 +33,6 @@
       content: '—';
       position: absolute;
       left: 0;
-    }
-  }
-}
-
-@media (--md-max) {
-  .slider-recommendations {
-    .slick-arrow {
-      top: -45px;
     }
   }
 }
