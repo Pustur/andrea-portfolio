@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://andreacolosiosound.com/en/</loc>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/en/works/</loc>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/works/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/works/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/en/about/</loc>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/about/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/about/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/en/what-i-do/</loc>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/what-i-do/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/what-i-do/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/en/news/</loc>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/news/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/news/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/en/contact/</loc>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/contact/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/contact/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/it/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/"/>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/it/works/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/works/"/>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/works/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/it/about/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/about/"/>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/about/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/it/what-i-do/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/what-i-do/"/>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/what-i-do/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/it/news/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/news/"/>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/news/"/>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://andreacolosiosound.com/it/contact/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://andreacolosiosound.com/en/contact/"/>
+  <xhtml:link rel="alternate" hreflang="it" href="https://andreacolosiosound.com/it/contact/"/>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>

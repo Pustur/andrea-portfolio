@@ -221,6 +221,7 @@ gulp.task('move', () => (
     `${config.src}CNAME`,
     `${config.src}humans.txt`,
     `${config.src}sitemap.xml`,
+    `${config.src}sitemap-https.xml`,
   ])
     .pipe(gulp.dest(config.dist))
 ));
