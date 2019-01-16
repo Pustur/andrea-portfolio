@@ -1,5 +1,6 @@
 import fs from 'fs';
 import del from 'del';
+import dotenv from 'dotenv';
 import marked from 'marked';
 import moment from 'moment';
 import precss from 'precss';
@@ -66,6 +67,9 @@ const config = {
     srcPattern: '**/*.{gif,jpeg,jpg,png,svg}',
   },
 };
+
+/* Get env variables */
+dotenv.config();
 
 /* HTML TASK */
 gulp.task('html', ['contentful'], () => (
@@ -147,8 +151,8 @@ gulp.task('fonts', () => (
 /* CONTENTFUL TASK */
 gulp.task('contentful', (done) => {
   const clientOptions = {
-    space: 'x66g2wq4vwn7',
-    accessToken: 'e5b613db89bff91e4ed471c03ceda5fa4b4646b07da106f9bd21db6655c8b1b3',
+    space: process.env.space,
+    accessToken: process.env.accessToken,
   };
 
   const client = contentful.createClient(clientOptions);
