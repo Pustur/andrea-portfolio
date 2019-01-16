@@ -11,7 +11,7 @@ You can view it [here](http://andreacolosiosound.com/en)
 - jQuery
 - Gulp
 - Babel
-- Eslint / Stylelint
+- Eslint / Stylelint / Puglint
 - Contentful
 
 ## License
