@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test:pug": "pug-lint src/pug/",
-    "test:js": "eslint \"src/**/*.js\"",
+    "test:js": "eslint \"src/**/*.js\" \"gulpfile.babel.js\"",
     "test:css": "stylelint \"src/**/*.css\"",
     "test": "npm run test:pug && npm run test:js && npm run test:css"
   },
@@ -26,7 +26,7 @@
     "eslint": "3.15.0",
     "eslint-config-airbnb-base": "11.1.0",
     "eslint-plugin-import": "2.2.0",
-    "gulp": "3.9.1",
+    "gulp": "4.0.2",
     "gulp-babel": "6.1.2",
     "gulp-cache": "0.4.5",
     "gulp-concat": "2.6.1",
