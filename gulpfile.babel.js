@@ -244,15 +244,21 @@ function serverTask() {
 
 /* RELOAD TASKS */
 function reloadHtmlTask() {
-  gulp.src(`${config.dist}${config.html.reloadPattern}`).pipe(connect.reload());
+  return gulp
+    .src(`${config.dist}${config.html.reloadPattern}`)
+    .pipe(connect.reload());
 }
 
 function reloadCssTask() {
-  gulp.src(`${config.dist}${config.css.reloadPattern}`).pipe(connect.reload());
+  return gulp
+    .src(`${config.dist}${config.css.reloadPattern}`)
+    .pipe(connect.reload());
 }
 
 function reloadJsTask() {
-  gulp.src(`${config.dist}${config.js.reloadPattern}`).pipe(connect.reload());
+  return gulp
+    .src(`${config.dist}${config.js.reloadPattern}`)
+    .pipe(connect.reload());
 }
 
 /* UTILITY TASKS */
