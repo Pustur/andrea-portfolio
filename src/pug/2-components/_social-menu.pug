@@ -1,7 +1,7 @@
 ul.social-menu.unstyled-list
   each socialItem in langFallback(socials[0].fields.socials)
     li.social-menu__item
-      a.social-menu__link(href=langFallback(socialItem.fields.url), target='_blank')
+      a.social-menu__link(href=langFallback(socialItem.fields.url), target='_blank' rel='noopener')
         case langFallback(socialItem.fields.name)
           when 'Facebook'
             include _icon-facebook
