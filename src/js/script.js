@@ -51,21 +51,12 @@
           <div class="container bigger">
             <div class="row">
               <div class="modal__work-video">
-                ${
-                  videoId ?
-                  `<div data-type="vimeo" data-video-id="${videoId}"></div>` :
-                  `<img src="${imageUrl}" alt />`
-                }
+                ${videoId ? `<div data-type="vimeo" data-video-id="${videoId}"></div>` : `<img src="${imageUrl}" alt />`}
               </div>
               <div class="modal__work-info">
                 <h2 class="modal__work-title no-margin-top">${title}</h2>
                 <div class="modal__work-description">${description}</div>
-                ${
-                  technicalDescription ?
-                  `<h3>${myRoleLabel}</h3>
-                  <div class="modal__work-technical-description">${technicalDescription}</div>` :
-                  ''
-                }
+                ${technicalDescription ? `<h3>${myRoleLabel}</h3><div class="modal__work-technical-description">${technicalDescription}</div>` : ''}
               </div>
             </div>
           </div>
@@ -228,7 +219,7 @@
   });
 
   $inDocumentLinks.on('click', (e) => {
-    const hash = e.currentTarget.hash;
+    const { hash } = e.currentTarget;
     const $target = $(hash);
 
     if ($target.length) {
