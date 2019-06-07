@@ -5,7 +5,6 @@ import marked from 'marked';
 import moment from 'moment';
 import precss from 'precss';
 import cssnano from 'cssnano';
-import at2x from 'postcss-at2x';
 import neat from 'postcss-neat';
 import fixes from 'postcss-fixes';
 import autoprefixer from 'autoprefixer';
@@ -94,7 +93,7 @@ function htmlTask() {
 
 /* CSS TASK */
 function cssTask() {
-  const processors = [precss(), at2x(), neat(), fixes(), autoprefixer()];
+  const processors = [precss(), neat(), fixes(), autoprefixer()];
 
   if (config.production) {
     processors.push(

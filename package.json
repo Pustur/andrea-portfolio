@@ -43,7 +43,6 @@
     "gulp-util": "3.0.8",
     "marked": "0.6.2",
     "moment": "2.24.0",
-    "postcss-at2x": "4.0.3",
     "postcss-fixes": "2.0.1",
     "postcss-neat": "2.5.2",
     "precss": "1.4.0",
