@@ -72,84 +72,81 @@ const config = {
 dotenv.config();
 
 /* HTML TASK */
-gulp.task('html', ['contentful'], () => (
-  gulp.src(`${config.src}${config.html.path}${config.html.srcPattern}`)
+function htmlTask() {
+  return gulp
+    .src(`${config.src}${config.html.path}${config.html.srcPattern}`)
     .pipe(plumber())
-    .pipe(data(() => {
-      const dataObj = JSON.parse(fs.readFileSync(config.contentfulFile));
-      dataObj.marked = marked;
-      dataObj.moment = moment;
-      dataObj.languages = [
-        { name: 'English', code: 'en' },
-        { name: 'Italiano', code: 'it' },
-      ];
-      return dataObj;
-    }))
+    .pipe(
+      data(() => {
+        const dataObj = JSON.parse(fs.readFileSync(config.contentfulFile));
+        dataObj.marked = marked;
+        dataObj.moment = moment;
+        dataObj.languages = [
+          { name: 'English', code: 'en' },
+          { name: 'Italiano', code: 'it' },
+        ];
+        return dataObj;
+      }),
+    )
     .pipe(pug(config.production ? {} : config.html.devOptions))
-    .pipe(gulp.dest(config.dist))
-));
+    .pipe(gulp.dest(config.dist));
+}
 
 /* CSS TASK */
-gulp.task('css', () => {
-  const processors = [
-    precss(),
-    at2x(),
-    neat(),
-    fixes(),
-    autoprefixer({
-      browsers: [
-        'IE >= 10',
-        'Safari >= 8',
-        'last 2 versions',
-        '> 1%',
-      ],
-    }),
-  ];
+function cssTask() {
+  const processors = [precss(), at2x(), neat(), fixes(), autoprefixer()];
 
   if (config.production) {
-    processors.push(cssnano({
-      safe: true,
-      calc: false,
-    }));
+    processors.push(
+      cssnano({
+        safe: true,
+        calc: false,
+      }),
+    );
   }
 
-  return gulp.src(`${config.src}${config.css.path}${config.css.srcPattern}`)
+  return gulp
+    .src(`${config.src}${config.css.path}${config.css.srcPattern}`)
     .pipe(plumber())
     .pipe(config.production ? util.noop() : sourcemaps.init())
     .pipe(postcss(processors))
-    .pipe(rename({
-      suffix: '.min',
-    }))
+    .pipe(
+      rename({
+        suffix: '.min',
+      }),
+    )
     .pipe(config.production ? util.noop() : sourcemaps.write())
     .pipe(gulp.dest(`${config.dist}${config.css.path}`));
-});
+}
 
 /* JAVASCRIPT TASK */
-gulp.task('js', () => (
-  gulp.src([
-    `${config.src}${config.js.path}0-vendor/jquery-3.1.1.js`,
-    `${config.src}${config.js.path}0-vendor/plyr.js`,
-    `${config.src}${config.js.path}0-vendor/parallax.js`,
-    `${config.src}${config.js.path}0-vendor/slick.js`,
-    `${config.src}${config.js.path}script.js`,
-  ])
+function jsTask() {
+  return gulp
+    .src([
+      `${config.src}${config.js.path}0-vendor/jquery-3.1.1.js`,
+      `${config.src}${config.js.path}0-vendor/plyr.js`,
+      `${config.src}${config.js.path}0-vendor/parallax.js`,
+      `${config.src}${config.js.path}0-vendor/slick.js`,
+      `${config.src}${config.js.path}script.js`,
+    ])
     .pipe(plumber())
     .pipe(config.production ? util.noop() : sourcemaps.init())
     .pipe(babel())
     .pipe(concat('script.min.js'))
     .pipe(config.production ? uglify() : util.noop())
     .pipe(config.production ? util.noop() : sourcemaps.write())
-    .pipe(gulp.dest(`${config.dist}${config.js.path}`))
-));
+    .pipe(gulp.dest(`${config.dist}${config.js.path}`));
+}
 
 /* FONTS TASK */
-gulp.task('fonts', () => (
-  gulp.src(`${config.src}${config.fonts.path}${config.fonts.srcPattern}`)
-    .pipe(gulp.dest(`${config.dist}${config.fonts.path}`))
-));
+function fontsTask() {
+  return gulp
+    .src(`${config.src}${config.fonts.path}${config.fonts.srcPattern}`)
+    .pipe(gulp.dest(`${config.dist}${config.fonts.path}`));
+}
 
 /* CONTENTFUL TASK */
-gulp.task('contentful', (done) => {
+function contentfulTask(done) {
   const clientOptions = {
     space: process.env.space,
     accessToken: process.env.accessToken,
@@ -162,7 +159,8 @@ gulp.task('contentful', (done) => {
   }
 
   function getContentTypes() {
-    return client.getContentTypes()
+    return client
+      .getContentTypes()
       .then(response => response.items.map(contentType => contentType.sys.id))
       .catch(logError);
   }
@@ -170,24 +168,27 @@ gulp.task('contentful', (done) => {
   async function getEntriesOfContentType(contentTypes) {
     const entriesByContentType = {};
 
-    await Promise.all(contentTypes.map((contentType) => {
-      let options = {
-        content_type: contentType,
-        locale: '*',
-      };
+    await Promise.all(
+      contentTypes.map(contentType => {
+        let options = {
+          content_type: contentType,
+          locale: '*',
+        };
 
-      if (contentType === 'news') {
-        options = Object.assign({}, options, {
-          order: '-fields.date',
-        });
-      }
+        if (contentType === 'news') {
+          options = Object.assign({}, options, {
+            order: '-fields.date',
+          });
+        }
 
-      return client.getEntries(options)
-        .then((entries) => {
-          entriesByContentType[contentType] = entries.items;
-        })
-        .catch(logError);
-    }))
+        return client
+          .getEntries(options)
+          .then(entries => {
+            entriesByContentType[contentType] = entries.items;
+          })
+          .catch(logError);
+      }),
+    )
       .then(response => response)
       .catch(logError);
 
@@ -203,65 +204,112 @@ gulp.task('contentful', (done) => {
   }
 
   writeContentfulFile();
-});
+}
 
 /* IMAGES TASK */
-gulp.task('img', () => (
-  gulp.src(`${config.src}${config.img.path}${config.img.srcPattern}`)
-    .pipe(cache(imagemin({
-      progressive: true,
-      interlaced: true,
-    })))
-    .pipe(gulp.dest(`${config.dist}${config.img.path}`))
-));
+function imgTask() {
+  return gulp
+    .src(`${config.src}${config.img.path}${config.img.srcPattern}`)
+    .pipe(
+      cache(
+        imagemin({
+          progressive: true,
+          interlaced: true,
+        }),
+      ),
+    )
+    .pipe(gulp.dest(`${config.dist}${config.img.path}`));
+}
 
 /* MOVE TASK */
-gulp.task('move', () => (
-  gulp.src([
-    `${config.src}CNAME`,
-    `${config.src}humans.txt`,
-    `${config.src}sitemap.xml`,
-    `${config.src}sitemap-https.xml`,
-  ])
-    .pipe(gulp.dest(config.dist))
-));
+function moveTask() {
+  return gulp
+    .src([
+      `${config.src}CNAME`,
+      `${config.src}humans.txt`,
+      `${config.src}sitemap.xml`,
+      `${config.src}sitemap-https.xml`,
+    ])
+    .pipe(gulp.dest(config.dist));
+}
 
 /* SERVER TASK */
-gulp.task('server', () => {
+function serverTask() {
   connect.server({
     root: config.dist.slice(0, -1),
     port: 8000,
     livereload: true,
   });
-});
+}
 
 /* RELOAD TASKS */
-gulp.task('reload-html', ['html'], () => (
-  gulp.src(`${config.dist}${config.html.reloadPattern}`)
-    .pipe(connect.reload())
-));
+function reloadHtmlTask() {
+  return gulp
+    .src(`${config.dist}${config.html.reloadPattern}`)
+    .pipe(connect.reload());
+}
 
-gulp.task('reload-css', ['css'], () => (
-  gulp.src(`${config.dist}${config.css.reloadPattern}`)
-    .pipe(connect.reload())
-));
+function reloadCssTask() {
+  return gulp
+    .src(`${config.dist}${config.css.reloadPattern}`)
+    .pipe(connect.reload());
+}
 
-gulp.task('reload-js', ['js'], () => (
-  gulp.src(`${config.dist}${config.js.reloadPattern}`)
-    .pipe(connect.reload())
-));
+function reloadJsTask() {
+  return gulp
+    .src(`${config.dist}${config.js.reloadPattern}`)
+    .pipe(connect.reload());
+}
 
 /* UTILITY TASKS */
-gulp.task('clean-cache', done => cache.clearAll(done));
+function cleanCacheTask(done) {
+  cache.clearAll(done);
+}
 
-gulp.task('clean-dist', () => del(config.dist));
+function cleanDistTask() {
+  return del(config.dist);
+}
 
 /* WATCH TASKS */
-gulp.task('watch', () => {
-  gulp.watch(`${config.src}${config.html.path}${config.html.watchPattern}`, ['reload-html']);
-  gulp.watch(`${config.src}${config.css.path}${config.css.watchPattern}`, ['reload-css']);
-  gulp.watch(`${config.src}${config.js.path}${config.js.watchPattern}`, ['reload-js']);
-});
+function watchTask() {
+  gulp.watch(
+    `${config.src}${config.html.path}${config.html.watchPattern}`,
+    gulp.series(htmlTask, reloadHtmlTask),
+  );
+  gulp.watch(
+    `${config.src}${config.css.path}${config.css.watchPattern}`,
+    gulp.series(cssTask, reloadCssTask),
+  );
+  gulp.watch(
+    `${config.src}${config.js.path}${config.js.watchPattern}`,
+    gulp.series(jsTask, reloadJsTask),
+  );
+}
 
-/* DEFAULT TASK */
-gulp.task('default', ['html', 'css', 'js', 'fonts', 'img', 'move', 'server', 'watch']);
+/* EXPORTS */
+exports.cleanCacheTask = cleanCacheTask;
+
+exports.build = gulp.series(
+  cleanDistTask,
+  gulp.parallel(
+    gulp.series(contentfulTask, htmlTask),
+    cssTask,
+    jsTask,
+    imgTask,
+    fontsTask,
+    moveTask,
+  ),
+);
+
+exports.default = gulp.series(
+  cleanDistTask,
+  gulp.parallel(
+    gulp.series(contentfulTask, htmlTask),
+    cssTask,
+    jsTask,
+    imgTask,
+    fontsTask,
+    moveTask,
+  ),
+  gulp.parallel(serverTask, watchTask),
+);
