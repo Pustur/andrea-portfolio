@@ -175,9 +175,7 @@ function contentfulTask(done) {
         };
 
         if (contentType === 'news') {
-          options = Object.assign({}, options, {
-            order: '-fields.date',
-          });
+          options = { ...options, ...{ order: '-fields.date' } };
         }
 
         return client
