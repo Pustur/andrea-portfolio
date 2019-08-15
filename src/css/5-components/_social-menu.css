@@ -76,6 +76,14 @@
       .imdb-icon {
         fill: $imdb-icon;
       }
+
+      .ig-background {
+        fill: $ig-background;
+      }
+
+      .ig-icon {
+        fill: $ig-icon;
+      }
     }
   }
 
