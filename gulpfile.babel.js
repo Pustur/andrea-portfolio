@@ -154,7 +154,7 @@ function contentfulTask(done) {
   const client = contentful.createClient(clientOptions);
 
   function logError(error) {
-    console.error(error);
+    console.error(error); // eslint-disable-line no-console
   }
 
   function getContentTypes() {
@@ -259,8 +259,8 @@ function reloadJsTask() {
 }
 
 /* UTILITY TASKS */
-function cleanCacheTask(done) {
-  cache.clearAll(done);
+function cleanCacheTask() {
+  return cache.clearAll();
 }
 
 function cleanDistTask() {
@@ -284,7 +284,7 @@ function watchTask() {
 }
 
 /* EXPORTS */
-exports.cleanCacheTask = cleanCacheTask;
+exports.cleanCache = cleanCacheTask;
 
 exports.build = gulp.series(
   cleanDistTask,
