@@ -1,9 +1,9 @@
-/          /it           Language=it
-/about     /it/about     Language=it
-/contact   /it/contact   Language=it
-/news      /it/news      Language=it
-/what-i-do /it/what-i-do Language=it
-/works     /it/works     Language=it
+/          /it           301 Language=it
+/about     /it/about     301 Language=it
+/contact   /it/contact   301 Language=it
+/news      /it/news      301 Language=it
+/what-i-do /it/what-i-do 301 Language=it
+/works     /it/works     301 Language=it
 
 /          /en
 /about     /en/about
