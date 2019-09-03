@@ -226,6 +226,7 @@ function moveTask() {
       `${config.src}humans.txt`,
       `${config.src}sitemap.xml`,
       `${config.src}sitemap-https.xml`,
+      `${config.src}_redirects`,
     ])
     .pipe(gulp.dest(config.dist));
 }
