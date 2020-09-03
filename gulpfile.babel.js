@@ -15,14 +15,12 @@ import pug from 'gulp-pug';
 import data from 'gulp-data';
 import util from 'gulp-util';
 import babel from 'gulp-babel';
-import cache from 'gulp-cache';
 import concat from 'gulp-concat';
 import rename from 'gulp-rename';
 import uglify from 'gulp-uglify';
 import connect from 'gulp-connect';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
-import imagemin from 'gulp-imagemin';
 import sourcemaps from 'gulp-sourcemaps';
 
 const config = {
@@ -209,16 +207,8 @@ function contentfulTask(done) {
 
 /* IMAGES TASK */
 function imgTask() {
-  const compress = () => cache(
-    imagemin({
-      progressive: true,
-      interlaced: true,
-    }),
-  );
-
   return gulp
     .src(`${config.src}${config.img.path}${config.img.srcPattern}`)
-    .pipe(config.production ? compress() : util.noop())
     .pipe(gulp.dest(`${config.dist}${config.img.path}`));
 }
 
@@ -264,10 +254,6 @@ function reloadJsTask() {
 }
 
 /* UTILITY TASKS */
-function cleanCacheTask() {
-  return cache.clearAll();
-}
-
 function cleanDistTask() {
   return del(config.dist);
 }
@@ -289,8 +275,6 @@ function watchTask() {
 }
 
 /* EXPORTS */
-exports.cleanCache = cleanCacheTask;
-
 exports.build = gulp.series(
   cleanDistTask,
   gulp.parallel(
