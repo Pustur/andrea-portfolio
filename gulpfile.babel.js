@@ -2,9 +2,9 @@ import fs from 'fs';
 import del from 'del';
 import dotenv from 'dotenv';
 import marked from 'marked';
-import moment from 'moment';
 import precss from 'precss';
 import cssnano from 'cssnano';
+import IntlPolyfill from 'intl';
 import neat from 'postcss-neat';
 import fixes from 'postcss-fixes';
 import autoprefixer from 'autoprefixer';
@@ -70,6 +70,10 @@ const config = {
 /* Get env variables */
 dotenv.config();
 
+/* Fix regex problem, see https://github.com/andyearnshaw/Intl.js/issues/308 */
+// eslint-disable-next-line no-underscore-dangle
+IntlPolyfill.__disableRegExpRestore();
+
 /* HTML TASK */
 function htmlTask() {
   return gulp
@@ -79,7 +83,7 @@ function htmlTask() {
       data(() => {
         const dataObj = JSON.parse(fs.readFileSync(config.contentfulFile));
         dataObj.marked = marked;
-        dataObj.moment = moment;
+        dataObj.PolyFilledDateTimeFormat = IntlPolyfill.DateTimeFormat;
         dataObj.languages = [
           { name: 'English', code: 'en' },
           { name: 'Italiano', code: 'it' },
