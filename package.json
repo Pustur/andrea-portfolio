@@ -41,6 +41,7 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-uglify": "3.0.2",
     "gulp-util": "3.0.8",
+    "intl": "1.2.5",
     "marked": "1.1.1",
     "postcss-fixes": "2.0.1",
     "postcss-neat": "2.5.2",
