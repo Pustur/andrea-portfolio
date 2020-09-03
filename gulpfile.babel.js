@@ -205,16 +205,16 @@ function contentfulTask(done) {
 
 /* IMAGES TASK */
 function imgTask() {
+  const compress = () => cache(
+    imagemin({
+      progressive: true,
+      interlaced: true,
+    }),
+  );
+
   return gulp
     .src(`${config.src}${config.img.path}${config.img.srcPattern}`)
-    .pipe(
-      cache(
-        imagemin({
-          progressive: true,
-          interlaced: true,
-        }),
-      ),
-    )
+    .pipe(config.production ? compress() : util.noop())
     .pipe(gulp.dest(`${config.dist}${config.img.path}`));
 }
 
