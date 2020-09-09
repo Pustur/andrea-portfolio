@@ -58,6 +58,11 @@ const config = {
     path: 'img/',
     srcPattern: '**/*.{gif,jpeg,jpg,png,svg}',
   },
+
+  static: {
+    path: 'static/',
+    srcPattern: '**/*',
+  },
 };
 
 /* Get env variables */
@@ -203,13 +208,7 @@ function imgTask() {
 /* MOVE TASK */
 function moveTask() {
   return gulp
-    .src([
-      `${config.src}CNAME`,
-      `${config.src}humans.txt`,
-      `${config.src}sitemap.xml`,
-      `${config.src}sitemap-https.xml`,
-      `${config.src}_redirects`,
-    ])
+    .src(`${config.src}${config.static.path}${config.static.srcPattern}`)
     .pipe(gulp.dest(config.dist));
 }
 
