@@ -262,26 +262,34 @@ function watchTask() {
   );
 }
 
-/* EXPORTS */
-exports.build = gulp.series(
-  cleanDistTask,
-  gulp.parallel(
-    gulp.series(contentfulTask, htmlTask),
-    cssTask,
-    jsTask,
-    imgTask,
-    moveTask,
-  ),
-);
+/* EXPORTED TASKS */
+function buildTask() {
+  return gulp.series(
+    cleanDistTask,
+    gulp.parallel(
+      gulp.series(contentfulTask, htmlTask),
+      cssTask,
+      jsTask,
+      imgTask,
+      moveTask,
+    ),
+  );
+}
 
-exports.default = gulp.series(
-  cleanDistTask,
-  gulp.parallel(
-    gulp.series(contentfulTask, htmlTask),
-    cssTask,
-    jsTask,
-    imgTask,
-    moveTask,
-  ),
-  gulp.parallel(serverTask, watchTask),
-);
+function defaultTask() {
+  return gulp.series(
+    cleanDistTask,
+    gulp.parallel(
+      gulp.series(contentfulTask, htmlTask),
+      cssTask,
+      jsTask,
+      imgTask,
+      moveTask,
+    ),
+    gulp.parallel(serverTask, watchTask),
+  );
+}
+
+/* EXPORTS */
+exports.build = buildTask();
+exports.default = defaultTask();
