@@ -54,11 +54,6 @@ const config = {
     reloadPattern: '**/*.js',
   },
 
-  fonts: {
-    path: 'fonts/',
-    srcPattern: '**/*.{eot,otf,svg,ttf,woff,woff2}',
-  },
-
   img: {
     path: 'img/',
     srcPattern: '**/*.{gif,jpeg,jpg,png,svg}',
@@ -137,13 +132,6 @@ function jsTask() {
     .pipe(config.production ? uglify() : util.noop())
     .pipe(config.production ? util.noop() : sourcemaps.write())
     .pipe(gulp.dest(`${config.dist}${config.js.path}`));
-}
-
-/* FONTS TASK */
-function fontsTask() {
-  return gulp
-    .src(`${config.src}${config.fonts.path}${config.fonts.srcPattern}`)
-    .pipe(gulp.dest(`${config.dist}${config.fonts.path}`));
 }
 
 /* CONTENTFUL TASK */
@@ -282,7 +270,6 @@ exports.build = gulp.series(
     cssTask,
     jsTask,
     imgTask,
-    fontsTask,
     moveTask,
   ),
 );
@@ -294,7 +281,6 @@ exports.default = gulp.series(
     cssTask,
     jsTask,
     imgTask,
-    fontsTask,
     moveTask,
   ),
   gulp.parallel(serverTask, watchTask),
