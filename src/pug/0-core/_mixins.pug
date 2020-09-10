@@ -21,12 +21,12 @@ mixin button(text, url)
       polyline.button__polyline(points='1,4 15,4')
       polyline.button__polyline(points='11,1 15,4 11,7')
 
-mixin news(img, alt, title, isodate, text)
+mixin news(img, alt, title, isodate, text, titleTag = 'h2')
   article.news-item.row
     .news-item__img
       img(src=img, alt=alt)
     .news-item__body
-      h4.h4= title
+      #{titleTag}.h4= title
       time.news-item__date(datetime=isodate)= intl.format(new Date(isodate))
       .news-item__text!= marked(text)
 
@@ -37,7 +37,7 @@ mixin work(id, title, coverTitle, description, technicalDescription, image, deta
       - if (isVFS)
         img.work-item__vfs-logo(src='/img/logos/vfs.svg', alt)
       .work-item__body
-        h4.work-item__cover-title= coverTitle
+        h2.work-item__cover-title= coverTitle
     .work-item__metadata
       .work-item__title= title
       .work-item__close-label!= closeLabel

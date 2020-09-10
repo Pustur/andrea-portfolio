@@ -16,7 +16,7 @@ block main
 
     .works
       .container
-        h3.h2.no-margin-top= langFallback(langFallback(menu[0].fields.home).fields.name)
+        h2.h2.no-margin-top= langFallback(langFallback(menu[0].fields.home).fields.name)
         +videoPlayer(langFallback(work[0].fields.works).slice(0, 3))
         +button(
           langFallback(label[0].fields.viewAllWorks),
@@ -25,7 +25,7 @@ block main
 
     .recommendations
       .container
-        h3.h2= langFallback(label[0].fields.recommendations)
+        h2.h2= langFallback(label[0].fields.recommendations)
         ul.slider-recommendations.unstyled-list
           each recommendation in langFallback(recommendations[0].fields.recommendations)
             li
@@ -35,14 +35,15 @@ block main
 
     .news
       .container
-        h3.h2= langFallback(langFallback(menu[0].fields.news).fields.name)
+        h2.h2= langFallback(langFallback(menu[0].fields.news).fields.name)
         - const latestNews = news[0];
         +news(
           langFallback(langFallback(latestNews.fields.image).fields.file).url,
           langFallback(langFallback(latestNews.fields.image).fields.description),
           langFallback(latestNews.fields.title),
           langFallback(latestNews.fields.date),
-          langFallback(latestNews.fields.description)
+          langFallback(latestNews.fields.description),
+          'h3'
         )
         +button(
           langFallback(label[0].fields.viewAllNews),
