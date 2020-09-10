@@ -41,7 +41,6 @@
     "gulp-util": "3.0.8",
     "intl": "1.2.5",
     "marked": "1.1.1",
-    "postcss-fixes": "2.0.1",
     "postcss-neat": "2.5.2",
     "precss": "1.4.0",
     "pug-lint": "2.6.0",

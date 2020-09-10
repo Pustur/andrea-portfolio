@@ -6,7 +6,6 @@ import precss from 'precss';
 import cssnano from 'cssnano';
 import IntlPolyfill from 'intl';
 import neat from 'postcss-neat';
-import fixes from 'postcss-fixes';
 import autoprefixer from 'autoprefixer';
 import * as contentful from 'contentful';
 
@@ -95,7 +94,7 @@ function htmlTask() {
 
 /* CSS TASK */
 function cssTask() {
-  const processors = [precss(), neat(), fixes(), autoprefixer()];
+  const processors = [precss(), neat(), autoprefixer()];
 
   if (config.production) {
     processors.push(
