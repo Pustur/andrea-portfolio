@@ -1,3 +1,4 @@
+import { PassThrough } from 'stream';
 import fs from 'fs';
 import del from 'del';
 import dotenv from 'dotenv';
@@ -12,7 +13,6 @@ import * as contentful from 'contentful';
 import gulp from 'gulp';
 import pug from 'gulp-pug';
 import data from 'gulp-data';
-import util from 'gulp-util';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import rename from 'gulp-rename';
@@ -22,8 +22,10 @@ import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 
+const noop = () => new PassThrough({ objectMode: true });
+
 const config = {
-  production: Boolean(util.env.production),
+  production: process.env.NODE_ENV === 'production',
 
   src: 'src/',
   dist: 'dist/',
@@ -108,14 +110,14 @@ function cssTask() {
   return gulp
     .src(`${config.src}${config.css.path}${config.css.srcPattern}`)
     .pipe(plumber())
-    .pipe(config.production ? util.noop() : sourcemaps.init())
+    .pipe(config.production ? noop() : sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(
       rename({
         suffix: '.min',
       }),
     )
-    .pipe(config.production ? util.noop() : sourcemaps.write())
+    .pipe(config.production ? noop() : sourcemaps.write())
     .pipe(gulp.dest(`${config.dist}${config.css.path}`));
 }
 
@@ -130,11 +132,11 @@ function jsTask() {
       `${config.src}${config.js.path}script.js`,
     ])
     .pipe(plumber())
-    .pipe(config.production ? util.noop() : sourcemaps.init())
+    .pipe(config.production ? noop() : sourcemaps.init())
     .pipe(babel())
     .pipe(concat('script.min.js'))
-    .pipe(config.production ? uglify() : util.noop())
-    .pipe(config.production ? util.noop() : sourcemaps.write())
+    .pipe(config.production ? uglify() : noop())
+    .pipe(config.production ? noop() : sourcemaps.write())
     .pipe(gulp.dest(`${config.dist}${config.js.path}`));
 }
 

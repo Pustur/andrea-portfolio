@@ -8,6 +8,9 @@
     "url": "https://github.com/Pustur/Andrea-portfolio.git"
   },
   "scripts": {
+    "dev": "gulp",
+    "dev:prod": "NODE_ENV=production gulp",
+    "build": "NODE_ENV=production gulp build",
     "test:pug": "pug-lint src/pug/",
     "test:js": "eslint \"src/**/*.js\" \"gulpfile.babel.js\"",
     "test:css": "stylelint \"src/**/*.css\"",
@@ -38,7 +41,6 @@
     "gulp-rename": "2.0.0",
     "gulp-sourcemaps": "2.6.5",
     "gulp-uglify": "3.0.2",
-    "gulp-util": "3.0.8",
     "intl": "1.2.5",
     "marked": "1.1.1",
     "postcss-neat": "2.5.2",
