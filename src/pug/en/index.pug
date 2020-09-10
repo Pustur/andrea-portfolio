@@ -9,7 +9,7 @@ block meta
 
 block main
   main.main
-    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.home).fields.file).url)
+    .parallax(data-image-src=langFallback(langFallback(parallaxImage[0].fields.home).fields.file).url, data-image-alt='', data-mirror-container='.parallax', data-z-index='')
       div
         h1.h1= langFallback(client[0].fields.name)
         p.h3= langFallback(client[0].fields.profession)

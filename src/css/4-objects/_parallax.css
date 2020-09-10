@@ -1,5 +1,6 @@
 .parallax {
   height: 400px;
+  background-color: #444;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,5 +8,9 @@
 
   * {
     margin: 0;
+  }
+
+  > * {
+    position: relative;
   }
 }
