@@ -47,7 +47,7 @@ mixin work(id, title, coverTitle, description, technicalDescription, image, deta
 
 mixin videoPlayer(videos)
   - const preloadedVideo = videos[0];
-  - const preloadedVideoId = langFallback(preloadedVideo.fields.videoUrl).replace(/[^\d]+/g, '');
+  - const preloadedVideoId = langFallback(preloadedVideo.fields.videoUrl).replace(/\D+/g, '');
 
   .video-player
     div(data-type='vimeo', data-video-id=preloadedVideoId)
