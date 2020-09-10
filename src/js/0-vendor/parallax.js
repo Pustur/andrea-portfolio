@@ -149,6 +149,9 @@
     if (!sliderExisted)
       this.$slider[0].src = this.imageSrc;
 
+    if (typeof this.imageAlt === 'string')
+      this.$slider.attr('alt', this.imageAlt);
+
     if (this.naturalHeight && this.naturalWidth || this.$slider[0].complete || slider.length > 0) {
       this.$slider.trigger('load');
     }
