@@ -57,7 +57,7 @@ const config = {
 
   img: {
     path: 'img/',
-    srcPattern: '**/*.{gif,jpeg,jpg,png,svg}',
+    srcPattern: '**/*',
   },
 
   static: {
