@@ -125,7 +125,6 @@ function cssTask() {
 function jsTask() {
   return gulp
     .src([
-      `${config.src}${config.js.path}0-vendor/jquery-3.1.1.js`,
       `${config.src}${config.js.path}0-vendor/plyr.js`,
       `${config.src}${config.js.path}0-vendor/parallax.js`,
       `${config.src}${config.js.path}0-vendor/slick.js`,
