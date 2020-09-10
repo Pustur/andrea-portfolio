@@ -1,4 +1,5 @@
-select.languages-select.unstyled-list
+label.sr-only(for='languages-select')
+select#languages-select.languages-select.unstyled-list
   each lang in languages
     +selectOption(
       lang.code,

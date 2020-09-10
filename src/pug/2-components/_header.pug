@@ -2,6 +2,7 @@ header.header
   .container
     .relative
       a.logo(href=`/${language}${langFallback(langFallback(menu[0].fields.home).fields.url)}`)
+        span.sr-only= langFallback(langFallback(menu[0].fields.home).fields.name)
         include _icon-logo
       include _hamburger
       .menu-wrapper
