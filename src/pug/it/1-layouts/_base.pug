@@ -9,8 +9,10 @@ include ../../0-core/_mixins
     day: 'numeric'
   });
 
+block pageVariables
+
 doctype html
-html(lang=language)
+html(lang=language, class={ [`page-${pageName}`]: pageName })
   head
     include ../../0-core/_meta
     block meta

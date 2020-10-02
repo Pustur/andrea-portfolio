@@ -11,7 +11,7 @@
     &.full {
       @neat-outer-container 100%;
 
-      padding: 0.92990627%; /* Magic number */
+      padding: 0;
     }
   }
 }

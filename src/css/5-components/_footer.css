@@ -12,5 +12,9 @@
   .footer {
     padding-top: 95px;
     padding-bottom: 85px;
+
+    .page-works & {
+      margin-top: 0;
+    }
   }
 }
