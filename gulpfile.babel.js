@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { PassThrough } from 'stream';
 import fs from 'fs';
 import del from 'del';
@@ -140,7 +142,7 @@ function jsTask() {
 }
 
 /* CONTENTFUL TASK */
-function contentfulTask(done) {
+function contentfulTask() {
   const clientOptions = {
     space: process.env.space,
     accessToken: process.env.accessToken,
@@ -148,15 +150,11 @@ function contentfulTask(done) {
 
   const client = contentful.createClient(clientOptions);
 
-  function logError(error) {
-    console.error(error); // eslint-disable-line no-console
-  }
-
   function getContentTypes() {
     return client
       .getContentTypes()
       .then(response => response.items.map(contentType => contentType.sys.id))
-      .catch(logError);
+      .catch(console.error);
   }
 
   async function getEntriesOfContentType(contentTypes) {
@@ -178,11 +176,11 @@ function contentfulTask(done) {
           .then(entries => {
             entriesByContentType[contentType] = entries.items;
           })
-          .catch(logError);
+          .catch(console.error);
       }),
     )
       .then(response => response)
-      .catch(logError);
+      .catch(console.error);
 
     return entriesByContentType;
   }
@@ -191,11 +189,17 @@ function contentfulTask(done) {
     const contentTypes = await getContentTypes();
     const entries = await getEntriesOfContentType(contentTypes);
 
-    fs.writeFileSync(config.contentfulFile, JSON.stringify(entries, null, 2));
-    done();
+    return fs.promises.writeFile(config.contentfulFile, JSON.stringify(entries, null, 2));
   }
 
-  writeContentfulFile();
+  return fs.promises.access(config.contentfulFile, fs.constants.F_OK)
+    .then(() => {
+      console.info(`${config.contentfulFile} file found.\nTo fetch new data delete ${config.contentfulFile} before running this command.`);
+    })
+    .catch(() => {
+      console.info(`${config.contentfulFile} file not found.\nFetching new data...`);
+      return writeContentfulFile();
+    });
 }
 
 /* IMAGES TASK */
