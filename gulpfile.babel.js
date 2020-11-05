@@ -217,12 +217,13 @@ function moveTask() {
 }
 
 /* SERVER TASK */
-function serverTask() {
+function serverTask(done) {
   connect.server({
     root: config.dist.slice(0, -1),
     port: 8000,
     livereload: true,
   });
+  done();
 }
 
 /* RELOAD TASKS */
@@ -250,7 +251,7 @@ function cleanDistTask() {
 }
 
 /* WATCH TASKS */
-function watchTask() {
+function watchTask(done) {
   gulp.watch(
     `${config.src}${config.html.path}${config.html.watchPattern}`,
     gulp.series(htmlTask, reloadHtmlTask),
@@ -263,6 +264,7 @@ function watchTask() {
     `${config.src}${config.js.path}${config.js.watchPattern}`,
     gulp.series(jsTask, reloadJsTask),
   );
+  done();
 }
 
 /* EXPORTED TASKS */
