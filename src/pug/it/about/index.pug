@@ -15,7 +15,7 @@ block main
 
     .about
       .container
-        img.profile-pic(src=langFallback(langFallback(about[0].fields.introImage).fields.file).url, alt=langFallback(langFallback(about[0].fields.introImage).fields.description))
+        img.profile-pic(src=langFallback(langFallback(about[0].fields.introImage).fields.file).url, alt=langFallback(langFallback(about[0].fields.introImage).fields.description) || '')
         .large-paragraph.intro!= langFallback(about[0].fields.intro)
 
       .container.smaller
