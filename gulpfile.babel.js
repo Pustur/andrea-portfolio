@@ -189,15 +189,23 @@ function contentfulTask() {
     const contentTypes = await getContentTypes();
     const entries = await getEntriesOfContentType(contentTypes);
 
-    return fs.promises.writeFile(config.contentfulFile, JSON.stringify(entries, null, 2));
+    return fs.promises.writeFile(
+      config.contentfulFile,
+      JSON.stringify(entries, null, 2),
+    );
   }
 
-  return fs.promises.access(config.contentfulFile, fs.constants.F_OK)
+  return fs.promises
+    .access(config.contentfulFile, fs.constants.F_OK)
     .then(() => {
-      console.info(`${config.contentfulFile} file found.\nTo fetch new data delete ${config.contentfulFile} before running this command.`);
+      console.info(
+        `${config.contentfulFile} file found.\nTo fetch new data delete ${config.contentfulFile} before running this command.`,
+      );
     })
     .catch(() => {
-      console.info(`${config.contentfulFile} file not found.\nFetching new data...`);
+      console.info(
+        `${config.contentfulFile} file not found.\nFetching new data...`,
+      );
       return writeContentfulFile();
     });
 }

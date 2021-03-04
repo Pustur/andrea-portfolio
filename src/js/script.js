@@ -51,12 +51,20 @@
           <div class="container bigger">
             <div class="row">
               <div class="modal__work-video">
-                ${videoId ? `<div data-type="vimeo" data-video-id="${videoId}"></div>` : `<img src="${imageUrl}" alt />`}
+                ${
+                  videoId
+                    ? `<div data-type="vimeo" data-video-id="${videoId}"></div>`
+                    : `<img src="${imageUrl}" alt />`
+                }
               </div>
               <div class="modal__work-info">
                 <h2 class="modal__work-title no-margin-top">${title}</h2>
                 <div class="modal__work-description">${description}</div>
-                ${technicalDescription ? `<h3>${myRoleLabel}</h3><div class="modal__work-technical-description">${technicalDescription}</div>` : ''}
+                ${
+                  technicalDescription
+                    ? `<h3>${myRoleLabel}</h3><div class="modal__work-technical-description">${technicalDescription}</div>`
+                    : ''
+                }
               </div>
             </div>
           </div>
@@ -133,7 +141,7 @@
 
   $window.on('resize', () => $window.scroll());
 
-  $window.on('keydown', (e) => {
+  $window.on('keydown', e => {
     if (e.which === 27) {
       closeModal();
     }
@@ -141,14 +149,14 @@
 
   $document.on('click', '.modal__close', closeModal);
 
-  $document.on('click', '.languages-menu__link', (e) => {
+  $document.on('click', '.languages-menu__link', e => {
     const selectedLanguage = $(e.currentTarget).text();
 
     e.preventDefault();
     changeLanguage(selectedLanguage);
   });
 
-  $document.on('change', '.languages-select', (e) => {
+  $document.on('change', '.languages-select', e => {
     const selectedLanguage = $(e.currentTarget).find(':selected').val();
 
     changeLanguage(selectedLanguage);
@@ -163,12 +171,16 @@
     });
   }
 
-  $workItemLinks.on('click', (e) => {
+  $workItemLinks.on('click', e => {
     const $target = $(e.currentTarget);
     const $metadata = $target.closest('li').find('.work-item__metadata');
-    const title = $metadata.find('.work-item__title').html() || $target.find('.work-item__cover-title').html();
+    const title =
+      $metadata.find('.work-item__title').html() ||
+      $target.find('.work-item__cover-title').html();
     const description = $metadata.find('.work-item__description').html();
-    const technicalDescription = $metadata.find('.work-item__technical-description').html();
+    const technicalDescription = $metadata
+      .find('.work-item__technical-description')
+      .html();
     const closeLabel = $metadata.find('.work-item__close-label').html();
     const myRoleLabel = $metadata.find('.work-item__my-role-label').html();
     const videoId = $target.attr('data-work-id');
@@ -211,22 +223,18 @@
   }
 
   $toTop.on('click', () => {
-    $root.animate({
-      scrollTop: 0,
-    }, 1000);
+    $root.animate({ scrollTop: 0 }, 1000);
 
     return false;
   });
 
-  $inDocumentLinks.on('click', (e) => {
+  $inDocumentLinks.on('click', e => {
     const { hash } = e.currentTarget;
     const $target = $(hash);
 
     if ($target.length) {
       e.preventDefault();
-      $root.animate({
-        scrollTop: $target.offset().top,
-      }, 1000, () => {
+      $root.animate({ scrollTop: $target.offset().top }, 1000, () => {
         window.location.hash = hash;
       });
     }
