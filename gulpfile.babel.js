@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 
+import { createClient } from 'contentful';
 import { PassThrough } from 'stream';
 import fs from 'fs';
 import del from 'del';
@@ -10,7 +11,6 @@ import cssnano from 'cssnano';
 import IntlPolyfill from 'intl';
 import neat from 'postcss-neat';
 import autoprefixer from 'autoprefixer';
-import * as contentful from 'contentful';
 
 import gulp from 'gulp';
 import pug from 'gulp-pug';
@@ -143,12 +143,10 @@ function jsTask() {
 
 /* CONTENTFUL TASK */
 function contentfulTask() {
-  const clientOptions = {
+  const client = createClient({
     space: process.env.SPACE_ID,
     accessToken: process.env.ACCESS_TOKEN,
-  };
-
-  const client = contentful.createClient(clientOptions);
+  });
 
   function getContentTypes() {
     return client
@@ -157,42 +155,38 @@ function contentfulTask() {
       .catch(console.error);
   }
 
-  async function getEntriesOfContentType(contentTypes) {
-    const entriesByContentType = {};
+  function getEntriesOfContentType(contentType) {
+    const defaultOptions = {
+      content_type: contentType,
+      locale: '*',
+    };
+    const additionalOptions =
+      contentType === 'news' ? { order: '-fields.date' } : {};
+    const options = { ...defaultOptions, ...additionalOptions };
 
-    await Promise.all(
-      contentTypes.map(contentType => {
-        let options = {
-          content_type: contentType,
-          locale: '*',
-        };
-
-        if (contentType === 'news') {
-          options = { ...options, ...{ order: '-fields.date' } };
-        }
-
-        return client
-          .getEntries(options)
-          .then(entries => {
-            entriesByContentType[contentType] = entries.items;
-          })
-          .catch(console.error);
-      }),
-    )
-      .then(response => response)
+    return client
+      .getEntries(options)
+      .then(entries => [contentType, entries.items])
       .catch(console.error);
-
-    return entriesByContentType;
   }
 
-  async function writeContentfulFile() {
-    const contentTypes = await getContentTypes();
-    const entries = await getEntriesOfContentType(contentTypes);
+  function getEntriesOfContentTypes(contentTypes) {
+    const promises = contentTypes.map(getEntriesOfContentType);
 
-    return fs.promises.writeFile(
-      config.contentfulFile,
-      JSON.stringify(entries, null, 2),
-    );
+    return Promise.all(promises)
+      .then(entries => Object.fromEntries(entries))
+      .catch(console.error);
+  }
+
+  function writeContentfulFile() {
+    return getContentTypes()
+      .then(getEntriesOfContentTypes)
+      .then(entries =>
+        fs.promises.writeFile(
+          config.contentfulFile,
+          JSON.stringify(entries, null, 2),
+        ),
+      );
   }
 
   return fs.promises
