@@ -144,8 +144,8 @@ function jsTask() {
 /* CONTENTFUL TASK */
 function contentfulTask() {
   const clientOptions = {
-    space: process.env.space,
-    accessToken: process.env.accessToken,
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN,
   };
 
   const client = contentful.createClient(clientOptions);
