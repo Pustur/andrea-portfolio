@@ -27,7 +27,9 @@
     "dotenv": "8.2.0",
     "eslint": "7.21.0",
     "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.3.1",
     "gulp": "4.0.2",
     "gulp-babel": "8.0.0",
     "gulp-concat": "2.6.1",
@@ -42,6 +44,7 @@
     "intl": "1.2.5",
     "marked": "2.0.1",
     "postcss-neat": "2.5.2",
-    "precss": "1.4.0"
+    "precss": "1.4.0",
+    "prettier": "2.2.1"
   }
 }
