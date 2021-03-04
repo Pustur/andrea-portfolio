@@ -1,7 +1,15 @@
 {
   "extends": "airbnb-base",
+  "env": {
+    "browser": true,
+    "jquery": true
+  },
+  "globals": {
+    "plyr": "readonly"
+  },
   "rules": {
     "arrow-parens": "off",
+    "no-param-reassign": [2, { "props": false }],
     "import/no-extraneous-dependencies": [2, { "devDependencies": true }]
   }
 }

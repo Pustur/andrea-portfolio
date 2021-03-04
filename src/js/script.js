@@ -110,7 +110,7 @@
     const regex = /(\/)[a-z]{2}(?=\/|$)/;
     const newUrl = currentUrl.replace(regex, (match, p1) => `${p1}${lang}`);
 
-    window.location.href = newUrl; // eslint-disable-line no-param-reassign
+    window.location.href = newUrl;
   }
 
   // Event listeners
@@ -227,7 +227,7 @@
       $root.animate({
         scrollTop: $target.offset().top,
       }, 1000, () => {
-        window.location.hash = hash; // eslint-disable-line no-param-reassign
+        window.location.hash = hash;
       });
     }
   });
@@ -273,4 +273,4 @@
       $workItems.not(`[data-category=${category}]`).remove();
     }
   }
-})(jQuery, window, document, plyr); // eslint-disable-line no-undef
+})(jQuery, window, document, plyr);
