@@ -42,23 +42,51 @@
       videoId,
       imageUrl,
       closeLabel,
+      imdbUrl,
       myRoleLabel,
     } = contents;
+    const links = [];
+
+    if (imdbUrl) {
+      links.push(
+        `<li><a href="${imdbUrl}" target="_blank" rel="noopener noreferrer">IMDb</a></li>`,
+      );
+    }
+    if (videoId && imageUrl) {
+      links.push(
+        `<li class="modal__video-link"><a href="#${videoId}">Watch the video</a></li>`,
+      );
+    }
+
     const html = `
       <div class="modal" style="display: none;">
         <div class="modal__scrolling-container">
           <a href="javascript:;" class="modal__close">${closeLabel}</a>
           <div class="container bigger">
             <div class="row">
-              <div class="modal__work-video">
+              <div class="modal__work-content">
+                ${
+                  imageUrl
+                    ? `<div class="modal__work-poster">
+                        <img src="${imageUrl}" alt />
+                      </div>`
+                    : ''
+                }
                 ${
                   videoId
-                    ? `<div data-type="vimeo" data-video-id="${videoId}"></div>`
-                    : `<img src="${imageUrl}" alt />`
+                    ? `<div id="${videoId}" class="modal__work-video">
+                        <div data-type="vimeo" data-video-id="${videoId}"></div>
+                      </div>`
+                    : ''
                 }
               </div>
               <div class="modal__work-info">
                 <h2 class="modal__work-title no-margin-top">${title}</h2>
+                ${
+                  links.length
+                    ? `<ul class="list-inline">${links.join('')}</ul>`
+                    : ''
+                }
                 <div class="modal__work-description">${description}</div>
                 ${
                   technicalDescription
@@ -185,6 +213,7 @@
     const myRoleLabel = $metadata.find('.work-item__my-role-label').html();
     const videoId = $target.attr('data-work-id');
     const imageUrl = $target.attr('data-work-image');
+    const imdbUrl = $target.attr('data-work-imdb-url');
 
     e.preventDefault();
     openModal({
@@ -194,6 +223,7 @@
       videoId,
       imageUrl,
       closeLabel,
+      imdbUrl,
       myRoleLabel,
     });
   });
