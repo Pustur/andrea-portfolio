@@ -14,6 +14,7 @@ $blue: #8eaca9;
 $blue-light: #9bbab7;
 $blue-lighter: #bdd9d6;
 $blue-lightest: #f4fbfb;
+$blue-shadow: rgba(38, 51, 53, 0.25);
 
 /* Social colors */
 $fb-background: #3b5998;
@@ -30,10 +31,13 @@ $ig-background: #e1306c;
 $ig-icon: white;
 
 /* Fonts */
-$avenir-font: 'Avenir', 'Avenir Next', 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$raleway-font: 'Raleway', 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$avenir-font: 'Avenir', 'Avenir Next', 'Raleway', 'Helvetica Neue', 'Helvetica',
+  'Arial', sans-serif;
+$raleway-font: 'Raleway', 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Helvetica',
+  'Arial', sans-serif;
 $helvetica-font: 'Helvetica Neue', 'Helvetica', 'Raleway', 'Arial', sans-serif;
-$plyr-font: 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+$plyr-font: 'Avenir', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica',
+  'Arial', sans-serif;
 
 /* Breakpoints */
 @custom-media --sm-max (width < 768px);

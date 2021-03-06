@@ -9,6 +9,10 @@
     @neat-shift 1;
   }
 
+  &__img {
+    box-shadow: 4px 10px 20px $blue-shadow;
+  }
+
   &__date {
     @extend %wide-caps;
 
