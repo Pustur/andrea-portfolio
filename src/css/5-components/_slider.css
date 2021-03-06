@@ -18,6 +18,7 @@
     left: 0;
 
     li {
+      outline: none;
       padding: 1px; /* Fix rounding error safari */
 
       &::before {
