@@ -1,0 +1,23 @@
+.list-inline {
+  list-style: none;
+  padding: 0;
+  display: flex;
+
+  li {
+    position: static;
+    padding-left: 0;
+
+    &::before {
+      position: static;
+      color: white;
+      margin: 0 0.5rem;
+      content: none;
+    }
+
+    + li {
+      &::before {
+        content: '—';
+      }
+    }
+  }
+}
