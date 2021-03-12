@@ -83,12 +83,14 @@ function htmlTask() {
     .pipe(
       data(() => {
         const dataObj = JSON.parse(fs.readFileSync(config.contentfulFile));
+
         dataObj.marked = marked;
         dataObj.PolyFilledDateTimeFormat = IntlPolyfill.DateTimeFormat;
         dataObj.languages = [
           { name: 'English', code: 'en' },
           { name: 'Italiano', code: 'it' },
         ];
+
         return dataObj;
       }),
     )
@@ -101,12 +103,7 @@ function cssTask() {
   const processors = [precss(), neat(), autoprefixer()];
 
   if (config.production) {
-    processors.push(
-      cssnano({
-        safe: true,
-        calc: false,
-      }),
-    );
+    processors.push(cssnano({ safe: true, calc: false }));
   }
 
   return gulp
@@ -114,11 +111,7 @@ function cssTask() {
     .pipe(plumber())
     .pipe(config.production ? noop() : sourcemaps.init())
     .pipe(postcss(processors))
-    .pipe(
-      rename({
-        suffix: '.min',
-      }),
-    )
+    .pipe(rename({ suffix: '.min' }))
     .pipe(config.production ? noop() : sourcemaps.write())
     .pipe(gulp.dest(`${config.dist}${config.css.path}`));
 }
