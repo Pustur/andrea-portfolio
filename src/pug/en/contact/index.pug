@@ -16,7 +16,7 @@ block main
     .contact
       .container
         .large-paragraph.contact-paragraph!= marked(langFallback(contact[0].fields.intro))
-        form.contact-form(action=`https://formspree.io/${langFallback(client[0].fields.email)}`, method='POST')
+        form.contact-form(action='https://formspree.io/f/mqkwaqqv', method='POST')
           input(type='text', name='_gotcha', style='display: none')
           .contact-form__row
             +input('name-input', langFallback(label[0].fields.name))(type='text', name='name', required)
