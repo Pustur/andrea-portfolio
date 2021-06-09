@@ -19,6 +19,7 @@ You can view it [here](https://andreacolosiosound.com/en)
 Don't update the following dependencies as they break the build
 
 - autoprefixer
+- cssnano
 - gulp-postcss
 - postcss-neat
 - precss
