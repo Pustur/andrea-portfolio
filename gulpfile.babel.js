@@ -151,13 +151,12 @@ function contentfulTask() {
   function getEntriesOfContentType(contentType) {
     const defaultOptions = {
       content_type: contentType,
-      locale: '*',
     };
     const additionalOptions =
       contentType === 'news' ? { order: '-fields.date' } : {};
     const options = { ...defaultOptions, ...additionalOptions };
 
-    return client
+    return client.withAllLocales
       .getEntries(options)
       .then(entries => [contentType, entries.items])
       .catch(console.error);
