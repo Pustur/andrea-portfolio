@@ -11,6 +11,7 @@
     "dev": "gulp",
     "dev:prod": "NODE_ENV=production gulp",
     "build": "NODE_ENV=production gulp build",
+    "format": "prettier --write .",
     "test:js": "eslint \"src/**/*.js\" \"gulpfile.babel.js\"",
     "test": "npm run test:js"
   },
