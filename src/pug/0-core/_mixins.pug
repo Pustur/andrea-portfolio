@@ -28,7 +28,7 @@ mixin news(img, alt = '', title, isodate, text, titleTag = 'h2')
     .news-item__body
       #{titleTag}.h4= title
       time.news-item__date(datetime=isodate)= intl.format(new Date(isodate))
-      .news-item__text!= marked(text)
+      .news-item__text!= marked.parse(text)
 
 mixin work(id, title, coverTitle, description, technicalDescription, image, detailImage, category, closeLabel, myRoleLabel, imdbUrl, isVFS)
   li.work-item(data-category=category.toLowerCase().replace(/\s/g, '-'))
@@ -42,8 +42,8 @@ mixin work(id, title, coverTitle, description, technicalDescription, image, deta
       .work-item__title= title
       .work-item__close-label!= closeLabel
       .work-item__my-role-label!= myRoleLabel
-      .work-item__description!= marked(description)
-      .work-item__technical-description!= marked(technicalDescription)
+      .work-item__description!= marked.parse(description)
+      .work-item__technical-description!= marked.parse(technicalDescription)
 
 mixin videoPlayer(videos)
   - const preloadedVideo = videos[0];
@@ -52,7 +52,7 @@ mixin videoPlayer(videos)
   .video-player
     div(data-type='vimeo', data-video-id=preloadedVideoId)
   .row
-    .video-description!= marked(langFallback(preloadedVideo.fields.description))
+    .video-description!= marked.parse(langFallback(preloadedVideo.fields.description))
 
 mixin slide(url, alt = '')
   li
@@ -62,4 +62,4 @@ mixin whatIDoSection(name, body)
   - const id = name.toLowerCase().replace(/\W+/g, '-')
   li(id=id)
     h2.h5= name
-    div!= marked(body)
+    div!= marked.parse(body)

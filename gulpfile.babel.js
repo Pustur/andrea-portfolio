@@ -5,7 +5,7 @@ import { PassThrough } from 'stream';
 import fs from 'fs';
 import del from 'del';
 import dotenv from 'dotenv';
-import marked from 'marked';
+import { marked } from 'marked';
 import precss from 'precss';
 import cssnano from 'cssnano';
 import IntlPolyfill from 'intl';

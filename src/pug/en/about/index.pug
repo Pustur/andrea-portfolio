@@ -20,7 +20,7 @@ block main
 
       .container.smaller
         h2.h2= langFallback(label[0].fields.originStory)
-        div!= marked(langFallback(about[0].fields.originStory))
+        div!= marked.parse(langFallback(about[0].fields.originStory))
 
       .container
         ul.slider.unstyled-list
