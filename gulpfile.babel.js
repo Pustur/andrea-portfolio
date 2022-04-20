@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-
 import { createClient } from 'contentful';
 import { PassThrough } from 'stream';
 import fs from 'fs';
@@ -263,33 +262,29 @@ function watchTask(done) {
 }
 
 /* EXPORTED TASKS */
-function buildTask() {
-  return gulp.series(
-    cleanDistTask,
-    gulp.parallel(
-      gulp.series(contentfulTask, htmlTask),
-      cssTask,
-      jsTask,
-      imgTask,
-      moveTask,
-    ),
-  );
-}
+const buildTask = gulp.series(
+  cleanDistTask,
+  gulp.parallel(
+    gulp.series(contentfulTask, htmlTask),
+    cssTask,
+    jsTask,
+    imgTask,
+    moveTask,
+  ),
+);
 
-function defaultTask() {
-  return gulp.series(
-    cleanDistTask,
-    gulp.parallel(
-      gulp.series(contentfulTask, htmlTask),
-      cssTask,
-      jsTask,
-      imgTask,
-      moveTask,
-    ),
-    gulp.parallel(serverTask, watchTask),
-  );
-}
+const defaultTask = gulp.series(
+  cleanDistTask,
+  gulp.parallel(
+    gulp.series(contentfulTask, htmlTask),
+    cssTask,
+    jsTask,
+    imgTask,
+    moveTask,
+  ),
+  gulp.parallel(serverTask, watchTask),
+);
 
 /* EXPORTS */
-exports.build = buildTask();
-exports.default = defaultTask();
+export { buildTask as build };
+export default defaultTask;
