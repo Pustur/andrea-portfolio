@@ -47,5 +47,6 @@
     "postcss-neat": "2.5.2",
     "precss": "1.4.0",
     "prettier": "2.6.2"
-  }
+  },
+  "dependencies": {}
 }
