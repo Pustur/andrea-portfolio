@@ -2,7 +2,7 @@
 
 > Portfolio for Andrea Colosio, Sound Designer
 
-You can view it [here](https://andreacolosiosound.com/en)
+You can view it [here](https://andreacolosiosound.com)
 
 ## Technologies
 
@@ -11,7 +11,7 @@ You can view it [here](https://andreacolosiosound.com/en)
 - jQuery
 - Gulp
 - Babel
-- Eslint / Stylelint / Puglint
+- Eslint
 - Contentful
 
 ## Note to self
