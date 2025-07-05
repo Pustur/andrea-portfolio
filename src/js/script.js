@@ -44,6 +44,7 @@
       closeLabel,
       imdbUrl,
       myRoleLabel,
+      watchTheVideoLabel,
     } = contents;
     const links = [];
 
@@ -54,7 +55,7 @@
     }
     if (videoId && imageUrl) {
       links.push(
-        `<li class="modal__video-link"><a href="#${videoId}">Watch the video</a></li>`,
+        `<li class="modal__video-link"><a href="#${videoId}">${watchTheVideoLabel}</a></li>`,
       );
     }
 
@@ -211,6 +212,7 @@
       .html();
     const closeLabel = $metadata.find('.work-item__close-label').html();
     const myRoleLabel = $metadata.find('.work-item__my-role-label').html();
+    const watchTheVideoLabel = $metadata.find('.work-item__watch-the-video-label').html();
     const videoId = $target.attr('data-work-id');
     const imageUrl = $target.attr('data-work-image');
     const imdbUrl = $target.attr('data-work-imdb-url');
@@ -225,6 +227,7 @@
       closeLabel,
       imdbUrl,
       myRoleLabel,
+      watchTheVideoLabel,
     });
   });
 
